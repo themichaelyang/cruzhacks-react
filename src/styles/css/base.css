@@ -223,7 +223,7 @@ html {
   flex-wrap: wrap; }
 
 .member {
-  margin: 0 1rem;
+  margin: 1rem;
   padding: 1rem 2rem;
   width: 18rem;
   height: 30rem;
@@ -266,8 +266,10 @@ html {
       background-image: url(../../assets/team/amit_saxena.jpg); }
     .member__profile.greg {
       background-image: url(../../assets/team/greg_wolff.jpg); }
+    .member__profile.shreya {
+      background-image: url(../../assets/team/shreya_adloori.jpg); }
     .member__profile.anisha {
-      background-image: url(../../assets/team/Anisha_Trivedi.JPG);
+      background-image: url(../../assets/team/anisha_trivedi.jpg);
       background-position: -12px; }
 
 /*# sourceMappingURL=base.css.map */

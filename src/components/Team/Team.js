@@ -12,14 +12,14 @@ class Team extends Component {
             bg="amit"
             title="President – Sponsorship"
             linkedin="https://www.linkedin.com/in/amitsa1/"
-            link="http://karthikmanickam.com/"
+            link="mailto:amsaxena@ucsc.edu"
           />
           <Member
             name="Greg Wolff"
             bg="greg"
             title="President – Design"
             linkedin="https://www.linkedin.com/in/gregwwolff/"
-            link="http://karthikmanickam.com/"
+            link="mailto:gregwwolff@gmail.com"
           />
           <Member
             name="Karthik Manickam"
@@ -27,9 +27,12 @@ class Team extends Component {
             title="President – Development"
             linkedin="https://www.linkedin.com/in/karthik-manickam/"
             link="http://karthikmanickam.com/"
+            target="_blank"
           />
         </div>
-        <div className="team__row"></div>
+        <div className="team__row">
+
+        </div>
       </div>
     );
   }
