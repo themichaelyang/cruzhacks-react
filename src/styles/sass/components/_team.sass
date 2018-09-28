@@ -1,0 +1,26 @@
+.team
+  padding: 10rem
+  background-color: $color-bg
+  text-align: center
+  @include respond(tab-port)
+    padding: 5rem 2rem
+  &__title
+    font-size: 4rem
+    text-transform: uppercase
+    color: white
+
+.member
+  padding: 1rem 2rem
+  width: 16rem
+  height: 24rem
+  background-color: $color-bg-alt
+  border-radius: 2rem
+  display: flex
+  flex-direction: column
+  align-items: center
+  &__portrait
+    width: 10rem
+    height: 10rem
+    background-image: linear-gradient(180deg, #FFE974 0%, #EBA471 21%, #EB7187 45%, #9782EA 67%, #719AEB 93%)
+    border-radius: 50%
+    margin: 2rem

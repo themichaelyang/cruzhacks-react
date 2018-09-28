@@ -204,4 +204,32 @@ html {
       font-size: 2.75rem;
       color: rgba(252, 249, 255, 0.7); }
 
+.team {
+  padding: 10rem;
+  background-color: #1C1921;
+  text-align: center; }
+  @media (max-width: 56.25em) {
+    .team {
+      padding: 5rem 2rem; } }
+  .team__title {
+    font-size: 4rem;
+    text-transform: uppercase;
+    color: white; }
+
+.member {
+  padding: 1rem 2rem;
+  width: 16rem;
+  height: 24rem;
+  background-color: #312D38;
+  border-radius: 2rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center; }
+  .member__portrait {
+    width: 10rem;
+    height: 10rem;
+    background-image: linear-gradient(180deg, #FFE974 0%, #EBA471 21%, #EB7187 45%, #9782EA 67%, #719AEB 93%);
+    border-radius: 50%;
+    margin: 2rem; }
+
 /*# sourceMappingURL=base.css.map */

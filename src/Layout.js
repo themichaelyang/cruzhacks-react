@@ -3,6 +3,7 @@ import Hero from './components/Hero';
 import Mission from './components/Mission';
 import CTA from './components/CTA';
 import Highlights from './components/Highlights';
+import Team from './components/Team';
 import './styles/css/base.css';
 
 class Layout extends Component {
@@ -13,6 +14,7 @@ class Layout extends Component {
         <Mission />
         <CTA />
         <Highlights />
+        <Team />
       </div>
     );
   }
