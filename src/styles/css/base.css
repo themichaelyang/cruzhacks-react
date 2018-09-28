@@ -272,4 +272,13 @@ html {
       background-image: url(../../assets/team/anisha_trivedi.jpg);
       background-position: -12px; }
 
+.footer {
+  padding: 5rem 10rem;
+  background-color: #2E2A38;
+  display: flex;
+  justify-content: space-between; }
+  .footer__copyright {
+    font-size: 2rem;
+    color: #8D84A1; }
+
 /*# sourceMappingURL=base.css.map */
