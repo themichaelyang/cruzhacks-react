@@ -1,4 +1,176 @@
-body {
-  color: white; }
+*,
+*::after,
+*::before {
+  margin: 0;
+  padding: 0;
+  box-sizing: inherit; }
+
+html {
+  font-family: "Varela Round", sans-serif;
+  font-size: 62.5%;
+  overflow-x: hidden; }
+  @media (max-width: 75em) {
+    html {
+      font-size: 56.25%; } }
+  @media (max-width: 56.25em) {
+    html {
+      font-size: 50%; } }
+
+.hero {
+  min-height: 100vh;
+  background-color: #1C1921;
+  position: relative; }
+  .hero__bg {
+    position: absolute;
+    top: 10%;
+    right: 0;
+    height: 900px; }
+    @media (max-width: 56.25em) {
+      .hero__bg {
+        height: 700px; } }
+    @media (max-width: 37.5em) {
+      .hero__bg {
+        height: 600px; } }
+  .hero__text {
+    z-index: 1;
+    color: white;
+    position: absolute;
+    top: 40%;
+    left: 13rem; }
+    .hero__text__header {
+      font-size: 7rem;
+      padding: 0.5rem 0; }
+    .hero__text__quote {
+      color: rgba(252, 249, 255, 0.7);
+      font-size: 2.25rem; }
+    .hero__text__location {
+      padding: 0.25rem 0;
+      display: block;
+      color: rgba(252, 249, 255, 0.7);
+      font-size: 2rem; }
+      .hero__text__location:first-of-type {
+        padding-top: 6rem; }
+    .hero__text__cta {
+      text-decoration: none;
+      display: inline-block;
+      color: white;
+      padding: 1rem 3rem;
+      border-radius: 10rem;
+      font-size: 2.5rem;
+      background: #312D38;
+      margin-top: 3rem;
+      transition: background-color 0.2s;
+      cursor: not-allowed; }
+      .hero__text__cta:hover {
+        background-color: #25222a; }
+
+.logo {
+  position: absolute;
+  z-index: 1;
+  top: 10%;
+  left: 8%;
+  height: 125px; }
+
+.mission {
+  background: #1C1921;
+  padding: 10rem;
+  display: flex;
+  flex-direction: column; }
+  @media (max-width: 56.25em) {
+    .mission {
+      padding: 5rem 3rem; } }
+  .mission__text {
+    font-size: 2.5rem;
+    font-family: "Space Mono", monospace;
+    color: #EBA471;
+    text-transform: uppercase;
+    letter-spacing: 2px; }
+  .mission__title {
+    color: white;
+    display: inline-block;
+    margin: 0.5rem 0;
+    font-size: 4rem; }
+  .mission__statement {
+    color: rgba(252, 249, 255, 0.7);
+    font-size: 3rem; }
+
+.cta-container {
+  background: #1C1921;
+  padding: 6rem 10rem 10rem 10rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-content: center;
+  align-items: center; }
+  @media (max-width: 56.25em) {
+    .cta-container {
+      padding: 5rem; } }
+  @media (max-width: 37.5em) {
+    .cta-container {
+      padding: 2rem; } }
+
+.cta {
+  width: 30rem;
+  height: 45rem;
+  margin: 2rem;
+  padding: 5rem 3rem;
+  border-radius: 20px;
+  background: #312D38;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center; }
+  .cta__title {
+    font-size: 3rem;
+    color: white;
+    margin: 3rem 0; }
+  .cta__text {
+    font-size: 2.75rem;
+    color: white; }
+
+.highlights-container {
+  padding: 10rem;
+  background-color: #1C1921;
+  display: flex;
+  flex-direction: column; }
+
+.highlight {
+  display: flex;
+  align-items: center;
+  padding: 2rem 10rem; }
+  .highlight.reverse {
+    flex-direction: row-reverse; }
+    .highlight.reverse .highlight__text {
+      text-align: left; }
+    .highlight.reverse .highlight__image-container {
+      margin: 0 0 0 4rem; }
+  .highlight__image-container {
+    margin-right: 5rem;
+    position: relative;
+    width: 60rem; }
+  .highlight__image {
+    height: 40rem;
+    width: 60rem;
+    filter: grayscale(100%);
+    border-radius: 10px; }
+  .highlight__overlay {
+    height: 40rem;
+    width: 100%;
+    position: absolute;
+    border-radius: 10px;
+    background-image: linear-gradient(202.54deg, rgba(211, 167, 255, 0.3) 6.32%, rgba(9, 93, 255, 0.3) 82.62%);
+    top: 0;
+    left: 0;
+    right: 0; }
+  .highlight__text {
+    text-align: right;
+    color: white; }
+    .highlight__text__title {
+      font-size: 4rem;
+      text-transform: uppercase;
+      white-space: nowrap; }
+    .highlight__text p {
+      font-size: 2.75rem;
+      color: rgba(252, 249, 255, 0.7); }
 
 /*# sourceMappingURL=base.css.map */

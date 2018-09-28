@@ -1,0 +1,31 @@
+.cta-container
+  background: $color-bg
+  padding: 6rem 10rem 10rem 10rem
+  display: flex
+  flex-wrap: wrap
+  justify-content: center
+  align-items: center
+  @include respond(tab-port)
+    padding: 5rem
+  @include respond(phone)
+    padding: 2rem
+
+.cta
+  width: 30rem
+  height: 45rem
+  margin: 2rem
+  padding: 5rem 3rem
+  border-radius: 20px
+  background: $color-bg-alt
+  display: flex
+  flex-direction: column
+  justify-content: center
+  align-items: center
+  text-align: center
+  &__title
+    font-size: 3rem
+    color: white
+    margin: 3rem 0
+  &__text
+    font-size: 2.75rem
+    color: white

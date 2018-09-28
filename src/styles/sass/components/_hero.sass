@@ -1,0 +1,57 @@
+.hero
+  min-height: 100vh
+  background-color: $color-bg
+  position: relative
+  // background-image: url(../../assets/hero.svg)
+  // background-size: contain
+  // background-repeat: no-repeat
+  // background-position: right
+  &__bg
+    position: absolute
+    top: 10%
+    right: 0
+    height: 900px
+    @include respond(tab-port)
+      height: 700px
+    @include respond(phone)
+      height: 600px
+  &__text
+    z-index: 1
+    color: white
+    position: absolute
+    top: 40%
+    left: 13rem
+    &__header
+      font-size: 7rem
+      padding: .5rem 0
+    &__quote
+      color: $color-text-alt
+      font-size: 2.25rem
+    &__location
+      &:first-of-type
+        padding-top: 6rem
+      padding: .25rem 0
+      display: block
+      color: $color-text-alt
+      font-size: 2rem
+    &__cta
+      text-decoration: none
+      display: inline-block
+      color: white
+      padding: 1rem 3rem
+      border-radius: 10rem
+      font-size: 2.5rem
+      background: $color-bg-alt
+      margin-top: 3rem
+      transition: background-color .2s
+      cursor: not-allowed
+      &:hover
+        background-color: darken($color-bg-alt, 5%)
+
+
+.logo
+  position: absolute
+  z-index: 1
+  top: 10%
+  left: 8%
+  height: 125px
