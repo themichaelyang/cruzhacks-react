@@ -129,7 +129,6 @@ html {
     color: white; }
 
 .highlights-container {
-  padding: 10rem;
   background-color: #1C1921;
   display: flex;
   flex-direction: column; }
@@ -138,23 +137,45 @@ html {
   display: flex;
   align-items: center;
   padding: 2rem 10rem; }
+  @media (max-width: 75em) {
+    .highlight {
+      flex-direction: column !important;
+      padding: 2rem; } }
   .highlight.reverse {
     flex-direction: row-reverse; }
     .highlight.reverse .highlight__text {
       text-align: left; }
+      @media (max-width: 75em) {
+        .highlight.reverse .highlight__text {
+          text-align: center;
+          margin: 3rem 0 5rem 0; } }
     .highlight.reverse .highlight__image-container {
       margin: 0 0 0 4rem; }
+      @media (max-width: 75em) {
+        .highlight.reverse .highlight__image-container {
+          margin: 0; } }
   .highlight__image-container {
     margin-right: 5rem;
     position: relative;
-    width: 60rem; }
+    width: 50rem; }
+    @media (max-width: 75em) {
+      .highlight__image-container {
+        margin: 0; } }
+    @media (max-width: 37.5em) {
+      .highlight__image-container {
+        width: 40rem;
+        height: 30rem; } }
   .highlight__image {
-    height: 40rem;
-    width: 60rem;
+    height: 35rem;
+    width: 50rem;
     filter: grayscale(100%);
     border-radius: 10px; }
+    @media (max-width: 37.5em) {
+      .highlight__image {
+        width: 40rem;
+        height: 30rem; } }
   .highlight__overlay {
-    height: 40rem;
+    height: 35rem;
     width: 100%;
     position: absolute;
     border-radius: 10px;
@@ -162,13 +183,23 @@ html {
     top: 0;
     left: 0;
     right: 0; }
+    @media (max-width: 37.5em) {
+      .highlight__overlay {
+        height: 30rem; } }
   .highlight__text {
     text-align: right;
     color: white; }
+    @media (max-width: 75em) {
+      .highlight__text {
+        text-align: center;
+        margin: 3rem 0; } }
     .highlight__text__title {
       font-size: 4rem;
       text-transform: uppercase;
       white-space: nowrap; }
+      @media (max-width: 99em) {
+        .highlight__text__title {
+          white-space: normal; } }
     .highlight__text p {
       font-size: 2.75rem;
       color: rgba(252, 249, 255, 0.7); }

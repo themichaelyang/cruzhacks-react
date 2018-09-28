@@ -1,5 +1,4 @@
 .highlights-container
-  padding: 10rem
   background-color: $color-bg
   display: flex
   flex-direction: column
@@ -8,23 +7,39 @@
   display: flex
   align-items: center
   padding: 2rem 10rem
+  @include respond(tab-land)
+    flex-direction: column !important
+    padding: 2rem
   &.reverse
     flex-direction: row-reverse
     .highlight__text
       text-align: left
+      @include respond(tab-land)
+        text-align: center
+        margin: 3rem 0 5rem 0
     .highlight__image-container
       margin: 0 0 0 4rem
+      @include respond(tab-land)
+        margin: 0
   &__image-container
     margin-right: 5rem
     position: relative
-    width: 60rem
+    width: 50rem
+    @include respond(tab-land)
+      margin: 0
+    @include respond(phone)
+      width: 40rem
+      height: 30rem
   &__image
-    height: 40rem
-    width: 60rem
+    height: 35rem
+    width: 50rem
     filter: grayscale(100%)
     border-radius: 10px
+    @include respond(phone)
+      width: 40rem
+      height: 30rem
   &__overlay
-    height: 40rem
+    height: 35rem
     width: 100%
     position: absolute
     border-radius: 10px
@@ -32,13 +47,20 @@
     top: 0
     left: 0
     right: 0
+    @include respond(phone)
+      height: 30rem
   &__text
     text-align: right
     color: white
+    @include respond(tab-land)
+      text-align: center
+      margin: 3rem 0
     &__title
       font-size: 4rem
       text-transform: uppercase
       white-space: nowrap
+      @include respond(mission)
+        white-space: normal
     p
       font-size: 2.75rem
       color: $color-text-alt
