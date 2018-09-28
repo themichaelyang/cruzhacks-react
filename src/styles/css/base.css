@@ -216,20 +216,58 @@ html {
     text-transform: uppercase;
     color: white; }
 
+.team__row {
+  margin-top: 3rem;
+  display: flex;
+  justify-content: center;
+  flex-wrap: wrap; }
+
 .member {
+  margin: 0 1rem;
   padding: 1rem 2rem;
-  width: 16rem;
-  height: 24rem;
+  width: 18rem;
+  height: 30rem;
   background-color: #312D38;
   border-radius: 2rem;
   display: flex;
   flex-direction: column;
   align-items: center; }
   .member__portrait {
-    width: 10rem;
-    height: 10rem;
+    width: 15rem;
+    height: 15rem;
     background-image: linear-gradient(180deg, #FFE974 0%, #EBA471 21%, #EB7187 45%, #9782EA 67%, #719AEB 93%);
     border-radius: 50%;
-    margin: 2rem; }
+    margin: 2rem;
+    position: relative; }
+  .member__name {
+    font-size: 2rem;
+    color: white;
+    padding: 0.5rem 0; }
+  .member__title {
+    font-size: 1.25rem;
+    color: rgba(252, 249, 255, 0.7); }
+  .member__links {
+    margin-top: 2rem; }
+    .member__links img {
+      margin: 0.25rem 1rem;
+      height: 2.5rem; }
+  .member__profile {
+    height: 14.25rem;
+    width: 14.25rem;
+    border-radius: 50%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    background-size: cover;
+    transform: translate(-50%, -50%); }
+    .member__profile.karthik {
+      background-image: url(../../assets/team/karthik_manickam.jpg); }
+    .member__profile.amit {
+      background-image: url(../../assets/team/amit_saxena.jpg); }
+    .member__profile.greg {
+      background-image: url(../../assets/team/greg_wolff.jpg); }
+    .member__profile.anisha {
+      background-image: url(../../assets/team/Anisha_Trivedi.JPG);
+      background-position: -12px; }
 
 /*# sourceMappingURL=base.css.map */
