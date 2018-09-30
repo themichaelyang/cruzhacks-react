@@ -204,6 +204,46 @@ html {
       font-size: 2.75rem;
       color: rgba(252, 249, 255, 0.7); }
 
+.faq-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  background: #1C1921;
+  max-width: 960px;
+  margin: auto; }
+
+.faq-container {
+  background-color: #1C1921;
+  padding: 10rem 15rem;
+  text-align: center; }
+  .faq-container__column {
+    display: flex;
+    flex-direction: column; }
+  .faq-container__title {
+    font-size: 4rem;
+    text-transform: uppercase;
+    color: white;
+    margin-bottom: 5rem; }
+
+.question {
+  padding: 3rem;
+  font-size: 1.75rem;
+  line-height: 2.5rem;
+  color: white;
+  text-align: left;
+  background-color: #1C1921;
+  border-radius: 20px; }
+  .question__title {
+    font-size: 2.5rem;
+    text-transform: uppercase;
+    display: block;
+    margin-bottom: 1rem; }
+
+.question-bg {
+  padding: 0.25rem 0.35rem;
+  margin: 2rem;
+  background-image: linear-gradient(to right bottom, #FFE974, #EBA471);
+  border-radius: 20px; }
+
 .team {
   padding: 10rem;
   background-color: #1C1921;
