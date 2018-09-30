@@ -19,7 +19,6 @@ html {
 
 .hero {
   min-height: 100vh;
-  background-color: #1C1921;
   position: relative; }
   .hero__bg {
     position: absolute;
@@ -73,7 +72,6 @@ html {
   height: 125px; }
 
 .mission {
-  background: #1C1921;
   padding: 10rem;
   display: flex;
   flex-direction: column; }
@@ -96,7 +94,6 @@ html {
     font-size: 3rem; }
 
 .cta-container {
-  background: #1C1921;
   padding: 6rem 10rem 10rem 10rem;
   display: flex;
   flex-wrap: wrap;
@@ -130,7 +127,6 @@ html {
     color: white; }
 
 .highlights-container {
-  background-color: #1C1921;
   display: flex;
   flex-direction: column; }
 
@@ -235,7 +231,6 @@ html {
   line-height: 2.5rem;
   color: white;
   text-align: left;
-  background-color: #1C1921;
   border-radius: 20px; }
   .question__title {
     font-size: 2.5rem;
@@ -251,7 +246,6 @@ html {
 
 .team {
   padding: 10rem;
-  background-color: #1C1921;
   text-align: center; }
   @media (max-width: 56.25em) {
     .team {
