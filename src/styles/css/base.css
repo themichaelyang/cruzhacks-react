@@ -231,6 +231,7 @@ html {
   line-height: 2.5rem;
   color: white;
   text-align: left;
+  background-color: #1C1921;
   border-radius: 20px; }
   .question__title {
     font-size: 2.5rem;
