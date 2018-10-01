@@ -15,15 +15,15 @@ class Highlights extends Component {
         />
         <Highlight
           title="Extend your industry network"
-          text="This year, we’re working even harder to make CruzHacks a diverse and welcoming event for students of all skill levels. Our pre-hack events help newcomers build their first website, and assist seasoned coders in expanding their skill set with new technologies."
+          text="Founders and representatives of various startups and industry giants hold workshops and booths at CruzHacks each year; this opportunity allows attendees to build confidence in their intrapersonal skills as well as learn a new product or API!"
           image={highlight2}
           reverse
         />
-        <Highlight
-          title="All inclusive environment"
-          text="This year, we’re working even harder to make CruzHacks a diverse and welcoming event for students of all skill levels. Our pre-hack events help newcomers build their first website, and assist seasoned coders in expanding their skill set with new technologies."
+        {/* <Highlight
+          title="Get Hella Free Shirts"
+          text="Lorem ipsum dolor sit amet, mea adhuc diceret in. Dicunt ancillae maluisset mei te, id sed veniam oportere rationibus, vel odio mutat ut. Simul signiferumque sit ea. Ut pro aliquam facilis volumus, et est utroque debitis."
           image={highlight3}
-        />
+        /> */}
       </div>
     );
   }
