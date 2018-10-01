@@ -1,6 +1,11 @@
 .hero
   min-height: 100vh
   position: relative
+  display: flex
+  @include respond(phone)
+    flex-direction: column
+    justify-content: center
+    align-items: center
   &__bg
     position: absolute
     top: 10%
@@ -9,13 +14,16 @@
     @include respond(tab-port)
       height: 700px
     @include respond(phone)
-      height: 600px
+      visibility: hidden
   &__text
     z-index: 1
     color: white
     position: absolute
     top: 40%
     left: 13rem
+    @include respond(phone)
+      text-align: center
+      position: static
     &__header
       font-size: 7rem
       padding: .5rem 0
@@ -50,3 +58,7 @@
   top: 10%
   left: 8%
   height: 125px
+  @include respond(phone)
+    height: 100px
+    position: static
+    margin-bottom: 3rem

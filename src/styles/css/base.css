@@ -19,7 +19,13 @@ html {
 
 .hero {
   min-height: 100vh;
-  position: relative; }
+  position: relative;
+  display: flex; }
+  @media (max-width: 37.5em) {
+    .hero {
+      flex-direction: column;
+      justify-content: center;
+      align-items: center; } }
   .hero__bg {
     position: absolute;
     top: 10%;
@@ -30,13 +36,17 @@ html {
         height: 700px; } }
     @media (max-width: 37.5em) {
       .hero__bg {
-        height: 600px; } }
+        visibility: hidden; } }
   .hero__text {
     z-index: 1;
     color: white;
     position: absolute;
     top: 40%;
     left: 13rem; }
+    @media (max-width: 37.5em) {
+      .hero__text {
+        text-align: center;
+        position: static; } }
     .hero__text__header {
       font-size: 7rem;
       padding: 0.5rem 0; }
@@ -70,6 +80,11 @@ html {
   top: 10%;
   left: 8%;
   height: 125px; }
+  @media (max-width: 37.5em) {
+    .logo {
+      height: 100px;
+      position: static;
+      margin-bottom: 3rem; } }
 
 .mission {
   padding: 10rem;
