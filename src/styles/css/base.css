@@ -28,6 +28,7 @@ html {
       align-items: center; } }
   .hero__bg {
     position: absolute;
+    z-index: -1;
     top: 10%;
     right: 0;
     height: 900px; }
@@ -99,14 +100,23 @@ html {
     color: #EBA471;
     text-transform: uppercase;
     letter-spacing: 2px; }
+    @media (max-width: 37.5em) {
+      .mission__text {
+        text-align: center; } }
   .mission__title {
     color: white;
     display: inline-block;
     margin: 0.5rem 0;
     font-size: 4rem; }
+    @media (max-width: 37.5em) {
+      .mission__title {
+        text-align: center; } }
   .mission__statement {
     color: rgba(252, 249, 255, 0.7);
     font-size: 3rem; }
+    @media (max-width: 37.5em) {
+      .mission__statement {
+        text-align: center; } }
 
 .cta-container {
   padding: 6rem 10rem 10rem 10rem;

@@ -10,11 +10,17 @@
     color: $color-text-orange
     text-transform: uppercase
     letter-spacing: 2px
+    @include respond(phone)
+      text-align: center
   &__title
     color: white
     display: inline-block
     margin: .5rem 0
     font-size: 4rem
+    @include respond(phone)
+      text-align: center
   &__statement
     color: $color-text-alt
     font-size: 3rem
+    @include respond(phone)
+      text-align: center
