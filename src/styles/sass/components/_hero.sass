@@ -2,64 +2,42 @@
   min-height: 100vh
   position: relative
   display: flex
-  @include respond(phone)
-    flex-direction: column
-    justify-content: center
-    align-items: center
-  &__bg
-    position: absolute
-    z-index: -1
-    top: 10%
-    right: 0
-    height: 900px
-    @include respond(tab-port)
-      height: 700px
-    @include respond(phone)
-      visibility: hidden
-  &__text
-    z-index: 1
+  flex-direction: column
+  align-items: center
+  justify-content: center
+  text-align: center
+  padding: 4rem 1rem
+  &__logo
+    height: 15rem
+  &__title
+    font-size: 8rem
     color: white
-    position: absolute
-    top: 40%
-    left: 13rem
-    @include respond(phone)
-      text-align: center
-      position: static
-    &__header
-      font-size: 7rem
-      padding: .5rem 0
-    &__quote
-      color: $color-text-alt
-      font-size: 2.25rem
-    &__location
-      &:first-of-type
-        padding-top: 6rem
-      padding: .25rem 0
-      display: block
-      color: $color-text-alt
+    margin: 2rem auto 1rem auto
+    @include respond(tab-port)
+      font-size: 5rem
+  &__text
+    color: $color-text-alt
+    font-size: 2.75rem
+    @include respond(tab-port)
       font-size: 2rem
-    &__cta
-      text-decoration: none
-      display: inline-block
-      color: white
-      padding: 1rem 3rem
-      border-radius: 10rem
-      font-size: 2.5rem
-      background: $color-bg-alt
-      margin-top: 3rem
-      transition: background-color .2s
+  &__apps
+    text-decoration: none
+    font-size: 2.75rem
+    padding: 1.5rem 3rem
+    border: 4px solid rgba(113, 154, 235, 0.2)
+    border-radius: 5rem
+    margin: 2rem
+    transition: all .2s
+    text-transform: uppercase
+    color: white
+    &:hover
+      background-color: lighten($color-bg, 5%)
       cursor: not-allowed
-      &:hover
-        background-color: darken($color-bg-alt, 5%)
-
-
-.logo
-  position: absolute
-  z-index: 1
-  top: 10%
-  left: 8%
-  height: 125px
-  @include respond(phone)
-    height: 100px
-    position: static
-    margin-bottom: 3rem
+  &__bg
+    width: 100%
+    position: absolute
+    top: 50%
+    left: 50%
+    transform: translate(-50%, -50%)
+    height: 1100px
+    z-index: -1

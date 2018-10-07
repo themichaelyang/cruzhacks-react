@@ -17,75 +17,54 @@ html {
     html {
       font-size: 50%; } }
 
+body, html {
+  overflow-x: hidden; }
+
 .hero {
   min-height: 100vh;
   position: relative;
-  display: flex; }
-  @media (max-width: 37.5em) {
-    .hero {
-      flex-direction: column;
-      justify-content: center;
-      align-items: center; } }
-  .hero__bg {
-    position: absolute;
-    z-index: -1;
-    top: 10%;
-    right: 0;
-    height: 900px; }
-    @media (max-width: 56.25em) {
-      .hero__bg {
-        height: 700px; } }
-    @media (max-width: 37.5em) {
-      .hero__bg {
-        visibility: hidden; } }
-  .hero__text {
-    z-index: 1;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  text-align: center;
+  padding: 4rem 1rem; }
+  .hero__logo {
+    height: 15rem; }
+  .hero__title {
+    font-size: 8rem;
     color: white;
-    position: absolute;
-    top: 40%;
-    left: 13rem; }
-    @media (max-width: 37.5em) {
+    margin: 2rem auto 1rem auto; }
+    @media (max-width: 56.25em) {
+      .hero__title {
+        font-size: 5rem; } }
+  .hero__text {
+    color: rgba(252, 249, 255, 0.7);
+    font-size: 2.75rem; }
+    @media (max-width: 56.25em) {
       .hero__text {
-        text-align: center;
-        position: static; } }
-    .hero__text__header {
-      font-size: 7rem;
-      padding: 0.5rem 0; }
-    .hero__text__quote {
-      color: rgba(252, 249, 255, 0.7);
-      font-size: 2.25rem; }
-    .hero__text__location {
-      padding: 0.25rem 0;
-      display: block;
-      color: rgba(252, 249, 255, 0.7);
-      font-size: 2rem; }
-      .hero__text__location:first-of-type {
-        padding-top: 6rem; }
-    .hero__text__cta {
-      text-decoration: none;
-      display: inline-block;
-      color: white;
-      padding: 1rem 3rem;
-      border-radius: 10rem;
-      font-size: 2.5rem;
-      background: #312D38;
-      margin-top: 3rem;
-      transition: background-color 0.2s;
+        font-size: 2rem; } }
+  .hero__apps {
+    text-decoration: none;
+    font-size: 2.75rem;
+    padding: 1.5rem 3rem;
+    border: 4px solid rgba(113, 154, 235, 0.2);
+    border-radius: 5rem;
+    margin: 2rem;
+    transition: all 0.2s;
+    text-transform: uppercase;
+    color: white; }
+    .hero__apps:hover {
+      background-color: #282430;
       cursor: not-allowed; }
-      .hero__text__cta:hover {
-        background-color: #25222a; }
-
-.logo {
-  position: absolute;
-  z-index: 1;
-  top: 10%;
-  left: 8%;
-  height: 125px; }
-  @media (max-width: 37.5em) {
-    .logo {
-      height: 100px;
-      position: static;
-      margin-bottom: 3rem; } }
+  .hero__bg {
+    width: 100%;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    height: 1100px;
+    z-index: -1; }
 
 .mission {
   padding: 10rem;
