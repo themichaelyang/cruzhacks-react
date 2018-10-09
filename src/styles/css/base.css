@@ -44,6 +44,13 @@ body, html {
     @media (max-width: 56.25em) {
       .hero__text {
         font-size: 2rem; } }
+    .hero__text__alt {
+      color: rgba(252, 249, 255, 0.7);
+      font-size: 2rem;
+      margin-top: 2rem; }
+      @media (max-width: 56.25em) {
+        .hero__text__alt {
+          font-size: 1.5rem; } }
   .hero__apps {
     text-decoration: none;
     font-size: 2.75rem;
