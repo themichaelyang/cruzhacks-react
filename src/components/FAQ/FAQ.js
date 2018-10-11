@@ -22,13 +22,13 @@ class FAQ extends Component {
             />
             <Question
               title="How can I be a sponsor?"
-              answer="Our sponsor pamphlet can be found here. Please also contact Amit, our sponsorship expert, at amsaxena@ucsc.edu and we can discuss the best way for your organization to get involved!"
+              answer="Please also contact Amit, our sponsorship expert, at amsaxena@ucsc.edu and we can discuss the best way for your organization to get involved!"
             />
           </div>
           <div className="faq-container__column">
             <Question
               title="How can I keep up to date on CruzHacks 2019 news?"
-              answer="Follow our Facebook page here! This is also a great place to find other hackers to team​ ​up with,​ ​or​ ​explore new​ ​ideas​ ​on​ ​what​ ​to​ ​build."
+              answer="Follow our Facebook page at facebook.com/CruzHacks ! This is also a great place to find other hackers to team​ ​up with,​ ​or​ ​explore new​ ​ideas​ ​on​ ​what​ ​to​ ​build."
             />
             <Question
               title="Is this completely free?"
@@ -44,11 +44,11 @@ class FAQ extends Component {
             />
             <Question
               title="How can I become a mentor or judge?"
-              answer="We would love to have you as a mentor or judge. Judges can apply here, and mentors can apply here."
+              answer="We would love to have you as a mentor or judge. Applications will be opening up soon!"
             />
             <Question
               title="I'd like to help out!"
-              answer="If you're interested in volunteering for this year's hackathon, sign up here!"
+              answer="If you're interested in volunteering for this year's hackathon, the application will be posted here when it's ready!"
             />
           </div>
         </div>
