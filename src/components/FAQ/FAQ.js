@@ -22,7 +22,7 @@ class FAQ extends Component {
             />
             <Question
               title="How can I be a sponsor?"
-              answer={["Our sponsor pamphlet can be found ", <a className="question__link" href="/Sponsorship_Packet_E.pdf" target="_blank">here.</a>, " Please also contact Amit, our sponsorship expert, at amsaxena@ucsc.edu and we can discuss the best way for your organization to get involved!"]}
+              answer="Please contact Amit, our sponsorship expert, at amsaxena@ucsc.edu and we can discuss the best way for your organization to get involved!"
             />
           </div>
           <div className="faq-container__column">
