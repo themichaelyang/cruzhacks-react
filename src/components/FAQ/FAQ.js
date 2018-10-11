@@ -22,13 +22,13 @@ class FAQ extends Component {
             />
             <Question
               title="How can I be a sponsor?"
-              answer="Please also contact Amit, our sponsorship expert, at amsaxena@ucsc.edu and we can discuss the best way for your organization to get involved!"
+              answer={["Our sponsor pamphlet can be found ", <a className="question__link" href="/Sponsorship_Packet_E.pdf" target="_blank">here.</a>, " Please also contact Amit, our sponsorship expert, at amsaxena@ucsc.edu and we can discuss the best way for your organization to get involved!"]}
             />
           </div>
           <div className="faq-container__column">
             <Question
               title="How can I keep up to date on CruzHacks 2019 news?"
-              answer="Follow our Facebook page at facebook.com/CruzHacks ! This is also a great place to find other hackers to team​ ​up with,​ ​or​ ​explore new​ ​ideas​ ​on​ ​what​ ​to​ ​build."
+              answer={["Follow our Facebook page ", <a className="question__link" href="http://www.facebook.com/CruzHacks" target="_blank">here!</a>, " This is also a great place to find other hackers to team​ ​up with,​ ​or​ ​explore new​ ​ideas​ ​on​ ​what​ ​to​ ​build."]}
             />
             <Question
               title="Is this completely free?"
@@ -44,11 +44,11 @@ class FAQ extends Component {
             />
             <Question
               title="How can I become a mentor or judge?"
-              answer="We would love to have you as a mentor or judge. Applications will be opening up soon!"
+              answer="We would love to have you as a mentor or judge. Mentor and Judge applications will be open soon!"
             />
             <Question
               title="I'd like to help out!"
-              answer="If you're interested in volunteering for this year's hackathon, the application will be posted here when it's ready!"
+              answer="If you're interested in volunteering for this year's hackathon, we'll post the sign up link here when applications open!"
             />
           </div>
         </div>

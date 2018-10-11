@@ -249,6 +249,9 @@ body, html {
     text-transform: uppercase;
     display: block;
     margin-bottom: 1rem; }
+  .question__link {
+    text-decoration: underline;
+    color: white; }
 
 .question-bg {
   padding: 0.25rem 0.35rem;
