@@ -14,7 +14,7 @@ class Highlights extends Component {
           image={highlight1}
         />
         <Highlight
-          title="Extend your industry network"
+          title={["Extend your", <br/>, "industry network"]}
           text="Founders and representatives of various startups and industry giants hold workshops and booths at CruzHacks each year; this opportunity allows attendees to build confidence in their intrapersonal skills as well as learn a new product or API!"
           image={highlight2}
           reverse

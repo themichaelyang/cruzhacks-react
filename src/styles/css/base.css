@@ -5,10 +5,25 @@
   padding: 0;
   box-sizing: inherit; }
 
+@font-face {
+  font-family: 'AC';
+  font-weight: 400;
+  src: url("../../assets/fonts/ACBK.woff2") format("woff2"); }
+
+@font-face {
+  font-family: 'AC';
+  font-weight: 500;
+  src: url("../../assets/fonts/ACM.woff2") format("woff2"); }
+
+@font-face {
+  font-family: 'AC';
+  font-weight: 700;
+  src: url("../../assets/fonts/ACBL.woff2") format("woff2"); }
+
 html {
-  font-family: "Varela Round", sans-serif;
+  font-family: 'AC', sans-serif;
   background-color: #1C1921;
-  font-size: 62.5%;
+  font-size: 45%;
   overflow-x: hidden; }
   @media (max-width: 75em) {
     html {
@@ -58,7 +73,7 @@ body, html {
     border: 4px solid rgba(113, 154, 235, 0.2);
     border-radius: 5rem;
     margin: 2rem;
-    transition: all 0.2s;
+    transition: all .2s;
     text-transform: uppercase;
     color: white; }
     .hero__apps:hover {
@@ -74,7 +89,7 @@ body, html {
     z-index: -1; }
 
 .mission {
-  padding: 10rem;
+  padding: 10rem 20rem;
   display: flex;
   flex-direction: column; }
   @media (max-width: 56.25em) {
@@ -92,7 +107,7 @@ body, html {
   .mission__title {
     color: white;
     display: inline-block;
-    margin: 0.5rem 0;
+    margin: .5rem 0;
     font-size: 4rem; }
     @media (max-width: 37.5em) {
       .mission__title {
@@ -254,7 +269,7 @@ body, html {
     color: white; }
 
 .question-bg {
-  padding: 0.25rem 0.35rem;
+  padding: .25rem .35rem;
   margin: 2rem;
   background-image: linear-gradient(to right bottom, #FFE974, #EBA471);
   border-radius: 20px; }
@@ -296,14 +311,14 @@ body, html {
   .member__name {
     font-size: 2rem;
     color: white;
-    padding: 0.5rem 0; }
+    padding: .5rem 0; }
   .member__title {
     font-size: 1.25rem;
     color: rgba(252, 249, 255, 0.7); }
   .member__links {
     margin-top: 2rem; }
     .member__links img {
-      margin: 0.25rem 1rem;
+      margin: .25rem 1rem;
       height: 2.5rem; }
   .member__profile {
     height: 14.25rem;
@@ -329,5 +344,3 @@ body, html {
   .footer__copyright {
     font-size: 1.5rem;
     color: #8D84A1; }
-
-/*# sourceMappingURL=base.css.map */

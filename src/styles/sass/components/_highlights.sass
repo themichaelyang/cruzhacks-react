@@ -5,7 +5,7 @@
 .highlight
   display: flex
   align-items: center
-  padding: 2rem 10rem
+  padding: 2rem 32rem
   @include respond(tab-land)
     flex-direction: column !important
     padding: 2rem
@@ -30,7 +30,6 @@
       width: 40rem
       height: 30rem
   &__image
-    height: 35rem
     width: 50rem
     filter: grayscale(100%)
     border-radius: 10px
@@ -38,7 +37,7 @@
       width: 40rem
       height: 30rem
   &__overlay
-    height: 35rem
+    height: 32.45rem
     width: 100%
     position: absolute
     border-radius: 10px
@@ -56,10 +55,11 @@
       margin: 3rem 0
     &__title
       font-size: 4rem
+      font-weight: 600
       text-transform: uppercase
       white-space: nowrap
       @include respond(mission)
         white-space: normal
     p
-      font-size: 2.75rem
+      font-size: 2.4rem
       color: $color-text-alt

@@ -6,7 +6,7 @@ import Highlights from './components/Highlights';
 import FAQ from './components/FAQ';
 import Team from './components/Team';
 import Footer from './components/Footer';
-import './styles/css/base.css';
+import './styles/sass/base.css';
 
 class Layout extends Component {
   render() {
