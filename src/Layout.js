@@ -1,26 +1,21 @@
 import React, { Component } from 'react';
-import Hero from './components/Hero';
-import Mission from './components/Mission';
-import CTA from './components/CTA';
-import Highlights from './components/Highlights';
-import FAQ from './components/FAQ';
-import Team from './components/Team';
-import Footer from './components/Footer';
+import { BrowserRouter as Router, Switch, Route, Link } from "react-router-dom";
+
+import Landing from './components/Landing';
+import Application from './components/Application';
+
 import './styles/sass/base.css';
 
 class Layout extends Component {
   render() {
     return (
       <div className="layout">
-        <div>
-          <Hero />
-          <Mission />
-          <CTA />
-          <Highlights />
-          <FAQ />
-          <Team />
-          <Footer />
-        </div>
+        <Router>
+          <Switch>
+            <Route path="/" exact component={Landing}/>
+            <Route path="/application" exact component={Application}/>
+          </Switch>
+        </Router>
       </div>
     );
   }
