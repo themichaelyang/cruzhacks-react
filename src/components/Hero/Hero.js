@@ -10,7 +10,10 @@ class Hero extends Component {
         <h1 className="hero__title">CruzHacks 2019</h1>
         <span className="hero__text">Create something that makes a difference.</span>
         <span className="hero__text__alt">Jan 18-20, 2019 @ Stevenson Event Center</span>
-        <a href="#" className="hero__apps">Apps open in Nov</a>
+        <div className="hero__button-container">
+          <a href="#" className="hero__button not-allowed">Apps open in Nov</a>
+          <a href="mailto:amsaxena@ucsc.edu" className="hero__button">Sponsoring?</a>
+        </div>
         <img src={hero} alt="" className="hero__bg"/>
       </div>
     );

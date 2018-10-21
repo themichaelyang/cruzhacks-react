@@ -28,25 +28,33 @@
       margin-top: 1rem
       @include respond(tab-port)
         font-size: 1.5rem
-  &__apps
+  &__button-container
+    margin: 2rem
+    display: grid
+    grid-template-columns: 1fr 1fr
+    align-items: center
+    @include respond(tab-port)
+      grid-template-columns: 1fr
+  &__button
     text-decoration: none
     font-size: 2rem
     font-weight: 600
     padding: 1.5rem 3.3rem
     background-color: rgba(113, 154, 235, 0.15)
     border-radius: 5rem
-    margin: 2rem
+    margin: 1rem 2rem
     transition: all .2s
     text-transform: uppercase
     color: white
     &:hover
       background-color: lighten($color-bg, 5%)
+    &.not-allowed
       cursor: not-allowed
   &__bg
     width: 100%
     position: absolute
     top: 51%
-    left: 51%
+    left: 55%
     transform: translate(-50%, -50%)
     height: 1100px
     z-index: -1
