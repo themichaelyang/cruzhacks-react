@@ -12,13 +12,15 @@ class Layout extends Component {
   render() {
     return (
       <div className="layout">
-        <Hero />
-        <Mission />
-        <CTA />
-        <Highlights />
-        <FAQ />
-        <Team />
-        <Footer />
+        <div>
+          <Hero />
+          <Mission />
+          <CTA />
+          <Highlights />
+          <FAQ />
+          <Team />
+          <Footer />
+        </div>
       </div>
     );
   }
