@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
-import logo from '../../assets/logo.svg';
-import hero from '../../assets/hero.svg';
+import logo from 'assets/logo.svg';
+import hero from 'assets/hero.svg';
 
 class Hero extends Component {
   render() {
