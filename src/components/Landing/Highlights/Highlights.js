@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import Highlight from './Highlight';
-import highlight1 from '../../assets/highlights/highlight1.jpg';
-import highlight2 from '../../assets/highlights/highlight2.jpg';
-import highlight3 from '../../assets/highlights/highlight3.jpg';
+import highlight1 from 'assets/highlights/highlight1.jpg';
+import highlight2 from 'assets/highlights/highlight2.jpg';
+import highlight3 from 'assets/highlights/highlight3.jpg';
 
 class Highlights extends Component {
   render() {

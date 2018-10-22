@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
-import linkedin from '../../assets/team/linkedin.svg';
-import envelope from '../../assets/team/envelope.svg';
+import linkedin from 'assets/team/linkedin.svg';
+import envelope from 'assets/team/envelope.svg';
 
 class Member extends Component {
   render() {

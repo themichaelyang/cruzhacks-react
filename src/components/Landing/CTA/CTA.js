@@ -1,7 +1,7 @@
 import React, {Component} from 'react';
-import network from '../../assets/cta/network.svg';
-import collaborate from '../../assets/cta/collaborate.svg';
-import sparkles from '../../assets/cta/sparkles.svg';
+import network from 'assets/cta/network.svg';
+import sparkles from 'assets/cta/sparkles.svg';
+import collaborate from 'assets/cta/collaborate.svg';
 
 class CTA extends Component {
   render() {

@@ -68,25 +68,34 @@ body, html {
       @media (max-width: 56.25em) {
         .hero__text__alt {
           font-size: 1.5rem; } }
-  .hero__apps {
+  .hero__button-container {
+    margin: 2rem;
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    align-items: center; }
+    @media (max-width: 56.25em) {
+      .hero__button-container {
+        grid-template-columns: 1fr; } }
+  .hero__button {
     text-decoration: none;
     font-size: 2rem;
     font-weight: 600;
     padding: 1.5rem 3.3rem;
     background-color: rgba(113, 154, 235, 0.15);
     border-radius: 5rem;
-    margin: 2rem;
+    margin: 1rem 2rem;
     transition: all .2s;
     text-transform: uppercase;
     color: white; }
-    .hero__apps:hover {
-      background-color: #282430;
+    .hero__button:hover {
+      background-color: #282430; }
+    .hero__button.not-allowed {
       cursor: not-allowed; }
   .hero__bg {
     width: 100%;
     position: absolute;
     top: 51%;
-    left: 51%;
+    left: 55%;
     transform: translate(-50%, -50%);
     height: 1100px;
     z-index: -1; }
