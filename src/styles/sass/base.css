@@ -46,6 +46,9 @@ body, html {
   padding: 4rem 1rem; }
   .hero__logo {
     height: 13rem; }
+    @media (max-width: 56.25em) {
+      .hero__logo {
+        height: 10rem; } }
   .hero__title {
     font-size: 9.5rem;
     color: white;
@@ -81,7 +84,7 @@ body, html {
     font-size: 2rem;
     font-weight: 600;
     padding: 1.5rem 3.3rem;
-    background-color: rgba(113, 154, 235, 0.15);
+    background-color: #292b3f;
     border-radius: 5rem;
     margin: 1rem 2rem;
     transition: all .2s;
@@ -99,6 +102,12 @@ body, html {
     transform: translate(-50%, -50%);
     height: 1100px;
     z-index: -1; }
+    @media (max-width: 56.25em) {
+      .hero__bg {
+        filter: blur(3px);
+        width: 110%;
+        top: 51%;
+        left: 46%; } }
 
 .mission {
   padding: 16rem 32rem 3rem;
@@ -140,7 +149,8 @@ body, html {
   align-items: center; }
   @media (max-width: 56.25em) {
     .cta-container {
-      padding: 5rem; } }
+      padding: 5rem;
+      flex-direction: column; } }
   @media (max-width: 37.5em) {
     .cta-container {
       padding: 2rem; } }
@@ -165,6 +175,12 @@ body, html {
   .cta__text {
     font-size: 2.75rem;
     color: white; }
+  @media (max-width: 56.25em) {
+    .cta {
+      width: 37%; } }
+  @media (max-width: 37.5em) {
+    .cta {
+      width: 75%; } }
 
 .highlights-container {
   display: flex;
@@ -356,6 +372,12 @@ body, html {
   padding: 5rem 10rem;
   display: flex;
   justify-content: space-between; }
+  @media (max-width: 37.5em) {
+    .footer {
+      padding: 5rem; } }
   .footer__copyright {
     font-size: 2rem;
     color: #8D84A1; }
+    @media (max-width: 37.5em) {
+      .footer__copyright {
+        font-size: 1rem; } }

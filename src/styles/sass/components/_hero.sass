@@ -9,6 +9,8 @@
   padding: 4rem 1rem
   &__logo
     height: 13rem
+    @include respond(tab-port)
+      height: 10rem
   &__title
     font-size: 9.5rem
     color: white
@@ -40,7 +42,7 @@
     font-size: 2rem
     font-weight: 600
     padding: 1.5rem 3.3rem
-    background-color: rgba(113, 154, 235, 0.15)
+    background-color: rgb(41, 43, 63)
     border-radius: 5rem
     margin: 1rem 2rem
     transition: all .2s
@@ -58,3 +60,8 @@
     transform: translate(-50%, -50%)
     height: 1100px
     z-index: -1
+    @include respond(tab-port)
+        filter: blur(3px);
+        width: 110%;
+        top: 51%;
+        left: 46%;

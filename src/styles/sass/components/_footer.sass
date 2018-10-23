@@ -2,6 +2,10 @@
   padding: 5rem 10rem
   display: flex
   justify-content: space-between
+  @include respond(phone)
+    padding: 5rem
   &__copyright
     font-size: 2rem
     color: $color-text-footer
+    @include respond(phone)
+      font-size: 1rem

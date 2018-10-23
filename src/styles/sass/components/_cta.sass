@@ -6,6 +6,7 @@
   align-items: center
   @include respond(tab-port)
     padding: 5rem
+    flex-direction: column;
   @include respond(phone)
     padding: 2rem
 
@@ -29,3 +30,7 @@
   &__text
     font-size: 2.75rem
     color: white
+  @include respond(tab-port)
+    width: 37%
+  @include respond(phone)
+    width: 75%
