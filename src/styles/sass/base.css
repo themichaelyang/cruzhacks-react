@@ -381,3 +381,6 @@ body, html {
     @media (max-width: 37.5em) {
       .footer__copyright {
         font-size: 1rem; } }
+
+.application h1 {
+  color: lightgray; }
