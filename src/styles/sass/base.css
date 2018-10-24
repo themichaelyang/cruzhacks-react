@@ -113,6 +113,9 @@ body, html {
   padding: 16rem 32rem 3rem;
   display: flex;
   flex-direction: column; }
+  @media (max-width: 75em) {
+    .mission {
+      padding: 8rem 5rem; } }
   @media (max-width: 56.25em) {
     .mission {
       padding: 5rem 3rem; } }

@@ -13,7 +13,6 @@ class Layout extends Component {
         <Router>
           <Switch>
             <Route path="/application" exact component={Application}/>
-            {/* <Route path="/auth" exact component={Auth}/> */}
             <Route path="/" component={Landing}/>
           </Switch>
         </Router>
