@@ -1,0 +1,23 @@
+.appselect
+    height: 6rem
+    width: 25rem
+    margin: 1rem
+    background-color: $color-bg-alt
+    border-radius: 2rem
+    display: inline-flex
+    padding: 2rem 4rem
+    align-items: center
+    justify-content: center
+    cursor: pointer 
+    transition: background-color .2s
+    &:hover
+        background-color: lighten($color-bg-alt, 5%)
+    &.selected
+        background-color: white
+        .appselect__title
+            color: $color-bg-alt
+    &__title
+        font-size: 4rem
+        text-transform: uppercase
+        color: white
+    

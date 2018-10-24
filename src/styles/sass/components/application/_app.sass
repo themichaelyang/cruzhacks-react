@@ -1,3 +1,35 @@
 .application
-  h1
-    color: lightgray
+  text-align: center
+  &__logo
+    height: 125px
+    margin-right: 3rem
+    position: absolute
+    cursor: pointer
+    top: 30px
+    left: 30px
+  &__title
+    font-size: 9.5rem
+    margin-top: 7rem
+    color: white
+    cursor: default
+  &__select
+    text-align: center
+    position: relative
+    padding: 15rem 0 8rem 0
+    &__title
+      display: block
+      color: white
+      font-size: 4rem
+      position: absolute
+      top: 50%
+      left: 50%
+      transform: translate(-50%, -50%)
+      background-color: $color-bg
+      padding: 1rem 2rem
+
+.separator
+  position: relative
+  height: 2px
+  background-color: $color-text-alt
+  margin: 4rem auto
+  max-width: 960px

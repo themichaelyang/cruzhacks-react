@@ -379,5 +379,61 @@ body, html {
       .footer__copyright {
         font-size: 1rem; } }
 
-.application h1 {
-  color: lightgray; }
+.application {
+  text-align: center; }
+  .application__logo {
+    height: 125px;
+    margin-right: 3rem;
+    position: absolute;
+    cursor: pointer;
+    top: 30px;
+    left: 30px; }
+  .application__title {
+    font-size: 9.5rem;
+    margin-top: 7rem;
+    color: white;
+    cursor: default; }
+  .application__select {
+    text-align: center;
+    position: relative;
+    padding: 15rem 0 8rem 0; }
+    .application__select__title {
+      display: block;
+      color: white;
+      font-size: 4rem;
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      background-color: #1C1921;
+      padding: 1rem 2rem; }
+
+.separator {
+  position: relative;
+  height: 2px;
+  background-color: rgba(252, 249, 255, 0.7);
+  margin: 4rem auto;
+  max-width: 960px; }
+
+.appselect {
+  height: 6rem;
+  width: 25rem;
+  margin: 1rem;
+  background-color: #312D38;
+  border-radius: 2rem;
+  display: inline-flex;
+  padding: 2rem 4rem;
+  align-items: center;
+  justify-content: center;
+  cursor: pointer;
+  transition: background-color .2s; }
+  .appselect:hover {
+    background-color: #3d3846; }
+  .appselect.selected {
+    background-color: white; }
+    .appselect.selected .appselect__title {
+      color: #312D38; }
+  .appselect__title {
+    font-size: 4rem;
+    text-transform: uppercase;
+    color: white; }
