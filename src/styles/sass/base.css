@@ -109,6 +109,94 @@ body, html {
         top: 51%;
         left: 46%; } }
 
+.hero__button, .hero__button-small {
+  text-decoration: none;
+  font-size: 2rem;
+  font-weight: 600;
+  padding: 1.5rem 3.3rem;
+  background-color: #292b3f;
+  border-radius: 5rem;
+  margin: 1rem 2rem;
+  transition: all .2s;
+  text-transform: uppercase;
+  color: white;
+  outline: none; }
+
+.hero__button:hover, .hero__button-small:hover {
+  background-color: #282430; }
+
+.hero__button.not-allowed {
+  cursor: not-allowed; }
+
+.hero__button-small {
+  padding: 1rem, 3.1rem; }
+
+.hero__form-group {
+  position: relative;
+  padding-top: 16px;
+  margin-bottom: 16px;
+  font-size: 14px;
+  color: white; }
+  .hero__form-group .animated-label {
+    position: absolute;
+    top: 20px;
+    left: 0;
+    bottom: 0;
+    z-index: 2;
+    width: 100%;
+    font-weight: 300;
+    opacity: 0.5;
+    cursor: text;
+    transition: 0.2s ease all;
+    margin: 0;
+    -webkit-user-select: none;
+    -moz-user-select: none;
+    user-select: none; }
+    .hero__form-group .animated-label:after {
+      content: '';
+      position: absolute;
+      bottom: 0;
+      left: 45%;
+      height: 2px;
+      width: 10px;
+      visibility: hidden;
+      background-color: white;
+      transition: 0.2s ease all; }
+  .hero__form-group.not-empty .animated-label {
+    top: 0;
+    font-size: 12px; }
+  .hero__form-group .form-control {
+    position: relative;
+    z-index: 1;
+    border-radius: 0;
+    border-width: 0 0 2px;
+    border-bottom-color: #292b3f;
+    height: auto;
+    padding: 3px 0 5px;
+    background: transparent;
+    color: white;
+    outline: none; }
+    .hero__form-group .form-control:focus {
+      box-shadow: none;
+      border-bottom-color: #292b3f; }
+      .hero__form-group .form-control:focus ~ .animated-label {
+        top: 0;
+        opacity: 1;
+        color: white;
+        font-size: 14px; }
+        .hero__form-group .form-control:focus ~ .animated-label:after {
+          visibility: visible;
+          width: 100%;
+          left: 0; }
+
+.hero__updates {
+  margin: 2rem;
+  display: grid; }
+
+@media (max-width: 56.25em) {
+  .hero__updates {
+    grid-template-columns: 1fr; } }
+
 .mission {
   padding: 16rem 32rem 3rem;
   display: flex;
