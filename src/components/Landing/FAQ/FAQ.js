@@ -44,7 +44,7 @@ class FAQ extends Component {
             />
             <Question
               title="How can I be a sponsor?"
-              answer="Please contact Amit, our sponsorship expert, at amsaxena@ucsc.edu and we can discuss the best way for your organization to get involved!"
+              answer="Please contact Amit, our sponsorship expert, at amit@cruzhacks.com and we can discuss the best way for your organization to get involved!"
             />
             <Question
               title="I'd like to help out!"
