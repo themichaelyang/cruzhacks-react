@@ -4,6 +4,9 @@ import {NavLink} from 'react-router-dom';
 
 import AppSelect from './AppSelect';
 import HackerForm from './HackerForm';
+import MentorForm from './MentorForm';
+import JudgeForm from './JudgeForm';
+import VolunteerForm from './VolunteerForm';
 
 class Application extends Component {
   constructor(props) {
@@ -18,14 +21,13 @@ class Application extends Component {
     this.setState({application: app})
   }
 
-  renderForm(application) {
+  renderForm = (application) => {
     console.log(typeof application)
     switch (application) {
-      case 1: console.log('hackerform') 
-      return <HackerForm />
-      case 2: return <h1>Mentor</h1>
-      case 3: return <h1>Judge</h1>
-      case 4: return <h1>Volunteer</h1>      
+      case 1: return <HackerForm />
+      case 2: return <MentorForm />
+      case 3: return <JudgeForm />
+      case 4: return <VolunteerForm />
     }
   }
 
