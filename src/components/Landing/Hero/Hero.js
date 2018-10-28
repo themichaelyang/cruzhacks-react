@@ -68,11 +68,13 @@ class Hero extends React.Component {
           <button type={"submit"} className={"hero__button-small"}>
               Submit
             </button>
-            <Recaptcha
-              ref={ ref => this.recaptcha = ref }
-              sitekey="6LcCvHYUAAAAANepSyd4Mt37dg9nqxxSKMb4Ic5p"
-              onResolved={  this.handleSubmit } 
-            />
+            <div className="hidden">
+              <Recaptcha              
+                ref={ ref => this.recaptcha = ref }
+                sitekey="6LcCvHYUAAAAANepSyd4Mt37dg9nqxxSKMb4Ic5p"
+                onResolved={  this.handleSubmit } 
+              />
+            </div>
           </form>
         </div>
         <img src={hero} alt="" className="hero__bg"/>

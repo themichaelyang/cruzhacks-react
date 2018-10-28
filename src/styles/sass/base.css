@@ -35,6 +35,9 @@ html {
 body, html {
   overflow-x: hidden; }
 
+.hidden {
+  visibility: hidden; }
+
 .hero {
   min-height: 100vh;
   position: relative;
