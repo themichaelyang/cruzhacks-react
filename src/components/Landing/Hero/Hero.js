@@ -21,7 +21,6 @@ class Hero extends React.Component {
     const target = event.target;
     const value = target.value;
     const name = target.name;
-
     this.setState({
       [name]: value
     });
@@ -64,7 +63,7 @@ class Hero extends React.Component {
         <form onSubmit={this.recapatchaValid} id="emailForm">
           <div className="hero__form-group">
             <input type="email" className="form-control" name="email" id="email" value={this.state.email} onChange={this.handleChange} required/>
-            <label for="email" className="animated-label">Email</label>
+            <label for="email" className={this.state.email ? "label-hidden" : "animated-label"}>Email</label>
           </div>
           <button type={"submit"} className={"hero__button-small"}>
               Submit
