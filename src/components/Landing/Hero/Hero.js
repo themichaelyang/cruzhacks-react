@@ -18,9 +18,8 @@ class Hero extends React.Component {
    * Email input state updater
    */
   handleChange(event) {
-    const target = event.target;
-    const value = target.value;
-    const name = target.name;
+    const value = event.target.value;
+    const name = event.target.name;
     this.setState({
       [name]: value
     });
