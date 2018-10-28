@@ -110,7 +110,9 @@ body, html {
         left: 46%; } }
 
 .label-hidden {
-  visibility: hidden !important;
+  visibility: hidden !important; }
+
+.hero__button, .hero__button-small {
   text-decoration: none;
   font-size: 2rem;
   font-weight: 600;
