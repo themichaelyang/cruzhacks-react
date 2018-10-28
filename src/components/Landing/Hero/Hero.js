@@ -44,7 +44,7 @@ class Hero extends React.Component {
       alert(error);
       this.recaptcha.reset();
     });
-    
+    this.setState({email: ''})
   }
 
   render() {
