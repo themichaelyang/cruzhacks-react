@@ -55,7 +55,7 @@ class Hero extends React.Component {
         <span className="hero__text__alt">Jan 18-20, 2019 @ Stevenson Event Center</span>
         <div className="hero__button-container">
           <a href="#" className="hero__button not-allowed">Apps open in Nov</a>
-          <a href="mailto:amit@cruzhacks.com" className="hero__button">Sponsoring?</a>
+          <a href="mailto:amit@cruzhacks.com" className="hero__button" target="_blank">Sponsoring?</a>
         </div>
         <span className="hero__text">Subscribe to updates:</span>
         <div className="hero__updates">
