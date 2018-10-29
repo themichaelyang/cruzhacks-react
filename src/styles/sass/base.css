@@ -416,7 +416,8 @@ body, html {
 .member {
   margin: 1rem;
   padding: 1rem 2rem;
-  width: 20rem;
+  min-width: 20rem;
+  max-width: 25rem;
   min-height: 30rem;
   background-color: #312D38;
   border-radius: 2rem;
