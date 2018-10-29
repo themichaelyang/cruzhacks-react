@@ -40,11 +40,11 @@ class FAQ extends Component {
             />
             <Question
               title="What are the rules?"
-              answer="As a Major League Hacking member event, we follow Major League Hacking’s Code of Conduct which ensures all attendees to CruzHacks are respectful regardless of who you are and where you come from. Additionally, to be considered for an award, you must only submit a project that your team wrote and worked on during the hackathon & agree to our 2018 Participation Agreement"
+              answer={["As a Major League Hacking member event, we follow ", <a className="question__link" href="https://mlh.io/code-of-conduct" target="_blank">Major League Hacking’s Code of Conduct</a>, " which ensures all attendees to CruzHacks are respectful regardless of who you are and where you come from. Additionally, to be considered for an award, you must only submit a project that your team wrote and worked on during the hackathon & agree to our 2018 Participation Agreement"]}
             />
             <Question
               title="How can I be a sponsor?"
-              answer="Please contact Amit, our sponsorship expert, at amit@cruzhacks.com and we can discuss the best way for your organization to get involved!"
+              answer={["Please contact Amit, our sponsorship expert, at ", <a className="question__link" href="mailto:amit@cruzhacks.com" target="_blank">amit@cruzhacks.com</a>, " and we can discuss the best way for your organization to get involved!"]}
             />
             <Question
               title="I'd like to help out!"
