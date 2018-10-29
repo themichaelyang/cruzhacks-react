@@ -7,7 +7,7 @@ class Member extends Component {
     return (
       <div className="member">
         <div className="member__portrait">
-          <div className={"member__profile " + this.props.bg}></div>
+          <img src={this.props.img} className="member__profile" alt="profile"/>
         </div>
         <span className="member__name">{this.props.name}</span>
         <span className="member__title">{this.props.title}</span>
