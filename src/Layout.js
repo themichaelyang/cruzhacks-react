@@ -4,7 +4,9 @@ import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import Landing from 'components/Landing';
 import Application from 'components/Application';
 
-import './styles/sass/base.css';
+import 'styles/css/normalize.css';
+import 'styles/sass/base.css';
+
 
 class Layout extends Component {
   render() {
