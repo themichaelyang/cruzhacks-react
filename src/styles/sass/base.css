@@ -395,7 +395,8 @@ body, html {
   grid-column-gap: 0rem; }
   @media (max-width: 75em) {
     .sponsors__logos.kilo {
-      padding: 5rem; } }
+      padding: 5rem;
+      padding-top: 0rem; } }
   @media (max-width: 37.5em) {
     .sponsors__logos.kilo {
       padding: 6rem 14% 1rem 14%; } }
