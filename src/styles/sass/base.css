@@ -385,7 +385,7 @@ body, html {
       margin-left: 2em; } }
 
 .sponsors__logos.kilo {
-  padding: 2rem 2% 2rem 1%;
+  padding: 2rem 2% 2rem 2%;
   grid-template-columns: repeat(5, 2fr);
   grid-template-rows: repeat(2, 2fr);
   display: flex;
