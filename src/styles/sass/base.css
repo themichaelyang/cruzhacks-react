@@ -350,7 +350,6 @@ body, html {
 
 .sponsors__container {
   padding: 10rem 15rem;
-  margin-bottom: -20rem;
   text-align: center; }
   @media (max-width: 75em) {
     .sponsors__container {
