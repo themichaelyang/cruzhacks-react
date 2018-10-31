@@ -425,7 +425,8 @@ body, html {
   display: flex;
   flex-wrap: wrap;
   justify-items: center;
-  justify-content: center; }
+  justify-content: center;
+  padding-bottom: 5rem; }
   @media (max-width: 75em) {
     .sponsors__logos.centi {
       padding: 2rem;
