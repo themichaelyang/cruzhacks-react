@@ -23,19 +23,24 @@ class Sponsors extends Component {
       </div>          
       <div className="sponsors__logos kilo">
         <div className="sponsors__kilo">
-          <img src={BSOEKilo} alt="Baskin School of Engineering" height="85px" width="200px"/>
+          <img src={BSOEKilo} alt="Baskin School of Engineering" height="100px" width="225px"/>
         </div>
         <div className="sponsors__kilo">
-          <img src={LookerKilo} alt="Looker" height="85px" width="200px"/>
+          <img src={LookerKilo} alt="Looker" height="100px" width="225px"/>
         </div>
         <div className="sponsors__kilo">
-          <img src={ProductOpsKilo}  alt="ProductOps" height="85px" width="200px"/>
+          <img src={ProductOpsKilo}  alt="ProductOps" height="100px" width="225px"/>
         </div>
         <div className="sponsors__kilo">
-          <img src={PlantronicsKilo}  alt="Plantronics" height="85px" width="200px"/>
+          <img src={PlantronicsKilo}  alt="Plantronics" height="100px" width="225px"/>
         </div>
         <div className="sponsors__kilo">
-          <img src={SouthSwellKilo}  alt="South Swell Ventures" height="85px" width="200px"/>
+          <img src={SouthSwellKilo}  alt="South Swell Ventures" height="100px" width="225px"/>
+        </div>
+      </div>
+      <div className="sponsors__logos centi">
+        <div className="sponsors__centi">
+          <img src={ChooseSCCenti}  alt="Choose Santa Cruz" height="90px"/>
         </div>
       </div>
     </div>
