@@ -14,6 +14,7 @@ class Hero extends React.Component {
     this.recapatchaValid = this.recapatchaValid.bind(this);
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.setState = this.setState.bind(this);
 }
   /**
    * Email input state updater
@@ -37,13 +38,12 @@ class Hero extends React.Component {
     })
     .then(function (response) {
       console.log(response);
-      this.setState({submit: 'Submitting!'})
     })
     .catch(function (error) {
       console.log(error);
       alert(error);
     });
-    this.setState({submit: 'Submitted!', email: ''})
+    this.setState({submit: 'Submitted!'})
   }
 
   render() {
@@ -82,10 +82,10 @@ class Hero extends React.Component {
   }
   recapatchaValid (event) {
     event.preventDefault();
-    this.setState({submit: 'Submitting!'})
+    this.setState({submit: "Submitting..."});
     console.dir(this.recaptcha)
-    this.recaptcha.execute();
-    console.log(this.recaptcha.getResponse);
+    this.recaptcha.execute()
+    console.log(this.recaptcha.getResponse)
   }  
 }
 
