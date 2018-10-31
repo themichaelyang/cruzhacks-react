@@ -391,6 +391,7 @@ body, html {
 .sponsors__logos.giga {
   padding: 2rem 2% 2rem 2%;
   padding-bottom: 1em;
+  padding-top: 0em;
   display: flex;
   flex-wrap: wrap;
   justify-items: center;
@@ -400,17 +401,15 @@ body, html {
       padding: 5rem; } }
   @media (max-width: 37.5em) {
     .sponsors__logos.giga {
-      padding: 2rem 2% 2rem 0%;
-      margin-left: 2em; } }
+      padding: 2rem 2% 2rem 2%;
+      padding-top: 0; } }
 
 .sponsors__logos.kilo {
   padding: 2rem 2% 2rem 2%;
-  padding-bottom: 1em;
   display: flex;
   flex-wrap: wrap;
   justify-items: center;
-  justify-content: center;
-  grid-column-gap: 0rem; }
+  justify-content: center; }
   @media (max-width: 75em) {
     .sponsors__logos.kilo {
       padding: 5rem; } }
@@ -419,6 +418,7 @@ body, html {
       padding: 6rem 14% 1rem 14%; } }
 
 .sponsors__logos.centi {
+  margin-top: -7.5%;
   padding: 2rem 2% 2rem 2%;
   display: flex;
   flex-wrap: wrap;
