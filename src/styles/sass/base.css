@@ -533,38 +533,43 @@ body, html {
     text-transform: uppercase;
     color: white; }
 
-.form {
+.form-container {
   max-width: 960px;
-  background-color: #312D38;
-  border-radius: 3rem;
   margin: auto;
   min-height: 75vh; }
-  .form .hacker__form {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    justify-items: center; }
-  .form__title {
+  .form-container__title {
     color: #EBA471;
     font-size: 5rem;
     text-transform: uppercase;
     letter-spacing: 3px;
     font-weight: normal;
     padding: 5rem 1rem 3rem 1rem; }
-  .form__input {
-    color: white;
-    outline: none;
-    width: 80%;
-    padding: 1rem 2rem;
-    border: none;
-    margin: 2rem;
+
+.form__group {
+  position: relative;
+  width: max-content;
+  margin: auto;
+  color: rgba(252, 249, 255, 0.7);
+  font-size: 3rem;
+  letter-spacing: 1px;
+  padding-top: 3rem; }
+  .form__group:not(:first-child) {
+    margin-top: 3rem; }
+  .form__group__label {
+    position: absolute;
+    top: 5px;
+    left: 0;
+    font-size: 2.5rem;
+    transition: all .15s; }
+    .form__group__label.inactive {
+      transform: translateY(35px); }
+  .form__group__input {
+    padding: 1rem 0;
+    min-width: 50rem;
     background-color: transparent;
-    border-bottom: 2px solid white;
-    border-radius: 5px;
-    margin: 2rem auto;
-    font-size: 3rem;
-    transition: all .2s; }
-    .form__input::placeholder {
-      letter-spacing: 2px;
-      color: #d9d9d9; }
-    .form__input:focus {
-      border-bottom: 2px solid #EBA471; }
+    border: none;
+    outline: none;
+    color: rgba(252, 249, 255, 0.7);
+    border-bottom: 1.5px solid; }
+    .form__group__input:focus {
+      border-bottom: 1px solid #EBA471; }

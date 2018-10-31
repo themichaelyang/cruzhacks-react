@@ -1,13 +1,7 @@
-.form
+.form-container
     max-width: 960px
-    background-color: $color-bg-alt
-    border-radius: 3rem
     margin: auto
     min-height: 75vh
-    .hacker__form
-        display: grid
-        grid-template-columns: 1fr 1fr
-        justify-items: center
     &__title
         color: $color-text-orange
         font-size: 5rem
@@ -15,21 +9,34 @@
         letter-spacing: 3px
         font-weight: normal
         padding: 5rem 1rem 3rem 1rem
-    &__input
-        color: white
-        outline: none
-        width: 80%
-        padding: 1rem 2rem
-        border: none
-        margin: 2rem
-        background-color: transparent
-        border-bottom: 2px solid white
-        border-radius: 5px
-        margin: 2rem auto
+
+.form
+    &__group
+        &:not(:first-child)
+            margin-top: 3rem
+        position: relative
+        width: max-content
+        margin: auto
+        color: $color-text-alt
         font-size: 3rem
-        transition: all .2s
-        &::placeholder
-            letter-spacing: 2px
-            color: darken(white, 15%)
-        &:focus
-            border-bottom: 2px solid $color-text-orange
+        letter-spacing: 1px
+        padding-top: 3rem
+        &__label
+            position: absolute
+            top: 5px   
+            left: 0
+            font-size: 2.5rem      
+            transition: all .15s   
+            &.inactive
+                transform: translateY(35px)
+        &__input
+            padding: 1rem 0
+            min-width: 50rem
+            background-color: transparent
+            border: none
+            outline: none
+            color: $color-text-alt
+            border-bottom: 1.5px solid
+            &:focus
+                border-bottom: 1px solid $color-text-orange
+                
