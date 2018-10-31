@@ -46,12 +46,12 @@ class Sponsors extends Component {
         </div>
       </div>
       <h2 className="sponsors__title">and Our Great Partners</h2>
-        <div className="sponsors__logos kilo">
+        <div className="sponsors__logos centi">
           <div className="sponsors__kilo">
-            <img src={MLHPartner}  alt="Major League Hacking" height="100px"/>
+            <img src={MLHPartner}  alt="Major League Hacking" height="110px"/>
           </div>
           <div className="sponsors__kilo">
-            <img src={ChallengeRocketPartner}  alt="Challenge Rocket" height="100px"/>
+            <img src={ChallengeRocketPartner}  alt="Challenge Rocket" height="110px"/>
           </div>
         </div>
     </div>
