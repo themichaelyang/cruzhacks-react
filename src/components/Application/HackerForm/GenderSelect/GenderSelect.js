@@ -5,7 +5,7 @@ class GenderSelect extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      gender: 'female'
+      gender: ''
     }
   }
 

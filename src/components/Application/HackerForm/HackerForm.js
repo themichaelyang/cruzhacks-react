@@ -12,7 +12,10 @@ class HackerForm extends Component {
     phone: '',
     gender: '',
     race: '',
-    age: ''      
+    age: '',
+    hackathons: '',
+    major: '',
+    school: ''      
   }
   constructor(props) {
     super(props)    
@@ -56,13 +59,21 @@ class HackerForm extends Component {
           <input className="form__group__input" id="phone" name="phone" type="tel" onChange={this.handleOnChange} value={this.state.phone} required/>
           <label className={this.state.phone ? "form__group__label" : "inactive form__group__label"} htmlFor="phone">Phone</label>
         </div>
-        <GenderSelect handler={this.grabState}/>
-        <EthnicitySelect handler={this.grabState}/>
-        <GraduationSelect handler={this.grabState}/>
         <div className="form__group">
           <input className="form__group__input" id="age" name="age" type="number" onChange={this.handleOnChange} value={this.state.age} required/>
           <label className={this.state.age ? "form__group__label" : "inactive form__group__label"} htmlFor="age">How old are you?</label>
         </div>
+        <div className="form__group">
+          <input className="form__group__input" id="major" name="major" type="text" onChange={this.handleOnChange} value={this.state.major} required/>
+          <label className={this.state.major ? "form__group__label" : "inactive form__group__label"} htmlFor="major">What's your major?</label>
+        </div>
+        <div className="form__group">
+          <input className="form__group__input" id="school" name="school" type="text" onChange={this.handleOnChange} value={this.state.school} required/>
+          <label className={this.state.school ? "form__group__label" : "inactive form__group__label"} htmlFor="school">What school do you go to?</label>
+        </div>
+        <GenderSelect handler={this.grabState}/>
+        <EthnicitySelect handler={this.grabState}/>
+        <GraduationSelect handler={this.grabState}/>
         <HackathonSelect handler={this.grabState}/>
         <input type="submit"/>
         </form>

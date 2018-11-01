@@ -559,7 +559,7 @@ body, html {
     position: absolute;
     top: 5px;
     left: 0;
-    font-size: 2.5rem;
+    font-size: 2rem;
     transition: all .15s; }
     .form__group__label.inactive {
       transform: translateY(35px); }
@@ -569,8 +569,8 @@ body, html {
     background-color: transparent;
     border: none;
     outline: none;
-    color: rgba(252, 249, 255, 0.7);
-    border-bottom: 1.5px solid; }
+    color: white;
+    border-bottom: 1.5px solid #312D38; }
     @media (max-width: 56.25em) {
       .form__group__input {
         min-width: 30rem; } }
