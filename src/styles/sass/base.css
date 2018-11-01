@@ -437,6 +437,7 @@ body, html {
       padding-bottom: 7.5rem; } }
 
 .sponsors__giga {
+  background-color: #312D38;
   min-height: 21rem;
   margin: 2rem 1rem;
   padding: 4rem 3rem 2rem;
@@ -451,6 +452,7 @@ body, html {
       transform: scale(0.75); } }
 
 .sponsors__kilo {
+  background-color: #312D38;
   max-height: 19rem;
   margin: 1rem 1rem;
   padding: 3rem 2rem 2rem;
@@ -462,6 +464,7 @@ body, html {
   text-align: center; }
 
 .sponsors__centi {
+  background-color: #312D38;
   max-height: 9.5rem;
   margin: 1rem 1rem;
   padding: 3rem 2rem 2rem;
