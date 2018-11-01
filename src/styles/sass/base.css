@@ -565,33 +565,44 @@ body, html {
       transform: translateY(35px); }
   .form__group__input {
     padding: 1rem 0;
-    min-width: 50rem;
+    min-width: 45rem;
     background-color: transparent;
     border: none;
     outline: none;
     color: rgba(252, 249, 255, 0.7);
     border-bottom: 1.5px solid; }
+    @media (max-width: 56.25em) {
+      .form__group__input {
+        min-width: 30rem; } }
     .form__group__input:focus {
       border-bottom: 1.5px solid #EBA471; }
 
-.gender, .race {
+.gender, .race, .graduation, .hackathon {
   display: flex;
   justify-content: space-between;
   align-items: center;
   margin: 10rem auto 4rem auto;
   color: white; }
-  .gender__title, .race__title {
+  @media (max-width: 56.25em) {
+    .gender, .race, .graduation, .hackathon {
+      flex-direction: column; } }
+  .gender__title, .race__title, .graduation__title, .hackathon__title {
     font-size: 4rem;
     font-weight: normal;
     margin-bottom: 2rem;
     margin-right: 2rem;
     text-align: left; }
-  .gender__select, .race__select {
+    @media (max-width: 56.25em) {
+      .gender__title, .race__title, .graduation__title, .hackathon__title {
+        text-align: center; } }
+  .gender .graduation__title, .race .graduation__title, .graduation .graduation__title, .hackathon .graduation__title {
+    margin-right: 0; }
+  .gender__select, .race__select, .graduation__select, .hackathon__select {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     align-items: center; }
-    .gender__select__option, .race__select__option {
+    .gender__select__option, .race__select__option, .graduation__select__option, .hackathon__select__option {
       font-size: 3rem;
       padding: 3rem 4rem;
       background-color: #312D38;
@@ -600,11 +611,15 @@ body, html {
       flex: 1;
       cursor: pointer;
       transition: background-color .2s; }
-      .gender__select__option:hover, .race__select__option:hover {
+      .gender__select__option:hover, .race__select__option:hover, .graduation__select__option:hover, .hackathon__select__option:hover {
         background-color: white;
         color: #312D38; }
-      .gender__select__option.active, .race__select__option.active {
+      .gender__select__option.active, .race__select__option.active, .graduation__select__option.active, .hackathon__select__option.active {
         background: white;
         color: #312D38; }
-    .gender__select .race__select__option, .race__select .race__select__option {
+    .gender__select .race__select__option, .race__select .race__select__option, .graduation__select .race__select__option, .hackathon__select .race__select__option {
       padding: 3rem 2rem; }
+    .gender__select .hackathon__select__option, .race__select .hackathon__select__option, .graduation__select .hackathon__select__option, .hackathon__select .hackathon__select__option {
+      white-space: nowrap; }
+    .gender__select .graduation__select__option, .race__select .graduation__select__option, .graduation__select .graduation__select__option, .hackathon__select .graduation__select__option {
+      flex: 0; }

@@ -1,6 +1,8 @@
 import React, {Component} from 'react';
 import GenderSelect from './GenderSelect';
 import EthnicitySelect from './EthnicitySelect';
+import GraduationSelect from './GraduationSelect';
+import HackathonSelect from './HackathonSelect';
 
 class HackerForm extends Component {
   initialState = {
@@ -9,7 +11,8 @@ class HackerForm extends Component {
     email: '',
     phone: '',
     gender: '',
-    race: ''      
+    race: '',
+    age: ''      
   }
   constructor(props) {
     super(props)    
@@ -29,9 +32,7 @@ class HackerForm extends Component {
   }
 
   grabState = (state) => {
-    this.setState(state, function() {
-      console.log(this.state.race)
-    })
+    this.setState(state)
   }
 
   render() {
@@ -57,6 +58,12 @@ class HackerForm extends Component {
         </div>
         <GenderSelect handler={this.grabState}/>
         <EthnicitySelect handler={this.grabState}/>
+        <GraduationSelect handler={this.grabState}/>
+        <div className="form__group">
+          <input className="form__group__input" id="age" name="age" type="number" onChange={this.handleOnChange} value={this.state.age} required/>
+          <label className={this.state.age ? "form__group__label" : "inactive form__group__label"} htmlFor="age">How old are you?</label>
+        </div>
+        <HackathonSelect handler={this.grabState}/>
         <input type="submit"/>
         </form>
       </div>

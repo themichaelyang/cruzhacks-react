@@ -31,27 +31,35 @@
                 transform: translateY(35px)
         &__input
             padding: 1rem 0
-            min-width: 50rem
+            min-width: 45rem
             background-color: transparent
             border: none
             outline: none
             color: $color-text-alt
             border-bottom: 1.5px solid
+            @include respond(tab-port)
+                min-width: 30rem
             &:focus
                 border-bottom: 1.5px solid $color-text-orange
 
-.gender, .race
+.gender, .race, .graduation, .hackathon
     display: flex
     justify-content: space-between
     align-items: center
     margin: 10rem auto 4rem auto
     color: white
+    @include respond(tab-port)
+        flex-direction: column            
     &__title
         font-size: 4rem
         font-weight: normal
         margin-bottom: 2rem
         margin-right: 2rem
         text-align: left
+        @include respond(tab-port)
+            text-align: center
+    .graduation__title
+        margin-right: 0
     &__select
         display: flex
         flex-wrap: wrap
@@ -72,5 +80,9 @@
             &.active
                 background: white
                 color: $color-bg-alt
-        .race__select__option
+        .race__select__option,
             padding: 3rem 2rem
+        .hackathon__select__option
+            white-space: nowrap
+        .graduation__select__option
+            flex: 0
