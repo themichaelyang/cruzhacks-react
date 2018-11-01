@@ -4,7 +4,7 @@ import hero from 'assets/hero.svg';
 import axios from 'axios';
 import Recaptcha from 'react-google-invisible-recaptcha';
 
-class Hero extends React.Component {
+class Hero extends Component {
   constructor (props) {
     super(props);
     this.state = {

@@ -536,7 +536,7 @@ body, html {
 .form-container {
   max-width: 960px;
   margin: auto;
-  min-height: 75vh; }
+  min-height: 175vh; }
   .form-container__title {
     color: #EBA471;
     font-size: 5rem;
@@ -548,13 +548,13 @@ body, html {
 .form__group {
   position: relative;
   width: max-content;
-  margin: auto;
+  margin: 1rem auto;
   color: rgba(252, 249, 255, 0.7);
   font-size: 3rem;
   letter-spacing: 1px;
   padding-top: 3rem; }
   .form__group:not(:first-child) {
-    margin-top: 3rem; }
+    margin-top: 5rem; }
   .form__group__label {
     position: absolute;
     top: 5px;
@@ -572,4 +572,37 @@ body, html {
     color: rgba(252, 249, 255, 0.7);
     border-bottom: 1.5px solid; }
     .form__group__input:focus {
-      border-bottom: 1px solid #EBA471; }
+      border-bottom: 1.5px solid #EBA471; }
+
+.gender, .race {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin: 10rem auto 4rem auto;
+  color: white; }
+  .gender__title, .race__title {
+    font-size: 4rem;
+    font-weight: normal;
+    margin-bottom: 2rem;
+    margin-right: 2rem;
+    text-align: left; }
+  .gender__select, .race__select {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center; }
+    .gender__select__option, .race__select__option {
+      font-size: 3rem;
+      padding: 3rem 4rem;
+      background-color: #312D38;
+      border-radius: 3rem;
+      margin: 1rem;
+      flex: 1;
+      cursor: pointer;
+      transition: background-color .2s; }
+      .gender__select__option:hover, .race__select__option:hover {
+        background-color: white;
+        color: #312D38; }
+      .gender__select__option.active, .race__select__option.active {
+        background: white;
+        color: #312D38; }

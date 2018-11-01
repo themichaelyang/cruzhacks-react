@@ -1,7 +1,7 @@
 .form-container
     max-width: 960px
     margin: auto
-    min-height: 75vh
+    min-height: 175vh
     &__title
         color: $color-text-orange
         font-size: 5rem
@@ -13,10 +13,10 @@
 .form
     &__group
         &:not(:first-child)
-            margin-top: 3rem
+            margin-top: 5rem
         position: relative
         width: max-content
-        margin: auto
+        margin: 1rem auto
         color: $color-text-alt
         font-size: 3rem
         letter-spacing: 1px
@@ -38,5 +38,37 @@
             color: $color-text-alt
             border-bottom: 1.5px solid
             &:focus
-                border-bottom: 1px solid $color-text-orange
-                
+                border-bottom: 1.5px solid $color-text-orange
+
+.gender, .race
+    display: flex
+    justify-content: space-between
+    align-items: center
+    margin: 10rem auto 4rem auto
+    color: white
+    &__title
+        font-size: 4rem
+        font-weight: normal
+        margin-bottom: 2rem
+        margin-right: 2rem
+        text-align: left
+    &__select
+        display: flex
+        flex-wrap: wrap
+        justify-content: center
+        align-items: center
+        &__option
+            font-size: 3rem
+            padding: 3rem 4rem
+            background-color: $color-bg-alt
+            border-radius: 3rem
+            margin: 1rem
+            flex: 1
+            cursor: pointer
+            transition: background-color .2s
+            &:hover
+                background-color: white
+                color: $color-bg-alt
+            &.active
+                background: white
+                color: $color-bg-alt
