@@ -15,7 +15,9 @@ class HackerForm extends Component {
     age: '',
     hackathons: '',
     major: '',
-    school: ''      
+    school: '',
+    linkedin: '',
+    website: ''      
   }
   constructor(props) {
     super(props)    
@@ -71,10 +73,28 @@ class HackerForm extends Component {
           <input className="form__group__input" id="school" name="school" type="text" onChange={this.handleOnChange} value={this.state.school} required/>
           <label className={this.state.school ? "form__group__label" : "inactive form__group__label"} htmlFor="school">What school do you go to?</label>
         </div>
+        <div className="form__group">
+          <input className="form__group__input" id="linkedin" name="linkedin" type="text" onChange={this.handleOnChange} value={this.state.linkedin}/>
+          <label className={this.state.linkedin ? "form__group__label" : "inactive form__group__label"} htmlFor="linkedin">LinkedIn URL</label>
+        </div>
+        <div className="form__group">
+          <input className="form__group__input" id="website" name="website" type="text" onChange={this.handleOnChange} value={this.state.website}/>
+          <label className={this.state.website ? "form__group__label" : "inactive form__group__label"} htmlFor="website">Personal Website URL</label>
+        </div>
         <GenderSelect handler={this.grabState}/>
         <EthnicitySelect handler={this.grabState}/>
         <GraduationSelect handler={this.grabState}/>
         <HackathonSelect handler={this.grabState}/>
+        <div className="form__group">
+          <textarea rows="5" cols="50" className="form__group__textarea" id="reason" name="reason" type="text" onChange={this.handleOnChange} value={this.state.reason} required/>
+          <label className={this.state.reason ? "form__group__label" : "inactive form__group__label"} htmlFor="reason">Why do you want to attend CruzHacks 2019? (max 100 words)</label>
+        </div>
+        <div className="form__group">
+          <h2>Do you agree to the MLH code of conduct?</h2>
+          <div className="checkbox">
+            <div className="check"></div>
+          </div>
+        </div>
         <input type="submit"/>
         </form>
       </div>

@@ -576,6 +576,15 @@ body, html {
         min-width: 30rem; } }
     .form__group__input:focus {
       border-bottom: 1.5px solid #EBA471; }
+  .form__group__textarea {
+    min-width: 45rem;
+    background-color: transparent;
+    outline: none;
+    border: none;
+    color: white;
+    resize: vertical;
+    border-bottom: 2px solid #312D38;
+    margin-bottom: 3rem; }
 
 .gender, .race, .graduation, .hackathon {
   display: flex;
@@ -623,3 +632,20 @@ body, html {
       white-space: nowrap; }
     .gender__select .graduation__select__option, .race__select .graduation__select__option, .graduation__select .graduation__select__option, .hackathon__select .graduation__select__option {
       flex: 0; }
+
+.checkbox {
+  height: 3rem;
+  width: 3rem;
+  border: 3px solid #EBA471;
+  border-radius: 50%;
+  position: relative;
+  overflow: hidden; }
+  .checkbox .check {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: #EBA471;
+    height: 2rem;
+    width: 2rem;
+    border-radius: 50%; }

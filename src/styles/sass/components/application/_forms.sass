@@ -41,6 +41,15 @@
                 min-width: 30rem
             &:focus
                 border-bottom: 1.5px solid $color-text-orange
+        &__textarea
+            min-width: 45rem
+            background-color: transparent
+            outline: none
+            border: none
+            color: white
+            resize: vertical
+            border-bottom: 2px solid $color-bg-alt
+            margin-bottom: 3rem
 
 .gender, .race, .graduation, .hackathon
     display: flex
@@ -86,3 +95,19 @@
             white-space: nowrap
         .graduation__select__option
             flex: 0
+.checkbox
+    height: 3rem
+    width: 3rem
+    border: 3px solid $color-text-orange
+    border-radius: 50%
+    position: relative
+    overflow: hidden
+    .check
+        position: absolute
+        top: 50%
+        left: 50% 
+        transform: translate(-50%, -50%)
+        background-color: $color-text-orange
+        height: 2rem
+        width: 2rem
+        border-radius: 50%
