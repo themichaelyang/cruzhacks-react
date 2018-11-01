@@ -1,0 +1,99 @@
+.sponsors
+    &__container
+        padding: 10rem 15rem
+        text-align: center
+        @include respond(tab-land)
+            padding: 2rem
+            margin-bottom: 0
+        @include respond(phone)
+            margin-bottom: 0
+    &__title
+        font-size: 4rem
+        text-transform: uppercase
+        color: white
+        margin-bottom: 5rem
+    &__logos
+            &.giga
+                padding: 2rem 2% 2rem 2%
+                padding-bottom: 0rem
+                padding-top: 0em
+                display: flex
+                flex-wrap: wrap
+                justify-items: center
+                justify-content: center
+                @include respond(tab-land)
+                    padding: 2rem
+                    padding-bottom: 0rem
+                @include respond(phone)
+                        padding: 2rem 2% 2rem 2%
+                        padding-top: 0
+
+            &.kilo
+                padding: 2rem 2% 2rem 2%
+                padding-bottom: 0rem
+                display: flex
+                flex-wrap: wrap
+                justify-items: center
+                justify-content: center
+                @include respond(tab-land)
+                    padding: 2rem
+                    padding-bottom: 0rem
+                @include respond(phone)
+                        padding: 6rem 14% 1rem 14%
+            &.centi
+                padding: 2rem 2% 2rem 2%
+                display: flex
+                flex-wrap: wrap
+                justify-items: center
+                justify-content: center
+                padding-bottom: 5rem
+                @include respond(tab-land)
+                    padding: 2rem
+                    padding-bottom: 7.5rem
+                @include respond(phone)
+                        padding: 6rem 14% 1rem 14%
+                        padding-bottom: 7.5rem
+                
+    &__giga
+        min-height: 21rem
+        margin: 2rem 1rem
+        padding: 4rem 3rem 2rem
+        border-radius: 20px
+        background: $color-bg-alt
+        display: flex
+        flex-direction: column
+        justify-content: center
+        align-items: center
+        text-align: center
+        @include respond(phone)
+             transform: scale(.75)
+          
+        
+    &__kilo
+        max-height: 19rem
+        margin: 1rem 1rem
+        padding: 3rem 2rem 2rem
+        border-radius: 20px
+        background: $color-bg-alt
+        display: flex
+        flex-direction: column
+        justify-content: center
+        align-items: center
+        text-align: center
+
+    &__centi
+        max-height: 9.5rem
+        margin: 1rem 1rem
+        padding: 3rem 2rem 2rem
+        border-radius: 20px
+        background: $color-bg-alt
+        display: flex
+        flex-direction: column
+        justify-content: center
+        align-items: center
+        text-align: center    
+
+        
+        
+   
+    

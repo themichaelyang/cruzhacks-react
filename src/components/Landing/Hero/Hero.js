@@ -8,11 +8,13 @@ class Hero extends Component {
   constructor (props) {
     super(props);
     this.state = {
-        email: ''
+        email: '',
+        submit: 'Submit'
     }
     this.recapatchaValid = this.recapatchaValid.bind(this);
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
+    this.setState = this.setState.bind(this);
 }
   /**
    * Email input state updater
@@ -36,14 +38,12 @@ class Hero extends Component {
     })
     .then(function (response) {
       console.log(response);
-      alert("Email submitted!")
     })
     .catch(function (error) {
       console.log(error);
       alert(error);
-      this.recaptcha.reset();
     });
-    this.setState({email: ''})
+    this.setState({submit: 'Submitted!'})
   }
 
   render() {
@@ -65,7 +65,7 @@ class Hero extends Component {
             <label for="email" className={this.state.email ? "label-hidden" : "animated-label"}>Email</label>
           </div>
           <button type={"submit"} className={"hero__button-small"}>
-              Submit
+              {this.state.submit}
             </button>
             <div className="hidden">
               <Recaptcha              
@@ -82,9 +82,10 @@ class Hero extends Component {
   }
   recapatchaValid (event) {
     event.preventDefault();
+    this.setState({submit: "Submitting..."});
     console.dir(this.recaptcha)
-    this.recaptcha.execute();
-    console.log(this.recaptcha.getResponse);
+    this.recaptcha.execute()
+    console.log(this.recaptcha.getResponse)
   }  
 }
 
