@@ -8,7 +8,8 @@ class HackerForm extends Component {
     lastname: '',
     email: '',
     phone: '',
-    gender: ''      
+    gender: '',
+    race: ''      
   }
   constructor(props) {
     super(props)    

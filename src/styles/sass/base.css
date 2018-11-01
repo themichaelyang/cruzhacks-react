@@ -606,3 +606,5 @@ body, html {
       .gender__select__option.active, .race__select__option.active {
         background: white;
         color: #312D38; }
+    .gender__select .race__select__option, .race__select .race__select__option {
+      padding: 3rem 2rem; }

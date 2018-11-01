@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 
-class EthnicitySelect extends Component {
+class GraduationSelect extends Component {
 
   constructor(props) {
     super(props)
@@ -33,4 +33,4 @@ class EthnicitySelect extends Component {
   }
 }
 
-export default EthnicitySelect;
+export default GraduationSelect;
