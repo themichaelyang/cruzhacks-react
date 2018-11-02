@@ -61,8 +61,8 @@ class HackerForm extends Component {
             <label className={this.state.email ? "form__group__label" : "inactive form__group__label"} htmlFor="email">Email</label>
           </div>
           <div className="form__group">
-            <input className="form__group__input" id="phone" name="phone" type="tel" onChange={this.handleOnChange} value={this.state.phone} required/>
-            <label className={this.state.phone ? "form__group__label" : "inactive form__group__label"} htmlFor="phone">Phone</label>
+            <input className="form__group__input" id="phone" name="phone" type="tel" onChange={this.handleOnChange} value={this.state.phone} />
+            <label className={this.state.phone ? "form__group__label" : "inactive form__group__label"} htmlFor="phone">Phone # (for SMS notifcations)</label>
           </div>
           <div className="form__group">
             <input className="form__group__input" id="age" name="age" type="number" onChange={this.handleOnChange} value={this.state.age} required/>

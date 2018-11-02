@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import TShirtSelect from '../TShirtSelect';
+import SkillSelect from './SkillSelect';
 
 class MentorForm extends Component {
 
@@ -9,7 +10,8 @@ class MentorForm extends Component {
     email: '',
     company: '',
     linkedin: '',
-    shirt: ''
+    shirt: '',
+    skills: new Set()
   }
   
   constructor(props) {
@@ -26,6 +28,7 @@ class MentorForm extends Component {
 
   grabState = (state) => {
     this.setState(state)
+    console.log(this.state.skills)
   }
 
   handleSubmit = (event) => {
@@ -39,7 +42,7 @@ class MentorForm extends Component {
       <div className="form-container">
         <h2 className="form-container__title">Mentor Application</h2>        
         <p className="form-container__text">
-          <span>Mentors are the backbone of an hackathon.  They operate our event’s Q/A forums and roam the event helping hackers.</span>
+          <span>Mentors are the backbone of our hackathon. They operate our event’s Q/A forums and roam the event helping hackers with technical problems.</span>
           <span>For such an important role, we’ll have separate lounging space and tons of delicious food for all mentors.</span>
         </p>
         <form className="form" onSubmit={this.handleSubmit}>
@@ -68,6 +71,7 @@ class MentorForm extends Component {
             <label className={this.state.reason ? "form__group__label" : "inactive form__group__label"} htmlFor="reason">Why do you want to mentor CruzHacks 2019? </label>
           </div>
           <TShirtSelect handler={this.grabState} />
+          <SkillSelect handler={this.grabState} />
           <input className="form__submit" type="submit" value="Submit Application"/>
         </form>
       </div>
