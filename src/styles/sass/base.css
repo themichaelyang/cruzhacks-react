@@ -372,7 +372,7 @@ body, html {
       color: rgba(252, 249, 255, 0.7); }
 
 .sponsors__container {
-  padding: 10rem 15rem;
+  padding: 10rem 15rem 0rem 15rem;
   text-align: center; }
   @media (max-width: 75em) {
     .sponsors__container {
@@ -671,6 +671,30 @@ body, html {
     letter-spacing: 3px;
     font-weight: normal;
     padding: 5rem 1rem 3rem 1rem; }
+
+.form__text {
+  color: rgba(252, 249, 255, 0.7);
+  font-size: 2rem;
+  margin: 1rem;
+  text-align: justify;
+  cursor: default; }
+  .form__text a {
+    color: #EBA471; }
+
+.form__submit {
+  padding: 2rem 4rem;
+  border: none;
+  outline: none;
+  background-color: #312D38;
+  font-size: 3rem;
+  color: white;
+  border-radius: 3rem;
+  margin: 1rem auto 10rem auto;
+  cursor: pointer;
+  transition: all .2s; }
+  .form__submit:hover {
+    color: #312D38;
+    background-color: white; }
 
 .form__group {
   position: relative;

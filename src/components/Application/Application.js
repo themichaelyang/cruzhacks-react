@@ -12,7 +12,7 @@ class Application extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      application: 0
+      application: 1
     }
   }
 
@@ -28,7 +28,6 @@ class Application extends Component {
       case 2: return <MentorForm />
       case 3: return <JudgeForm />
       case 4: return <VolunteerForm />
-      default: return <HackerForm />
     }
   }
 

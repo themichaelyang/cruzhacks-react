@@ -11,6 +11,28 @@
         padding: 5rem 1rem 3rem 1rem
 
 .form
+    &__text
+        color: $color-text-alt
+        font-size: 2rem
+        margin: 1rem        
+        text-align: justify
+        cursor: default
+        a
+            color: $color-text-orange
+    &__submit
+        padding: 2rem 4rem
+        border: none
+        outline: none
+        background-color: $color-bg-alt
+        font-size: 3rem
+        color: white
+        border-radius: 3rem
+        margin: 1rem auto 10rem auto
+        cursor: pointer
+        transition: all .2s
+        &:hover
+            color: $color-bg-alt
+            background-color: white
     &__group
         &:not(:first-child)
             margin-top: 5rem
