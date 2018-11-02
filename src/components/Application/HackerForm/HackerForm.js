@@ -3,6 +3,7 @@ import GenderSelect from './GenderSelect';
 import EthnicitySelect from './EthnicitySelect';
 import GraduationSelect from './GraduationSelect';
 import HackathonSelect from './HackathonSelect';
+import TShirtSelect from '../TShirtSelect';
 
 class HackerForm extends Component {
   initialState = {
@@ -13,11 +14,12 @@ class HackerForm extends Component {
     gender: '',
     race: '',
     age: '',
-    hackathons: '',
+    hackathon: '',
     major: '',
     school: '',
     linkedin: '',
-    website: ''      
+    website: '',
+    shirt: ''      
   }
   constructor(props) {
     super(props)    
@@ -26,6 +28,7 @@ class HackerForm extends Component {
 
   handleSubmit = (event) => {
     event.preventDefault();
+    console.log(this.state)
     this.setState(this.initialState)
   }
 
@@ -89,8 +92,9 @@ class HackerForm extends Component {
           <EthnicitySelect handler={this.grabState}/>
           <GraduationSelect handler={this.grabState}/>
           <HackathonSelect handler={this.grabState}/>
+          <TShirtSelect handler={this.grabState}/>
           <p className="form__text">
-          By submitting this application I affirm that I have read and agree to the <a href="https://static.mlh.io/docs/mlh-code-of-conduct.pdf" target="_blank">MLH code of conduct</a> and I authorize CruzHacks to share my application information for event administration, ranking, MLH administration, pre and post-event informational emails and occasional messages about hackathons in-line with the MLH Privacy Policy.  I further agree to the terms of both the MLH Contest Terms and Conditions and the MLH Privacy policy. 
+            By submitting this application I affirm that I have read and agree to the <a href="https://static.mlh.io/docs/mlh-code-of-conduct.pdf" target="_blank">MLH code of conduct</a> and I authorize CruzHacks to share my application information for event administration, ranking, MLH administration, pre and post-event informational emails and occasional messages about hackathons in-line with the MLH Privacy Policy.  I further agree to the terms of both the MLH Contest Terms and Conditions and the MLH Privacy policy. 
           </p>
           <input className="form__submit" type="submit" value="Submit Application"/>
         </form>

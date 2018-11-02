@@ -664,6 +664,13 @@ body, html {
   max-width: 960px;
   margin: auto;
   min-height: 175vh; }
+  .form-container__text {
+    font-size: 3rem;
+    color: rgba(252, 249, 255, 0.7);
+    text-align: justify; }
+    .form-container__text span {
+      display: block;
+      margin: 2rem auto; }
   .form-container__title {
     color: #EBA471;
     font-size: 5rem;
@@ -693,8 +700,7 @@ body, html {
   cursor: pointer;
   transition: all .2s; }
   .form__submit:hover {
-    color: #312D38;
-    background-color: white; }
+    font-size: 3.5rem; }
 
 .form__group {
   position: relative;
@@ -734,35 +740,34 @@ body, html {
     border: none;
     color: white;
     resize: vertical;
-    border-bottom: 2px solid #312D38;
     margin-bottom: 3rem; }
 
-.gender, .race, .graduation, .hackathon {
+.gender, .race, .graduation, .hackathon, .shirt {
   display: flex;
   justify-content: space-between;
   align-items: center;
   margin: 10rem auto 4rem auto;
   color: white; }
   @media (max-width: 56.25em) {
-    .gender, .race, .graduation, .hackathon {
+    .gender, .race, .graduation, .hackathon, .shirt {
       flex-direction: column; } }
-  .gender__title, .race__title, .graduation__title, .hackathon__title {
+  .gender__title, .race__title, .graduation__title, .hackathon__title, .shirt__title {
     font-size: 4rem;
     font-weight: normal;
     margin-bottom: 2rem;
     margin-right: 2rem;
     text-align: left; }
     @media (max-width: 56.25em) {
-      .gender__title, .race__title, .graduation__title, .hackathon__title {
+      .gender__title, .race__title, .graduation__title, .hackathon__title, .shirt__title {
         text-align: center; } }
-  .gender .graduation__title, .race .graduation__title, .graduation .graduation__title, .hackathon .graduation__title {
+  .gender .graduation__title, .race .graduation__title, .graduation .graduation__title, .hackathon .graduation__title, .shirt .graduation__title {
     margin-right: 0; }
-  .gender__select, .race__select, .graduation__select, .hackathon__select {
+  .gender__select, .race__select, .graduation__select, .hackathon__select, .shirt__select {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
     align-items: center; }
-    .gender__select__option, .race__select__option, .graduation__select__option, .hackathon__select__option {
+    .gender__select__option, .race__select__option, .graduation__select__option, .hackathon__select__option, .shirt__select__option {
       font-size: 3rem;
       padding: 3rem 4rem;
       background-color: #312D38;
@@ -771,18 +776,24 @@ body, html {
       flex: 1;
       cursor: pointer;
       transition: background-color .2s; }
-      .gender__select__option:hover, .race__select__option:hover, .graduation__select__option:hover, .hackathon__select__option:hover {
+      .gender__select__option:hover, .race__select__option:hover, .graduation__select__option:hover, .hackathon__select__option:hover, .shirt__select__option:hover {
         background-color: white;
         color: #312D38; }
-      .gender__select__option.active, .race__select__option.active, .graduation__select__option.active, .hackathon__select__option.active {
+      .gender__select__option.active, .race__select__option.active, .graduation__select__option.active, .hackathon__select__option.active, .shirt__select__option.active {
         background: white;
         color: #312D38; }
-    .gender__select .race__select__option, .race__select .race__select__option, .graduation__select .race__select__option, .hackathon__select .race__select__option {
+    .gender__select .race__select__option, .race__select .race__select__option, .graduation__select .race__select__option, .hackathon__select .race__select__option, .shirt__select .race__select__option {
       padding: 3rem 2rem; }
-    .gender__select .hackathon__select__option, .race__select .hackathon__select__option, .graduation__select .hackathon__select__option, .hackathon__select .hackathon__select__option {
+    .gender__select .hackathon__select__option, .race__select .hackathon__select__option, .graduation__select .hackathon__select__option, .hackathon__select .hackathon__select__option, .shirt__select .hackathon__select__option {
       white-space: nowrap; }
-    .gender__select .graduation__select__option, .race__select .graduation__select__option, .graduation__select .graduation__select__option, .hackathon__select .graduation__select__option {
+    .gender__select .graduation__select__option, .race__select .graduation__select__option, .graduation__select .graduation__select__option, .hackathon__select .graduation__select__option, .shirt__select .graduation__select__option {
       flex: 0; }
+  .gender .shirt__select, .race .shirt__select, .graduation .shirt__select, .hackathon .shirt__select, .shirt .shirt__select {
+    flex-wrap: nowrap;
+    flex: 1; }
+    @media (max-width: 56.25em) {
+      .gender .shirt__select, .race .shirt__select, .graduation .shirt__select, .hackathon .shirt__select, .shirt .shirt__select {
+        flex-wrap: wrap; } }
 
 .checkbox {
   height: 3rem;
