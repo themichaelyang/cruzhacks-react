@@ -44,7 +44,7 @@ class SkillSelect extends Component {
           <span className={this.state.skill.has("DevOps") ? "skill__select__option active" : "skill__select__option"} data-skill="DevOps" onClick={this.changeValue}>DevOps</span>
           <span className={this.state.skill.has("Machine Learning") ? "skill__select__option active" : "skill__select__option"} data-skill="Machine Learning" onClick={this.changeValue}>Machine Learning</span>
           <span className={this.state.skill.has("Other") ? "skill__select__option active" : "skill__select__option"} data-skill="Other" onClick={this.changeValue}>Other</span>
-          <input type="hidden" name="skill" className="skill__value" onChange={this.props.handler} value={this.state.race}/>
+          <input type="hidden" name="skill" className="skill__value" onChange={this.props.handler}/>
         </div>        
       </div>
     );
