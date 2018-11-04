@@ -730,6 +730,8 @@ body, html {
         min-width: 30rem; } }
     .form__group__input:focus {
       border-bottom: 1.5px solid #EBA471; }
+      .form__group__input:focus + .form__group__label {
+        transform: translateY(0); }
   .form__group__textarea {
     min-width: 45rem;
     background-color: transparent;
