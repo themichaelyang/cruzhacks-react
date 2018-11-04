@@ -740,6 +740,8 @@ body, html {
     color: white;
     resize: vertical;
     margin-bottom: 3rem; }
+    .form__group__textarea:focus + .form__group__label {
+      transform: translateY(0); }
 
 .gender, .race, .graduation, .hackathon, .shirt, .skill, .availability, .club {
   display: flex;
