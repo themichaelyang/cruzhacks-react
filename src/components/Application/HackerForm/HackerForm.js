@@ -1,4 +1,6 @@
 import React, {Component} from 'react';
+import S3FileUpload from 'react-s3';
+
 import axios from 'axios';
 
 import GenderSelect from './GenderSelect';
@@ -8,13 +10,22 @@ import HackathonSelect from './HackathonSelect';
 import TShirtSelect from '../TShirtSelect';
 import Loader from 'components/Loader';
 
-class HackerForm extends Component {
+
+const config = {
+  bucketName: 'cruzhacks-2019-hackers',
+  region: 'us-east-2',
+  dirName: 'resumes',
+  accessKeyId: 'AKIAIRMVH5E4RORG46EA',
+  secretAccessKey: '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'
+}
+
+class HackerForm extends Component { 
   initialState = {
     status: 0,
     email: '',
     first_name: '',
     last_name: '',
-    age: '',
+    age: -1,
     university: '',
     grad_year: '',
     shirt_size: '',
@@ -29,47 +40,75 @@ class HackerForm extends Component {
     linkedin: '',   
     dietary_rest: '',    
     workshop_ideas: '',
+    resume: '',
+    resumeName: ''
   }
+
+  resumeObj = {}
+
   constructor(props) {
     super(props)    
     this.state = this.initialState
   }
+
+  // testResumeUpload = (event) => {
+  //   console.log(event.target.files[0])
+  //   S3FileUpload.uploadFile(event.target.files[0], config)
+  //     .then((response) => {
+  //       this.setState({resume: response.location}, function() {
+  //         console.log(this.state.resume)
+  //       })
+  //     })
+  //     .catch((error) => {
+  //       console.log(error)
+  //     })
+  // }
 
   handleSubmit = (event) => {
     event.preventDefault()
     if (this.state.shirt_size === '') {
       window.alert("Please select a shirt size!")
     } else {
-      this.setState({status: 1}, () => {
-        axios({
-          method: 'post',
-          url: 'https://cruzhacks2019-registration-stg.herokuapp.com/register/attendee',
-          data: {
-            email: this.state.email,
-            first_name: this.state.first_name,
-            last_name: this.state.last_name,
-            age: this.state.age,
-            university: this.state.university,
-            grad_year: this.state.grad_year,
-            shirt_size: this.state.shirt_size,
-            short_answer1: this.state.short_answer1,
-            short_answer2: this.state.short_answer2,
-            phone_number: this.state.phone_number,
-            gender: this.state.gender,
-            ethnicity: this.state.ethnicity,
-            major: this.state.major,
-            num_hacks: this.state.num_hacks,
-            github: this.state.github,
-            linkedin: this.state.linkedin,
-            dietary_rest: this.state.dietary_rest,
-            workshop_ideas: this.state.workshop_ideas
-          }
-        }).then((response) => {
-          this.setState({status: 2})
-        }).catch((error) => {
-          this.setState({status: 3})
-        });  
-      }) 
+      S3FileUpload.uploadFile(this.resumeObj, config)
+      .then((response) => {
+        this.setState({resume: response.location}, function() {
+          this.setState({status: 1}, () => {
+            axios({
+              method: 'post',
+              url: 'https://cruzhacks2019-registration-stg.herokuapp.com/register/attendee',
+              data: {
+                email: this.state.email,
+                first_name: this.state.first_name,
+                last_name: this.state.last_name,
+                age: this.state.age,
+                university: this.state.university,
+                grad_year: this.state.grad_year,
+                shirt_size: this.state.shirt_size,
+                short_answer1: this.state.short_answer1,
+                short_answer2: this.state.short_answer2,
+                phone_number: this.state.phone_number,
+                gender: this.state.gender,
+                ethnicity: this.state.ethnicity,
+                major: this.state.major,
+                num_hacks: this.state.num_hacks,
+                github: this.state.github,
+                linkedin: this.state.linkedin,
+                dietary_rest: this.state.dietary_rest,
+                workshop_ideas: this.state.workshop_ideas,
+                resume: this.state.resume
+              }
+            }).then((response) => {
+              this.setState({status: 2})
+            }).catch((error) => {
+              this.setState({status: 3})
+            });  
+          }) 
+        })
+      })
+      .catch((error) => {
+        console.log(error)
+        this.setState({status: 3})
+      })
     }       
   }
 
@@ -82,6 +121,13 @@ class HackerForm extends Component {
 
   grabState = (state) => {
     this.setState(state)
+  }
+
+  handleFileUpload = (event) => {
+    this.resumeObj = event.target.files[0]
+    let name = event.target.value
+    name = name.substr(name.lastIndexOf('\\') + 1)
+    this.setState({resumeName: name})
   }
 
   render() {
@@ -115,7 +161,7 @@ class HackerForm extends Component {
                 <label className={this.state.phone_number ? "form__group__label" : "inactive form__group__label"} htmlFor="phone_number">Phone #* (for SMS notifcations)</label>
               </div>
               <div className="form__group">
-                <input className="form__group__input" id="age" name="age" type="number" onChange={this.handleOnChange} value={this.state.age} max="99" required/>
+                <input className="form__group__input" id="age" name="age" type="number" onChange={this.handleOnChange} max="99" required/>
                 <label className={this.state.age ? "form__group__label" : "inactive form__group__label"} htmlFor="age">How old are you?*</label>
               </div>
               <div className="form__group">
@@ -123,7 +169,7 @@ class HackerForm extends Component {
                 <label className={this.state.university ? "form__group__label" : "inactive form__group__label"} htmlFor="university">What school do you go to?*</label>
               </div>
               <div className="form__group">
-                <input className="form__group__input" id="major" name="major" type="text" onChange={this.handleOnChange} value={this.state.major} maxLength="20" required/>
+                <input className="form__group__input" id="major" name="major" type="text" onChange={this.handleOnChange} value={this.state.major} maxLength="20" />
                 <label className={this.state.major ? "form__group__label" : "inactive form__group__label"} htmlFor="major">What's your major?</label>
               </div>
               <div className="form__group">
@@ -131,7 +177,7 @@ class HackerForm extends Component {
                 <label className={this.state.linkedin ? "form__group__label" : "inactive form__group__label"} htmlFor="linkedin">LinkedIn URL</label>
               </div>
               <div className="form__group">
-                <input className="form__group__input" id="github" name="github" type="text" onChange={this.handleOnChange} value={this.state.github} maxLength="20"/>
+                <input className="form__group__input" id="github" name="github" type="text" onChange={this.handleOnChange} value={this.state.github} maxLength="80"/>
                 <label className={this.state.github ? "form__group__label" : "inactive form__group__label"} htmlFor="github">Personal Website or GitHub URL</label>
               </div>
               <div className="form__group">
@@ -141,6 +187,10 @@ class HackerForm extends Component {
               <div className="form__group">
                 <input className="form__group__input" id="workshop_ideas" name="workshop_ideas" type="text" onChange={this.handleOnChange} value={this.state.workshop_ideas} maxLength="250"/>
                 <label className={this.state.workshop_ideas ? "form__group__label" : "inactive form__group__label"} htmlFor="workshop_ideas">Are there any specific workshops you'd like to see?</label>
+              </div>
+              <div className="form__group">
+                <label className="form__group__file" htmlFor="resume">{this.state.resumeName ? this.state.resumeName : "Upload your resume as (Firstname_Lastname.pdf)"}</label>
+                <input className="form__group__input" style={{visibility: 'hidden', position: 'absolute'}} id="resume" name="resume" type="file" onChange={this.handleFileUpload} maxLength="250"/>
               </div>
               <div className="form__group">
                 <textarea rows="4" cols="50" maxLength="500" className="form__group__textarea" id="short_answer1" name="short_answer1" onChange={this.handleOnChange} value={this.state.short_answer1} required/>

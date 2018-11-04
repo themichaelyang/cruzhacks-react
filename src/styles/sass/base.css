@@ -766,6 +766,14 @@ body, html {
       border-bottom: 1.5px solid #EBA471; }
       .form__group__input:focus + .form__group__label {
         transform: translateY(0); }
+  .form__group__file {
+    padding: 2rem 4rem;
+    border-radius: 3rem;
+    background-color: #312D38;
+    transition: background-color .2s;
+    cursor: pointer; }
+    .form__group__file:hover {
+      background-color: #3d3846; }
   .form__group__charcount {
     position: absolute;
     font-size: 1rem;
