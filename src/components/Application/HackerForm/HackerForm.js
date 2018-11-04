@@ -6,6 +6,7 @@ import EthnicitySelect from './EthnicitySelect';
 import GraduationSelect from './GraduationSelect';
 import HackathonSelect from './HackathonSelect';
 import TShirtSelect from '../TShirtSelect';
+import Loader from 'components/Loader';
 
 class HackerForm extends Component {
   initialState = {
@@ -81,9 +82,9 @@ class HackerForm extends Component {
 
   render() {
     switch (this.state.status) {
-      case 1: return <h1 className="status">LOADING</h1>
-      case 2: return <h1 className="status">Submitted your application!</h1>
-      case 3: return <h1 className="status">There was an error submitting your application</h1>
+      case 1: return <Loader />
+      case 2: return <span className="status-success">Success! (Can someone come up with the text for this & Jennifer can ya make some nice SVG for this so it's more visual? Also can you pick send me the hex for a success color and error color)</span>
+      case 3: return <span className="status-error">Oops! There was an error submitting your application. You probably submitted an application with an email that has already been used. If that's not what happened and you see this I messed up the form data validation. Let me know immediately if that's the case</span>
       default: {
         return (
           <div className="form-container">

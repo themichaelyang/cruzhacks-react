@@ -41,6 +41,39 @@ body, html {
 .text-center {
   text-align: center !important; }
 
+.status-success, .status-error {
+  font-size: 4rem;
+  color: #DFF2BF;
+  max-width: 960px;
+  display: block;
+  margin: auto; }
+
+.status-error {
+  color: #FFBABA; }
+
+.loader {
+  width: 250px;
+  height: 250px;
+  border: 5px solid #312D38;
+  border-top: 5px solid #625a71;
+  border-radius: 50%;
+  margin: auto;
+  animation: rotating 2s linear infinite; }
+
+@keyframes rotating {
+  from {
+    -ms-transform: rotate(0deg);
+    -moz-transform: rotate(0deg);
+    -webkit-transform: rotate(0deg);
+    -o-transform: rotate(0deg);
+    transform: rotate(0deg); }
+  to {
+    -ms-transform: rotate(360deg);
+    -moz-transform: rotate(360deg);
+    -webkit-transform: rotate(360deg);
+    -o-transform: rotate(360deg);
+    transform: rotate(360deg); } }
+
 .hero {
   min-height: 100vh;
   position: relative;
@@ -815,7 +848,3 @@ body, html {
     height: 2rem;
     width: 2rem;
     border-radius: 50%; }
-
-.status {
-  font-size: 5rem;
-  color: white; }

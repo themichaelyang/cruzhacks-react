@@ -50,6 +50,19 @@ html
     @include respond(tab-port)
       font-size: 37.5%
 
+$color-bg: #1C1921
+$color-bg-alt: #312D38
+$color-text-orange: #EBA471
+$color-text-alt: rgba(252, 249, 255, 0.7)
+$color-bg-footer: #2E2A38
+$color-text-footer: #8D84A1
+
+$color-success: #DFF2BF
+$color-error: #FFBABA
+
+$font-stack-alt: 'Space Mono', monospace
+$font-stack: 'Varela Round', sans-serif
+
 body, html
   overflow-x: hidden
 
@@ -59,16 +72,38 @@ body, html
 .text-center
   text-align: center !important
 
-$color-bg: #1C1921
-$color-bg-alt: #312D38
-$color-text-orange: #EBA471
-$color-text-alt: rgba(252, 249, 255, 0.7)
-$color-bg-footer: #2E2A38
-$color-text-footer: #8D84A1
+.status-success, .status-error
+    font-size: 4rem
+    color: $color-success
+    max-width: 960px
+    display: block
+    margin: auto
 
-$font-stack-alt: 'Space Mono', monospace
-$font-stack: 'Varela Round', sans-serif
+.status-error
+  color: $color-error
 
+.loader
+    width: 250px
+    height: 250px
+    border: 5px solid $color-bg-alt
+    border-top: 5px solid lighten($color-bg-alt, 20%)
+    border-radius: 50%
+    margin: auto
+    animation: rotating 2s linear infinite
+
+@keyframes rotating
+    from        
+        -ms-transform: rotate(0deg)
+        -moz-transform: rotate(0deg)
+        -webkit-transform: rotate(0deg)
+        -o-transform: rotate(0deg)
+        transform: rotate(0deg)
+    to 
+        -ms-transform: rotate(360deg)
+        -moz-transform: rotate(360deg)
+        -webkit-transform: rotate(360deg)
+        -o-transform: rotate(360deg)
+        transform: rotate(360deg)
 
 @import "components/landing/hero"
 @import "components/landing/mission"
