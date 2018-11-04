@@ -22,7 +22,6 @@ class Application extends Component {
   }
 
   renderForm = (application) => {
-    console.log(typeof application)
     switch (application) {
       case 1: return <HackerForm />
       case 2: return <MentorForm />

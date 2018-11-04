@@ -658,8 +658,7 @@ body, html {
 
 .form-container {
   max-width: 960px;
-  margin: auto;
-  min-height: 175vh; }
+  margin: auto; }
   .form-container__text {
     font-size: 3rem;
     color: rgba(252, 249, 255, 0.7);
@@ -732,6 +731,11 @@ body, html {
       border-bottom: 1.5px solid #EBA471; }
       .form__group__input:focus + .form__group__label {
         transform: translateY(0); }
+  .form__group__charcount {
+    position: absolute;
+    font-size: 1rem;
+    bottom: 10px;
+    right: 10px; }
   .form__group__textarea {
     min-width: 45rem;
     background-color: transparent;
@@ -778,8 +782,7 @@ body, html {
       cursor: pointer;
       transition: background-color .2s; }
       .gender__select__option:hover, .race__select__option:hover, .graduation__select__option:hover, .hackathon__select__option:hover, .shirt__select__option:hover, .skill__select__option:hover, .availability__select__option:hover, .club__select__option:hover {
-        background-color: white;
-        color: #312D38; }
+        background-color: #3d3846; }
       .gender__select__option.active, .race__select__option.active, .graduation__select__option.active, .hackathon__select__option.active, .shirt__select__option.active, .skill__select__option.active, .availability__select__option.active, .club__select__option.active {
         background: white;
         color: #312D38; }
@@ -812,3 +815,7 @@ body, html {
     height: 2rem;
     width: 2rem;
     border-radius: 50%; }
+
+.status {
+  font-size: 5rem;
+  color: white; }

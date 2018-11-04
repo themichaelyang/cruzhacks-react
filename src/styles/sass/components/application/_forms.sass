@@ -1,7 +1,6 @@
 .form-container
     max-width: 960px
     margin: auto
-    min-height: 175vh
     &__text
         font-size: 3rem
         color: $color-text-alt
@@ -72,7 +71,11 @@
                 border-bottom: 1.5px solid $color-text-orange
                 + .form__group__label
                     transform: translateY(0)
-
+        &__charcount
+            position: absolute
+            font-size: 1rem
+            bottom: 10px
+            right: 10px
         &__textarea
             min-width: 45rem
             background-color: transparent
@@ -83,6 +86,8 @@
             margin-bottom: 3rem
             &:focus + .form__group__label
                     transform: translateY(0)
+
+
 
 .gender, .race, .graduation, .hackathon, .shirt, .skill, .availability, .club
     display: flex
@@ -117,8 +122,7 @@
             cursor: pointer
             transition: background-color .2s
             &:hover
-                background-color: white
-                color: $color-bg-alt
+                background-color: lighten($color-bg-alt, 5%)                
             &.active
                 background: white
                 color: $color-bg-alt
@@ -149,3 +153,7 @@
         height: 2rem
         width: 2rem
         border-radius: 50%
+
+.status
+    font-size: 5rem
+    color: white
