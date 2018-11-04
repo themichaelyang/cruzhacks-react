@@ -43,7 +43,7 @@ class MentorForm extends Component {
       this.setState({status: 1}, () => {
         axios({
           method: 'post',
-          url: 'https://cruzhacks2019-registration-stg.herokuapp.com/register/mentor',
+          url: process.env.REACT_APP_REGISTRATION_ENDPOINT.concat('/mentor'),
           data: {
             email: this.state.email,
             first_name: this.state.first_name,

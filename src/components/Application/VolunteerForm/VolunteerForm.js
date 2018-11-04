@@ -44,7 +44,7 @@ class VolunteerForm extends Component {
       this.setState({status: 1}, () => {
         axios({
           method: 'post',
-          url: 'https://cruzhacks2019-registration-stg.herokuapp.com/register/volunteer',
+          url: process.env.REACT_APP_REGISTRATION_ENDPOINT.concat('/volunteer'),
           data: {
             email: this.state.email,
             first_name: this.state.first_name,

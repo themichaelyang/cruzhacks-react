@@ -15,8 +15,8 @@ const config = {
   bucketName: 'cruzhacks-2019-hackers',
   region: 'us-east-2',
   dirName: 'resumes',
-  accessKeyId: 'AKIAIRMVH5E4RORG46EA',
-  secretAccessKey: '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'
+  accessKeyId: process.env.REACT_APP_AWS_ACCESS_KEY,
+  secretAccessKey: process.env.REACT_APP_AWS_SECRET_KEY
 }
 
 class HackerForm extends Component { 
@@ -51,31 +51,18 @@ class HackerForm extends Component {
     this.state = this.initialState
   }
 
-  // testResumeUpload = (event) => {
-  //   console.log(event.target.files[0])
-  //   S3FileUpload.uploadFile(event.target.files[0], config)
-  //     .then((response) => {
-  //       this.setState({resume: response.location}, function() {
-  //         console.log(this.state.resume)
-  //       })
-  //     })
-  //     .catch((error) => {
-  //       console.log(error)
-  //     })
-  // }
-
   handleSubmit = (event) => {
     event.preventDefault()
     if (this.state.shirt_size === '') {
       window.alert("Please select a shirt size!")
-    } else {
+    } else if (this.resumeObj){
       S3FileUpload.uploadFile(this.resumeObj, config)
       .then((response) => {
         this.setState({resume: response.location}, function() {
           this.setState({status: 1}, () => {
             axios({
               method: 'post',
-              url: 'https://cruzhacks2019-registration-stg.herokuapp.com/register/attendee',
+              url: process.env.REACT_APP_REGISTRATION_ENDPOINT.concat('/atendee'),
               data: {
                 email: this.state.email,
                 first_name: this.state.first_name,
@@ -109,6 +96,37 @@ class HackerForm extends Component {
         console.log(error)
         this.setState({status: 3})
       })
+    } else {
+      this.setState({status: 1}, () => {
+        axios({
+          method: 'post',
+          url: 'https://cruzhacks2019-registration-stg.herokuapp.com/register/attendee',
+          data: {
+            email: this.state.email,
+            first_name: this.state.first_name,
+            last_name: this.state.last_name,
+            age: this.state.age,
+            university: this.state.university,
+            grad_year: this.state.grad_year,
+            shirt_size: this.state.shirt_size,
+            short_answer1: this.state.short_answer1,
+            short_answer2: this.state.short_answer2,
+            phone_number: this.state.phone_number,
+            gender: this.state.gender,
+            ethnicity: this.state.ethnicity,
+            major: this.state.major,
+            num_hacks: this.state.num_hacks,
+            github: this.state.github,
+            linkedin: this.state.linkedin,
+            dietary_rest: this.state.dietary_rest,
+            workshop_ideas: this.state.workshop_ideas
+          }
+        }).then((response) => {
+          this.setState({status: 2})
+        }).catch((error) => {
+          this.setState({status: 3})
+        });  
+      }) 
     }       
   }
 
@@ -133,8 +151,8 @@ class HackerForm extends Component {
   render() {
     switch (this.state.status) {
       case 1: return <Loader />
-      case 2: return <span className="status-success">Success! (Can someone come up with the text for this & Jennifer can ya make some SVG for this so it's more visual or give me an idea of what to make this thing look like it's like 5am and im exhausted and i have 0 creative sense right now and im hangry and i have to finish my cs homework Also can u pick send me the hex for success color and error colors)</span>
-      case 3: return <span className="status-error">Oops! There was an error submitting your application. You probably submitted an application with an email that has already been used. If that's not what happened and you see this I messed up the form data validation. Let me know immediately if that's the case</span>
+      case 2: return <span className="status-success">Thanks for applying! We've received your application and will get back to you as soon as we can.</span>
+      case 3: return <span className="status-error">Oops! There was an error submitting your application. Please try again and make sure you use a unique email!</span>
       default: {
         return (
           <div className="form-container">

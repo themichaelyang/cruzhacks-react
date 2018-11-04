@@ -45,7 +45,7 @@ class JudgeForm extends Component {
       this.setState({status: 1}, () => {
         axios({
           method: 'post',
-          url: 'https://cruzhacks2019-registration-stg.herokuapp.com/register/judge',
+          url: process.env.REACT_APP_REGISTRATION_ENDPOINT.concat('/judge'),
           data: {
             email: this.state.email,
             first_name: this.state.first_name,
