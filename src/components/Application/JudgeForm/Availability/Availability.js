@@ -11,7 +11,7 @@ class Availability extends Component {
 
   changeValue = (event) => {
     this.setState({availability: event.target.dataset.availability}, function() {
-      this.props.handler({availability: this.state.availability})
+      this.props.handler({available: this.state.availability})
     })
   }
 

@@ -5,11 +5,12 @@ import ClubSelect from './ClubSelect';
 class VolunteerForm extends Component {
 
   initialState = {
-    firstname: '',
-    lastname: '',
+    first_name: '',
+    last_name: '',
     email: '',
-    shirt: '',
-    clubs: '',
+    shirt_size: '',
+    assoc_clubs: '',
+    short_answer: '',
     year: ''
   }
   
@@ -45,16 +46,21 @@ class VolunteerForm extends Component {
         </p>
         <form className="form" onSubmit={this.handleSubmit}>
           <div className="form__group">
-            <input className="form__group__input" id="firstname" name="firstname" type="text" onChange={this.handleOnChange} value={this.state.firstname} required/>
-            <label className={this.state.firstname ? "form__group__label" : "inactive form__group__label"} htmlFor="firstname">Firstname</label>
+            <input className="form__group__input" id="first_name" name="first_name" type="text" onChange={this.handleOnChange} value={this.state.first_name} required/>
+            <label className={this.state.first_name ? "form__group__label" : "inactive form__group__label"} htmlFor="first_name">Firstname</label>
           </div>
           <div className="form__group">
-            <input className="form__group__input" id="lastname" name="lastname" type="text" onChange={this.handleOnChange} value={this.state.lastname} required/>
-            <label className={this.state.lastname ? "form__group__label" : "inactive form__group__label"} htmlFor="lastname">Lastname</label>
+            <input className="form__group__input" id="last_name" name="last_name" type="text" onChange={this.handleOnChange} value={this.state.last_name} required/>
+            <label className={this.state.last_name ? "form__group__label" : "inactive form__group__label"} htmlFor="last_name">Lastname</label>
           </div>
           <div className="form__group">
             <input className="form__group__input" id="email" name="email" type="email" onChange={this.handleOnChange} value={this.state.email} required/>
             <label className={this.state.email ? "form__group__label" : "inactive form__group__label"} htmlFor="email">UCSC Email</label>
+          </div>
+          <div className="form__group">
+            <textarea rows="5" cols="50" className="form__group__textarea" id="short_answer" name="short_answer" type="text" onChange={this.handleOnChange} value={this.state.short_answer} maxLength="500" required/>
+            <label className={this.state.short_answer ? "form__group__label" : "inactive form__group__label"} htmlFor="short_answer">Why do you want to volunteer at CruzHacks 2019?* (Max 500 chars)</label>
+            <span className="form__group__charcount">Character count: {this.state.short_answer.length}</span>  
           </div>
           <ClubSelect handler={this.grabState} />
           <TShirtSelect handler={this.grabState} />

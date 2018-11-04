@@ -749,7 +749,7 @@ body, html {
     font-size: 2rem;
     transition: all .15s; }
     .form__group__label.inactive {
-      transform: translateY(35px); }
+      transform: translateY(30px); }
   .form__group__input {
     padding: 1rem 0;
     min-width: 45rem;

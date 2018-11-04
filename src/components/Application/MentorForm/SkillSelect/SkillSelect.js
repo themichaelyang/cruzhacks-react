@@ -19,7 +19,7 @@ class SkillSelect extends Component {
       set.add(selectedSkill)
     }
     this.setState({skill: set}, function() {
-      this.props.handler({skills: this.state.skill})
+      this.props.handler({mentor_field: [...this.state.skill].join(',')})
     })
   }
 
