@@ -54,15 +54,15 @@ class Hero extends Component {
         <span className="hero__text">Create something that makes a difference.</span>
         <span className="hero__text__alt">Jan 18-20, 2019 @ Stevenson Event Center</span>
         <div className="hero__button-container">
-          <a href="#" className="hero__button not-allowed">Apps open in Nov</a>
-          <a href="mailto:amit@cruzhacks.com" className="hero__button" target="_blank">Sponsoring?</a>
+          <a href="/application" className="hero__button not-allowed">Apps open in Nov</a>
+          <a href="mailto:amit@cruzhacks.com" className="hero__button" target="_blank" rel="noopener noreferrer">Sponsoring?</a>
         </div>
         <span className="hero__text">Subscribe to updates:</span>
         <div className="hero__updates">
         <form onSubmit={this.recapatchaValid} id="emailForm">
           <div className="hero__form-group">
             <input type="email" className="form-control" name="email" id="email" value={this.state.email} onChange={this.handleChange} required/>
-            <label for="email" className={this.state.email ? "label-hidden" : "animated-label"}>Email</label>
+            <label htmlFor="email" className={this.state.email ? "label-hidden" : "animated-label"}>Email</label>
           </div>
           <button type={"submit"} className={"hero__button-small"}>
               {this.state.submit}

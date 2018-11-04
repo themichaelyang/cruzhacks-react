@@ -37,7 +37,7 @@ class MentorForm extends Component {
 
   handleSubmit = (event) => {
     event.preventDefault();
-    if (this.state.shirt_size == '') {
+    if (this.state.shirt_size === '') {
       window.alert("Please select a shirt size!")
     } else {
       this.setState({status: 1}, () => {

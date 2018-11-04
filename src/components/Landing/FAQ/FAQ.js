@@ -3,6 +3,32 @@ import Question from './Question';
 
 class FAQ extends Component {
   render() {
+    const linkStyles = {
+      padding: '0 3px'
+    }
+    const MLHquestion = (
+      <span>
+        As a Major League Hacking member event, we follow 
+        <a className="question__link" style={linkStyles} href="https://mlh.io/code-of-conduct" target="_blank" rel="noopener noreferrer">Major League Hacking’s Code of Conduct</a>
+        which ensures all attendees to CruzHacks are respectful regardless of who you are and where you come from. Additionally, to be considered for an award, you must only submit a project that your team wrote and worked on during the hackathon & agree to our 2018 Participation Agreement
+      </span>
+    )
+
+    const news = (
+      <span>
+        Follow our Facebook page
+        <a className="question__link" style={linkStyles} href="http://www.facebook.com/CruzHacks" target="_blank" rel="noopener noreferrer">here!</a>
+        This is also a great place to find other hackers to team​ ​up with,​ ​or​ ​explore new​ ​ideas​ ​on​ ​what​ ​to​ ​build.
+      </span>
+    )
+
+    const sponsor = (
+      <span>
+        Please contact Amit, our sponsorship expert, at
+        <a className="question__link" style={linkStyles} href="mailto:amit@cruzhacks.com" target="_blank" rel="noopener noreferrer">amit@cruzhacks.com</a>
+        and we can discuss the best way for your organization to get involved!
+      </span>
+    )
     return (
       <div className="faq-container">
         <h2 className="faq-container__title">Frequently Asked Questions</h2>
@@ -32,7 +58,7 @@ class FAQ extends Component {
           <div className="faq-container__column">
             <Question
               title="How can I keep up to date on CruzHacks 2019 news?"
-              answer={["Follow our Facebook page ", <a className="question__link" href="http://www.facebook.com/CruzHacks" target="_blank">here!</a>, " This is also a great place to find other hackers to team​ ​up with,​ ​or​ ​explore new​ ​ideas​ ​on​ ​what​ ​to​ ​build."]}
+              answer={news}
             />
             <Question
               title="Is this completely free?"
@@ -40,11 +66,11 @@ class FAQ extends Component {
             />
             <Question
               title="What are the rules?"
-              answer={["As a Major League Hacking member event, we follow ", <a className="question__link" href="https://mlh.io/code-of-conduct" target="_blank">Major League Hacking’s Code of Conduct</a>, " which ensures all attendees to CruzHacks are respectful regardless of who you are and where you come from. Additionally, to be considered for an award, you must only submit a project that your team wrote and worked on during the hackathon & agree to our 2018 Participation Agreement"]}
+              answer={MLHquestion}
             />
             <Question
               title="How can I be a sponsor?"
-              answer={["Please contact Amit, our sponsorship expert, at ", <a className="question__link" href="mailto:amit@cruzhacks.com" target="_blank">amit@cruzhacks.com</a>, " and we can discuss the best way for your organization to get involved!"]}
+              answer={sponsor}
             />
             <Question
               title="I'd like to help out!"

@@ -28,7 +28,7 @@ class VolunteerForm extends Component {
   handleOnChange = (event) => {
     let newState = {}
     const name = event.target.name
-    newState[name] = name === 'age' ? parseInt(event.target.value) : event.target.value
+    newState[name] = name === 'age' ? parseInt(event.target.value, 10) : event.target.value
     this.setState(newState)
   }
 
@@ -38,7 +38,7 @@ class VolunteerForm extends Component {
 
   handleSubmit = (event) => {
     event.preventDefault();
-    if (this.state.shirt_size == '') {
+    if (this.state.shirt_size === '') {
       window.alert("Please select a shirt size!")
     } else {
       this.setState({status: 1}, () => {

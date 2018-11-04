@@ -17,7 +17,7 @@ class Application extends Component {
   }
 
   toggleApplication = (event) => {
-    let app = parseInt(event.target.dataset.app)
+    let app = parseInt(event.target.dataset.app, 10)
     this.setState({application: app})
   }
 
@@ -27,6 +27,7 @@ class Application extends Component {
       case 2: return <MentorForm />
       case 3: return <JudgeForm />
       case 4: return <VolunteerForm />
+      default: return <HackerForm />
     }
   }
 
@@ -37,10 +38,10 @@ class Application extends Component {
         <h1 className="application__title">CruzHacks 2019 Applications</h1>
         <div className="application__select">
           <span className="application__select__title">Choose an Application Type</span>
-          <AppSelect name="Hacker" class={this.state.application == 1 ? 'selected' : ''} data="1" handler={this.toggleApplication}/>
-          <AppSelect name="Mentor" class={this.state.application == 2 ? 'selected' : ''} data="2" handler={this.toggleApplication}/>
-          <AppSelect name="Judge" class={this.state.application == 3 ? 'selected' : ''} data="3" handler={this.toggleApplication}/>
-          <AppSelect name="Volunteer" class={this.state.application == 4 ? 'selected' : ''} data="4" handler={this.toggleApplication}/>
+          <AppSelect name="Hacker" class={this.state.application === 1 ? 'selected' : ''} data="1" handler={this.toggleApplication}/>
+          <AppSelect name="Mentor" class={this.state.application === 2 ? 'selected' : ''} data="2" handler={this.toggleApplication}/>
+          <AppSelect name="Judge" class={this.state.application === 3 ? 'selected' : ''} data="3" handler={this.toggleApplication}/>
+          <AppSelect name="Volunteer" class={this.state.application === 4 ? 'selected' : ''} data="4" handler={this.toggleApplication}/>
         </div>
         {this.renderForm(this.state.application)}
       </div>

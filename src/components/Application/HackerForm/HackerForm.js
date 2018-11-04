@@ -37,7 +37,7 @@ class HackerForm extends Component {
 
   handleSubmit = (event) => {
     event.preventDefault()
-    if (this.state.shirt_size == '') {
+    if (this.state.shirt_size === '') {
       window.alert("Please select a shirt size!")
     } else {
       this.setState({status: 1}, () => {
@@ -76,7 +76,7 @@ class HackerForm extends Component {
   handleOnChange = (event) => {    
     let newState = {}
     const name = event.target.name
-    newState[name] = name === 'age' ? parseInt(event.target.value) : event.target.value
+    newState[name] = name === 'age' ? parseInt(event.target.value, 10) : event.target.value
     this.setState(newState)
   }
 
@@ -158,7 +158,7 @@ class HackerForm extends Component {
               <HackathonSelect handler={this.grabState}/>
               <TShirtSelect handler={this.grabState}/>
               <p className="form__text">
-                By submitting this application I affirm that I have read and agree to the <a href="https://static.mlh.io/docs/mlh-code-of-conduct.pdf" target="_blank">MLH code of conduct</a> and I authorize CruzHacks to share my application information for event administration, ranking, MLH administration, pre and post-event informational emails and occasional messages about hackathons in-line with the MLH Privacy Policy.  I further agree to the terms of both the MLH Contest Terms and Conditions and the MLH Privacy policy. 
+                By submitting this application I affirm that I have read and agree to the <a href="https://static.mlh.io/docs/mlh-code-of-conduct.pdf" target="_blank" rel="noopener noreferrer">MLH code of conduct</a> and I authorize CruzHacks to share my application information for event administration, ranking, MLH administration, pre and post-event informational emails and occasional messages about hackathons in-line with the MLH Privacy Policy.  I further agree to the terms of both the MLH Contest Terms and Conditions and the MLH Privacy policy. 
               </p>
               <input className="form__submit" type="submit" value="Submit Application"/>          
             </form>

@@ -37,10 +37,10 @@ class JudgeForm extends Component {
 
   handleSubmit = (event) => {
     event.preventDefault();
-    if (this.state.shirt_size == '') {
+    if (this.state.shirt_size === '') {
       window.alert("Please select a shirt size!")
-    } else if (this.state.available == '') {
-      window.alert("Please select you're availability")
+    } else if (this.state.available === '') {
+      window.alert("Please select your availability")
     }else {
       this.setState({status: 1}, () => {
         axios({

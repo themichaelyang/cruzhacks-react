@@ -1,3 +1,5 @@
+/* eslint-disable */
+
 import React, {Component} from 'react';
 import AmazonGiga from 'assets/sponsors/Amazon-GIGA/Amazon-GIGA.svg';
 import UCSCGradDivGiga from 'assets/sponsors/UCSC Grad Division - GIGA/GRADDIVLOGO.png'
