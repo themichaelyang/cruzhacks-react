@@ -188,7 +188,8 @@ body, html {
   outline: none; }
 
 .hero__button:hover, .hero__button-small:hover {
-  background-color: #282430; }
+  background-color: #282430;
+  cursor: pointer; }
 
 .hero__button.not-allowed {
   cursor: not-allowed; }

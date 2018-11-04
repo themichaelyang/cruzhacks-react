@@ -23,7 +23,7 @@ class GenderSelect extends Component {
           <span className={this.state.gender == "female" ? "gender__select__option active" : "gender__select__option"} data-gender="female" onClick={this.changeValue}>Female</span>
           <span className={this.state.gender == "male" ? "gender__select__option active" : "gender__select__option"} data-gender="male" onClick={this.changeValue}>Male</span>
           <span className={this.state.gender == "transgender" ? "gender__select__option active" : "gender__select__option"} data-gender="transgender" onClick={this.changeValue}>Transgender</span>
-          <span className={this.state.gender == "genderqueer" ? "gender__select__option active" : "gender__select__option"} data-gender="genderqueer" onClick={this.changeValue}>Genderqueer</span>
+          <span className={this.state.gender == "gender-nonconforming" ? "gender__select__option active" : "gender__select__option"} data-gender="gender-nonconforming" onClick={this.changeValue}>Gender-nonconforming</span>
           <span className={this.state.gender == "other" ? "gender__select__option active" : "gender__select__option"} data-gender="other" onClick={this.changeValue}>Other</span>
           <input type="hidden" name="gender" className="gender__value" onChange={this.props.handler} value={this.state.gender}/>
         </div>        

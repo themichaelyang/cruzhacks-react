@@ -17,43 +17,63 @@ class Sponsors extends Component {
       <h2 className="sponsors__title">Thank You to Our Wonderful Sponsors</h2>
       <div className="sponsors__logos giga">
         <div className="sponsors__giga">
+          <a href="https://graddiv.ucsc.edu" target = "_blank">
           <img src={UCSCGradDivGiga} alt="UCSC Graduate Division" height="150px" width="450px"/>
+          </a>
         </div>
         <div className="sponsors__giga">
+          <a href="https://aws.amazon.com/education/awseducate/" target = "_blank">
           <img src={AmazonGiga} alt="Amazon" height="150px" width="450px"/>
+          </a>
         </div>
       </div>          
       <div className="sponsors__logos kilo">
         <div className="sponsors__kilo">
+          <a href="https://www.bsoe.ucsc.edu" target = "_blank">
           <img src={BSOEKilo} alt="Baskin School of Engineering" height="100px" width="225px"/>
+          </a>
         </div>
         <div className="sponsors__kilo">
+          <a href="https://looker.com/" target = "_blank">
           <img src={LookerKilo} alt="Looker" height="100px" width="225px"/>
+          </a>
         </div>
         <div className="sponsors__kilo">
+          <a href="https://www.productops.com/" target="_blank">
           <img src={ProductOpsKilo}  alt="ProductOps" height="100px" width="225px"/>
+          </a>
         </div>
         <div className="sponsors__kilo">
+          <a href="https://www.plantronics.com" target="_blank">
           <img src={PlantronicsKilo}  alt="Plantronics" height="100px" width="225px"/>
+          </a>
         </div>
         <div className="sponsors__kilo">
+          <a href="https://www.santacruzworks.org/members/south-swell-ventures" target="_blank">
           <img src={SouthSwellKilo}  alt="South Swell Ventures" height="100px" width="225px"/>
+          </a>
         </div>
       </div>
       <div className="sponsors__logos centi">
         <div className="sponsors__centi">
+          <a href="https://choosesantacruz.com/" target="_blank">
           <img src={ChooseSCCenti}  alt="Choose Santa Cruz" height="100px"/>
+          </a>
         </div>
       </div>
       <h2 className="sponsors__title">and Our Great Partners</h2>
-        <div className="sponsors__logos centi">
-          <div className="sponsors__kilo">
-            <img src={MLHPartner}  alt="Major League Hacking" height="110px"/>
-          </div>
-          <div className="sponsors__kilo">
-            <img src={ChallengeRocketPartner}  alt="Challenge Rocket" height="110px"/>
-          </div>
+      <div className="sponsors__logos centi">
+        <div className="sponsors__kilo">
+          <a href="https://mlh.io/" target="_blank">
+          <img src={MLHPartner}  alt="Major League Hacking" height="110px"/>
+          </a>
         </div>
+        <div className="sponsors__kilo">
+          <a href="https://challengerocket.com/" target="_blank">
+          <img src={ChallengeRocketPartner}  alt="Challenge Rocket" height="110px"/>
+          </a>
+        </div>
+      </div>
     </div>
     );
   }

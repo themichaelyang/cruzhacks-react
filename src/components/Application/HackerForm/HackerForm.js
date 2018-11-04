@@ -83,12 +83,16 @@ class HackerForm extends Component {
   render() {
     switch (this.state.status) {
       case 1: return <Loader />
-      case 2: return <span className="status-success">Success! (Can someone come up with the text for this & Jennifer can ya make some nice SVG for this so it's more visual? Also can you pick send me the hex for a success color and error color)</span>
+      case 2: return <span className="status-success">Success! (Can someone come up with the text for this & Jennifer can ya make some SVG for this so it's more visual or give me an idea of what to make this thing look like it's like 5am and im exhausted and i have 0 creative sense right now and im hangry and i have to finish my cs homework Also can u pick send me the hex for success color and error colors)</span>
       case 3: return <span className="status-error">Oops! There was an error submitting your application. You probably submitted an application with an email that has already been used. If that's not what happened and you see this I messed up the form data validation. Let me know immediately if that's the case</span>
       default: {
         return (
           <div className="form-container">
-            <h2 className="form-container__title">Hacker Application</h2>
+            <h2 className="form-container__title">Hacker Application</h2>                   
+            <p className="form-container__text">
+              <span>Add a paragraph before the application to note our policy with picking applications, a.k.a. please take the application seriously as we have limited space in our venue. We are picking participants to ensure diversity between skill level, year, representation, etc.</span>
+              <span>Sorry Greg too tired to write this rn can sum1 else do it thanks</span>
+            </p>
             <form className="form" onSubmit={this.handleSubmit}>
               <div className="form__group">
                 <input className="form__group__input" id="first_name" name="first_name" type="text" onChange={this.handleOnChange} value={this.state.first_name} maxlength="20" required/>
