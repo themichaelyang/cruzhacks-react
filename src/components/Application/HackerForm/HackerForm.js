@@ -76,7 +76,7 @@ class HackerForm extends Component {
   handleOnChange = (event) => {    
     let newState = {}
     const name = event.target.name
-    newState[event.target.name] = name === 'age' ? parseInt(event.target.value) : event.target.value
+    newState[name] = name === 'age' ? parseInt(event.target.value) : event.target.value
     this.setState(newState)
   }
 

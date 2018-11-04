@@ -19,7 +19,7 @@ class ClubSelect extends Component {
       set.add(club)
     }
     this.setState({club: set}, function() {
-      this.props.handler({assoc_club: this.state.club})
+      this.props.handler({assoc_clubs: [...this.state.club].join(',')})
     })
   }
 

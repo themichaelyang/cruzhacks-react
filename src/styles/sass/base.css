@@ -849,3 +849,40 @@ body, html {
     height: 2rem;
     width: 2rem;
     border-radius: 50%; }
+
+.avail {
+  margin: 10rem auto 4rem auto;
+  color: white; }
+  .avail__title {
+    font-size: 4rem;
+    font-weight: normal;
+    margin-bottom: 2rem;
+    margin-right: 2rem;
+    text-align: left; }
+    @media (max-width: 56.25em) {
+      .avail__title {
+        text-align: center; } }
+  .avail__select {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    justify-content: center; }
+  .avail__col {
+    display: flex;
+    flex-direction: column;
+    align-items: center; }
+    .avail__col__title {
+      font-size: 3rem;
+      padding: 2rem; }
+    .avail__col__option {
+      font-size: 3rem;
+      padding: 3rem 4rem;
+      background-color: #312D38;
+      border-radius: 3rem;
+      margin: 1rem;
+      cursor: pointer;
+      transition: background-color .2s; }
+      .avail__col__option:hover {
+        background-color: #3d3846; }
+      .avail__col__option.active {
+        background: white;
+        color: #312D38; }

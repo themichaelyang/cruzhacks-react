@@ -122,7 +122,7 @@
             cursor: pointer
             transition: background-color .2s
             &:hover
-                background-color: lighten($color-bg-alt, 5%)                
+                background-color: lighten($color-bg-alt, 5%)              
             &.active
                 background: white
                 color: $color-bg-alt
@@ -153,3 +153,39 @@
         height: 2rem
         width: 2rem
         border-radius: 50%
+
+.avail
+    margin: 10rem auto 4rem auto
+    color: white        
+    &__title
+        font-size: 4rem
+        font-weight: normal
+        margin-bottom: 2rem
+        margin-right: 2rem
+        text-align: left
+        @include respond(tab-port)
+            text-align: center
+    &__select
+        display: grid
+        grid-template-columns: repeat(3, 1fr)
+        justify-content: center
+    &__col
+        display: flex
+        flex-direction: column
+        align-items: center
+        &__title
+            font-size: 3rem
+            padding: 2rem
+        &__option
+            font-size: 3rem
+            padding: 3rem 4rem
+            background-color: $color-bg-alt
+            border-radius: 3rem
+            margin: 1rem
+            cursor: pointer
+            transition: background-color .2s
+            &:hover
+                background-color: lighten($color-bg-alt, 5%)              
+            &.active
+                background: white
+                color: $color-bg-alt
