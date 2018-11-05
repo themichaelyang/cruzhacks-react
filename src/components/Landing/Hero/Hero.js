@@ -33,7 +33,7 @@ class Hero extends Component {
    */
   handleSubmit (event) {
     this.recaptcha.reset()
-    axios.get('https://script.google.com/macros/s/AKfycbwK0fis0dLzeu0Yf3A27oKrxvAC_ZUafgPHiaWqM-Dgmdk-g20/exec', {
+    axios.get(process.env.REACT_APP_RECAPTCHA_URI, {
       params: {
         email: this.state.email,
       }
