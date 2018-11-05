@@ -16,7 +16,7 @@ class Layout extends Component {
         <div className="layout">
           <Router>
             <Switch>
-              <Route path="/application" exact component={Application}/>
+              <Route path="/dmoks6i1343" exact component={Application}/>
               <Route path="/" component={Landing}/>
             </Switch>
           </Router>
