@@ -55,7 +55,7 @@ class Hero extends Component {
         <span className="hero__text__alt">Jan 18-20, 2019 @ Stevenson Event Center</span>
         <div className="hero__button-container">
           <NavLink to="/application" className="hero__button">Apps open in Nov</NavLink>
-          <a href="mailto:amit@cruzhacks.com" className="hero__button" target="_blank" rel="noopener noreferrer">Sponsoring?</a>
+          <a href="/Sponsorship_Packet_E.pdf" className="hero__button" target="_blank" rel="noopener noreferrer">Sponsoring?</a>
         </div>
         <span className="hero__text">Subscribe to updates:</span>
         <div className="hero__updates">
