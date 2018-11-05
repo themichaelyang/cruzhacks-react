@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import { NavLink } from 'react-router-dom';
 import logo from 'assets/logo.svg';
 import hero from 'assets/hero.svg';
 import axios from 'axios';
@@ -55,7 +56,7 @@ class Hero extends Component {
         <span className="hero__text">Create something that makes a difference.</span>
         <span className="hero__text__alt">Jan 18-20, 2019 @ Stevenson Event Center</span>
         <div className="hero__button-container">
-          <a href="/application" className="hero__button not-allowed">Apps open in Nov</a>
+          <NavLink to="/application" className="hero__button">Apps open in Nov</NavLink>
           <a href="mailto:amit@cruzhacks.com" className="hero__button" target="_blank" rel="noopener noreferrer">Sponsoring?</a>
         </div>
         <span className="hero__text">Subscribe to updates:</span>
