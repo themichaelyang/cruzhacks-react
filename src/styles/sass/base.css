@@ -129,7 +129,7 @@ body, html {
         grid-template-columns: 1fr; } }
   .hero__button {
     text-decoration: none;
-    font-size: 2rem;
+    font-size: 2.75rem;
     font-weight: 600;
     padding: 1.5rem 3.3rem;
     background-color: #292b3f;
@@ -186,7 +186,6 @@ body, html {
 
 .hero__button, .hero__button-small {
   text-decoration: none;
-  font-size: 2rem;
   font-weight: 600;
   padding: 1.5rem 3.3rem;
   background-color: #292b3f;
