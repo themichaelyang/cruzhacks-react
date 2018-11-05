@@ -2,6 +2,9 @@ import React, {Component} from 'react';
 import axios from 'axios';
 
 import Loader from 'components/Loader';
+import Success from 'components/Success';
+import Error from 'components/Error';
+
 import TShirtSelect from '../TShirtSelect';
 import SkillSelect from './SkillSelect';
 
@@ -19,7 +22,7 @@ class MentorForm extends Component {
     mentor_field: '',
     dietary_rest: ''
   }
-  
+
   constructor(props) {
     super(props)
     this.state = this.initialState
@@ -59,20 +62,20 @@ class MentorForm extends Component {
           this.setState({status: 2})
         }).catch((error) => {
           this.setState({status: 3})
-        });  
+        });
       })
-    }    
+    }
   }
 
   render() {
     switch (this.state.status) {
       case 1: return <Loader />
-      case 2: return <span className="status-success">Success! (Can someone come up with the text for this & Jennifer can ya make some SVG for this so it's more visual or give me an idea of what to make this thing look like it's like 5am and im exhausted and i have 0 creative sense right now and im hangry and i have to finish my cs homework Also can u pick send me the hex for success color and error colors)</span>
-      case 3: return <span className="status-error">Oops! There was an error submitting your application. You probably submitted an application with an email that has already been used. If that's not what happened and you see this I messed up the form data validation. Let me know immediately if that's the case</span>
+      case 2: return <Success text="Thanks for applying! We've received your application and will get back to you as soon as we can."/>
+      case 3: return <Error text="Oops! There was an error submitting your application. If you think this was a mistake please get in touch with us at contact@cruzhacks.com!"/>
       default: {
         return (
           <div className="form-container">
-            <h2 className="form-container__title">Mentor Application</h2>   
+            <h2 className="form-container__title">Mentor Application</h2>
             <p className="form-container__text">
               <span>Mentors are the backbone of our hackathon. They operate our event’s Q/A forums and roam the event helping hackers with technical problems.</span>
               <span>For such an important role, we’ll have separate lounging space and tons of delicious food for all mentors.</span>
@@ -105,7 +108,7 @@ class MentorForm extends Component {
               <div className="form__group">
                 <textarea rows="5" cols="50" className="form__group__textarea" id="short_answer" name="short_answer" type="text" onChange={this.handleOnChange} value={this.state.short_answer} maxLength="500" required/>
                 <label className={this.state.short_answer ? "form__group__label" : "inactive form__group__label"} htmlFor="short_answer">Why do you want to mentor CruzHacks 2019?* (Max 500 chars)</label>
-                <span className="form__group__charcount">Character count: {this.state.short_answer.length}</span>  
+                <span className="form__group__charcount">Character count: {this.state.short_answer.length}</span>
               </div>
               <TShirtSelect handler={this.grabState} />
               <SkillSelect handler={this.grabState} />
@@ -114,7 +117,7 @@ class MentorForm extends Component {
           </div>
         );
       }
-    }    
+    }
   }
 }
 

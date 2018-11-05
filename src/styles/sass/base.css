@@ -41,15 +41,24 @@ body, html {
 .text-center {
   text-align: center !important; }
 
-.status-success, .status-error {
-  font-size: 4rem;
-  color: #DFF2BF;
-  max-width: 960px;
-  display: block;
-  margin: auto; }
+.success, .error {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 75vh; }
+  .success__text, .error__text {
+    color: white;
+    font-size: 5rem;
+    max-width: 960px; }
+  .success__img, .error__img {
+    margin: 5rem auto;
+    height: 35rem; }
 
-.status-error {
-  color: #FFBABA; }
+.error__text {
+  color: #EF5C65; }
+
+.error__img {
+  height: 35rem; }
 
 .loader {
   width: 250px;

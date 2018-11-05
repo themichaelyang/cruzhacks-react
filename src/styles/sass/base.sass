@@ -72,15 +72,24 @@ body, html
 .text-center
   text-align: center !important
 
-.status-success, .status-error
-    font-size: 4rem
-    color: $color-success
+.success, .error
+  display: flex
+  flex-direction: column
+  align-items: center
+  min-height: 75vh
+  &__text
+    color: white
+    font-size: 5rem
     max-width: 960px
-    display: block
-    margin: auto
+  &__img
+    margin: 5rem auto
+    height: 35rem
 
-.status-error
-  color: $color-error
+.error__text
+  color: #EF5C65
+
+.error__img
+  height: 35rem
 
 .loader
     width: 250px
@@ -92,13 +101,13 @@ body, html
     animation: rotating 2s linear infinite
 
 @keyframes rotating
-    from        
+    from
         -ms-transform: rotate(0deg)
         -moz-transform: rotate(0deg)
         -webkit-transform: rotate(0deg)
         -o-transform: rotate(0deg)
         transform: rotate(0deg)
-    to 
+    to
         -ms-transform: rotate(360deg)
         -moz-transform: rotate(360deg)
         -webkit-transform: rotate(360deg)
