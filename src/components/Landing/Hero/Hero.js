@@ -2,6 +2,7 @@ import React, {Component} from 'react';
 import logo from 'assets/logo.svg';
 import hero from 'assets/hero.svg';
 import axios from 'axios';
+import Recaptcha from 'react-google-invisible-recaptcha';
 
 class Hero extends Component {
   constructor (props) {
@@ -10,6 +11,7 @@ class Hero extends Component {
         email: '',
         submit: 'Submit'
     }
+    this.recapatchaValid = this.recapatchaValid.bind(this);
     this.handleChange = this.handleChange.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
     this.setState = this.setState.bind(this);
@@ -29,8 +31,7 @@ class Hero extends Component {
    * AJAX function to Google Sheets
    */
   handleSubmit (event) {
-    event.preventDefault()
-    this.setState({submit: 'Submitting...'})
+    this.recaptcha.reset()
     axios.get('https://script.google.com/macros/s/AKfycbwK0fis0dLzeu0Yf3A27oKrxvAC_ZUafgPHiaWqM-Dgmdk-g20/exec', {
       params: {
         email: this.state.email,
@@ -59,7 +60,7 @@ class Hero extends Component {
         </div>
         <span className="hero__text">Subscribe to updates:</span>
         <div className="hero__updates">
-        <form onSubmit={this.handleSubmit} id="emailForm">
+        <form onSubmit={this.recapatchaValid} id="emailForm">
           <div className="hero__form-group">
             <input type="email" className="form-control" name="email" id="email" value={this.state.email} onChange={this.handleChange} required/>
             <label htmlFor="email" className={this.state.email ? "label-hidden" : "animated-label"}>Email</label>
@@ -67,12 +68,26 @@ class Hero extends Component {
           <button type={"submit"} className={"hero__button-small"}>
               {this.state.submit}
             </button>
+            <div className="hidden">
+              <Recaptcha              
+                ref={ ref => this.recaptcha = ref }
+                sitekey="6LcCvHYUAAAAANepSyd4Mt37dg9nqxxSKMb4Ic5p"
+                onResolved={  this.handleSubmit } 
+              />
+            </div>
           </form>
         </div>
         <img src={hero} alt="" className="hero__bg"/>
       </div>
     );
   }
+  recapatchaValid (event) {
+    event.preventDefault();
+    this.setState({submit: "Submitting..."});
+    console.dir(this.recaptcha)
+    this.recaptcha.execute()
+    console.log(this.recaptcha.getResponse)
+  }  
 }
 
 export default Hero;
