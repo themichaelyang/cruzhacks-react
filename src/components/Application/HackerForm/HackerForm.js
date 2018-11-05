@@ -1,6 +1,5 @@
 import React, {Component} from 'react';
 import S3FileUpload from 'react-s3';
-
 import axios from 'axios';
 
 import GenderSelect from './GenderSelect';
@@ -10,22 +9,13 @@ import HackathonSelect from './HackathonSelect';
 import TShirtSelect from '../TShirtSelect';
 import Loader from 'components/Loader';
 
-
-const config = {
-  bucketName: process.env.REACT_APP_AWS_BUCKET_NAME,
-  region: process.env.REACT_APP_AWS_REGION,
-  dirName: 'resumes',
-  accessKeyId: process.env.REACT_APP_AWS_ACCESS_KEY,
-  secretAccessKey: process.env.REACT_APP_AWS_SECRET_KEY
-}
-
 class HackerForm extends Component { 
   initialState = {
     status: 0,
     email: '',
     first_name: '',
     last_name: '',
-    age: -1,
+    age: null,
     university: '',
     grad_year: '',
     shirt_size: '',
@@ -55,14 +45,21 @@ class HackerForm extends Component {
     event.preventDefault()
     if (this.state.shirt_size === '') {
       window.alert("Please select a shirt size!")
-    } else if (this.resumeObj){
+    } else if (this.resumeObj) {
+      const config = {
+        bucketName: process.env.REACT_APP_AWS_BUCKET_NAME,
+        region: process.env.REACT_APP_AWS_REGION,
+        dirName: 'resumes/'.concat(this.state.email),
+        accessKeyId: process.env.REACT_APP_AWS_ACCESS_KEY,
+        secretAccessKey: process.env.REACT_APP_AWS_SECRET_KEY
+      }
       S3FileUpload.uploadFile(this.resumeObj, config)
       .then((response) => {
         this.setState({resume: response.location}, function() {
           this.setState({status: 1}, () => {
             axios({
               method: 'post',
-              url: process.env.REACT_APP_REGISTRATION_ENDPOINT.concat('/atendee'),
+              url: process.env.REACT_APP_REGISTRATION_ENDPOINT.concat('/attendee'),
               data: {
                 email: this.state.email,
                 first_name: this.state.first_name,
@@ -226,7 +223,7 @@ class HackerForm extends Component {
               <HackathonSelect handler={this.grabState}/>
               <TShirtSelect handler={this.grabState}/>
               <p className="form__text">
-                By submitting this application I affirm that I have read and agree to the <a href="https://static.mlh.io/docs/mlh-code-of-conduct.pdf" target="_blank" rel="noopener noreferrer">MLH code of conduct</a> and I authorize CruzHacks to share my application information for event administration, ranking, MLH administration, pre and post-event informational emails and occasional messages about hackathons in-line with the MLH Privacy Policy.  I further agree to the terms of both the MLH Contest Terms and Conditions and the MLH Privacy policy. 
+                By submitting this application I affirm that I have read and agree to the <a href="https://static.mlh.io/docs/mlh-code-of-conduct.pdf" target="_blank" rel="noopener noreferrer">MLH code of conduct</a> and I authorize CruzHacks to share my application information for event administration, ranking, MLH administration, pre and post-event informational emails and occasional messages about hackathons in-line with the MLH Privacy Policy. I further agree to the terms of both the MLH Contest Terms and Conditions and the MLH Privacy policy. 
               </p>
               <input className="form__submit" type="submit" value="Submit Application"/>          
             </form>

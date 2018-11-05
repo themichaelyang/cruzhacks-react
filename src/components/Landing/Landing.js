@@ -17,8 +17,8 @@ class Landing extends Component {
         <Mission />
         <CTA />
         <Highlights />
-        <Sponsors />
         <FAQ />
+        <Sponsors />
         <Team />
         <Footer />
       </div>

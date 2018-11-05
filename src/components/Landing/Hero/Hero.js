@@ -1,4 +1,5 @@
 import React, {Component} from 'react';
+import { NavLink } from 'react-router-dom';
 import logo from 'assets/logo.svg';
 import hero from 'assets/hero.svg';
 import axios from 'axios';
@@ -31,19 +32,18 @@ class Hero extends Component {
    * AJAX function to Google Sheets
    */
   handleSubmit (event) {
+    this.recaptcha.reset()
     axios.get('https://script.google.com/macros/s/AKfycbwK0fis0dLzeu0Yf3A27oKrxvAC_ZUafgPHiaWqM-Dgmdk-g20/exec', {
       params: {
         email: this.state.email,
       }
     })
-    .then(function (response) {
-      console.log(response);
+    .then(() => {
+      this.setState({submit: 'Submitted!', email: ''})
     })
     .catch(function (error) {
-      console.log(error);
       alert(error);
     });
-    this.setState({submit: 'Submitted!'})
   }
 
   render() {
@@ -54,7 +54,7 @@ class Hero extends Component {
         <span className="hero__text">Create something that makes a difference.</span>
         <span className="hero__text__alt">Jan 18-20, 2019 @ Stevenson Event Center</span>
         <div className="hero__button-container">
-          <a href="/application" className="hero__button not-allowed">Apps open in Nov</a>
+          <NavLink to="/application" className="hero__button">Apps open in Nov</NavLink>
           <a href="mailto:amit@cruzhacks.com" className="hero__button" target="_blank" rel="noopener noreferrer">Sponsoring?</a>
         </div>
         <span className="hero__text">Subscribe to updates:</span>
@@ -70,7 +70,7 @@ class Hero extends Component {
             <div className="hidden">
               <Recaptcha              
                 ref={ ref => this.recaptcha = ref }
-                sitekey="6LcCvHYUAAAAANepSyd4Mt37dg9nqxxSKMb4Ic5p"
+                sitekey={process.env.REACT_APP_RECAPTCHA_SITE_KEY}
                 onResolved={  this.handleSubmit } 
               />
             </div>
@@ -80,12 +80,11 @@ class Hero extends Component {
       </div>
     );
   }
-  recapatchaValid (event) {
+  recapatchaValid = (event) => {
     event.preventDefault();
-    this.setState({submit: "Submitting..."});
-    console.dir(this.recaptcha)
-    this.recaptcha.execute()
-    console.log(this.recaptcha.getResponse)
+    this.setState({submit: "Submitting..."}, function() {
+      this.recaptcha.execute()
+    })
   }  
 }
 
