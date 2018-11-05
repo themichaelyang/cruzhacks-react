@@ -25,7 +25,7 @@ class HackerForm extends Component {
     email: '',
     first_name: '',
     last_name: '',
-    age: -1,
+    age: null,
     university: '',
     grad_year: '',
     shirt_size: '',
@@ -55,14 +55,14 @@ class HackerForm extends Component {
     event.preventDefault()
     if (this.state.shirt_size === '') {
       window.alert("Please select a shirt size!")
-    } else if (this.resumeObj){
+    } else if (this.resumeObj) {
       S3FileUpload.uploadFile(this.resumeObj, config)
       .then((response) => {
         this.setState({resume: response.location}, function() {
           this.setState({status: 1}, () => {
             axios({
               method: 'post',
-              url: process.env.REACT_APP_REGISTRATION_ENDPOINT.concat('/atendee'),
+              url: process.env.REACT_APP_REGISTRATION_ENDPOINT.concat('/attendee'),
               data: {
                 email: this.state.email,
                 first_name: this.state.first_name,
