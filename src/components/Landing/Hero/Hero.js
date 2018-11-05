@@ -1,9 +1,37 @@
 import React, {Component} from 'react';
 import { NavLink } from 'react-router-dom';
+import axios from 'axios';
+
 import logo from 'assets/logo.svg';
 import hero from 'assets/hero.svg';
 
 class Hero extends Component {
+  constructor(props) {
+    super(props)
+    this.state = {
+      email: '',
+      subscribe: 'Subscribe'
+    }
+  }
+
+  getEmail = (event) => {
+    this.setState({email: event.target.value}, function() {
+      console.log(this.state.email)
+    })
+  }
+
+  subscribeEmail = (event) => {
+    if (!this.state.email) return
+    axios.post(process.env.REACT_APP_SUBSCRIBE_ENDPOINT, {
+        email: this.state.email
+      })
+      .then((response) => {
+        this.setState({email: '', subscribe: "You've Been Subscribed!"})
+      }).catch((error) => {
+        console.log(error)
+      })
+  }
+
   render() {
     return (
       <div className="hero">
@@ -14,6 +42,12 @@ class Hero extends Component {
         <div className="hero__button-container">
           <NavLink to="/application" className="hero__button">Apps open in Nov</NavLink>
           <a href="/Sponsorship_Packet_E.pdf" className="hero__button" target="_blank" rel="noopener noreferrer">Sponsoring?</a>
+        </div>
+        <div className="hero__updates">
+          <span className="hero__updates__title">Subscribe for email updates:</span>
+          <input className="hero__updates__input" value={this.state.email} type="email" name="email" id="email" onChange={this.getEmail}/>
+          <label htmlFor="email" className={this.state.email ? "active hero__updates__label" : "hero__updates__label"}>Email</label>
+          <input type="submit" className="hero__updates__submit" value={this.state.subscribe} onClick={this.subscribeEmail}/>
         </div>
         <img src={hero} alt="" className="hero__bg"/>
       </div>
