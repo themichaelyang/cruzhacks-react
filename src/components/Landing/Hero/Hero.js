@@ -72,7 +72,7 @@ class Hero extends Component {
             <div className="hidden">
               <Recaptcha              
                 ref={ ref => this.recaptcha = ref }
-                sitekey="6LcCvHYUAAAAANepSyd4Mt37dg9nqxxSKMb4Ic5p"
+                sitekey={process.env.REACT_APP_RECAPTCHA_SITE_KEY}
                 onResolved={  this.handleSubmit } 
               />
             </div>
