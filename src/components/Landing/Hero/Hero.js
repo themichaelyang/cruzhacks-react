@@ -31,6 +31,7 @@ class Hero extends Component {
    * AJAX function to Google Sheets
    */
   handleSubmit (event) {
+    this.recaptcha.reset()
     axios.get('https://script.google.com/macros/s/AKfycbwK0fis0dLzeu0Yf3A27oKrxvAC_ZUafgPHiaWqM-Dgmdk-g20/exec', {
       params: {
         email: this.state.email,
