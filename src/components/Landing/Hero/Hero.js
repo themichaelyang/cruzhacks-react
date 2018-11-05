@@ -38,14 +38,12 @@ class Hero extends Component {
         email: this.state.email,
       }
     })
-    .then(function (response) {
-      console.log(response);
+    .then(() => {
+      this.setState({submit: 'Submitted!', email: ''})
     })
     .catch(function (error) {
-      console.log(error);
       alert(error);
     });
-    this.setState({submit: 'Submitted!'})
   }
 
   render() {
@@ -82,12 +80,11 @@ class Hero extends Component {
       </div>
     );
   }
-  recapatchaValid (event) {
+  recapatchaValid = (event) => {
     event.preventDefault();
-    this.setState({submit: "Submitting..."});
-    console.dir(this.recaptcha)
-    this.recaptcha.execute()
-    console.log(this.recaptcha.getResponse)
+    this.setState({submit: "Submitting..."}, function() {
+      this.recaptcha.execute()
+    })
   }  
 }
 
