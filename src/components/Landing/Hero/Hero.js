@@ -30,6 +30,7 @@ class Hero extends Component {
    */
   handleSubmit (event) {
     event.preventDefault()
+    this.setState({submit: 'Submitting...'})
     axios.get('https://script.google.com/macros/s/AKfycbwK0fis0dLzeu0Yf3A27oKrxvAC_ZUafgPHiaWqM-Dgmdk-g20/exec', {
       params: {
         email: this.state.email,
