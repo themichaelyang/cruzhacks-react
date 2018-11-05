@@ -15,9 +15,7 @@ class Hero extends Component {
   }
 
   getEmail = (event) => {
-    this.setState({email: event.target.value}, function() {
-      console.log(this.state.email)
-    })
+    this.setState({email: event.target.value})
   }
 
   subscribeEmail = (event) => {
