@@ -12,8 +12,8 @@ import Loader from 'components/Loader';
 
 
 const config = {
-  bucketName: 'cruzhacks-2019-hackers',
-  region: 'us-east-2',
+  bucketName: process.env.REACT_APP_AWS_BUCKET_NAME,
+  region: process.env.REACT_APP_AWS_REGION,
   dirName: 'resumes',
   accessKeyId: process.env.REACT_APP_AWS_ACCESS_KEY,
   secretAccessKey: process.env.REACT_APP_AWS_SECRET_KEY
