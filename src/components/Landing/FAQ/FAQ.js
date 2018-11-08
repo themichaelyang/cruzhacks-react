@@ -35,13 +35,13 @@ class FAQ extends Component {
     const applyMentorsJudges = (
       <span>
         We would love to have you as a mentor or judge.
-        <NavLink className="question__link" style={linkStyles} to="/applications">Mentor and Judge applications can be found here!</NavLink>
+        <NavLink className="question__link" style={linkStyles} to="/apply">Mentor and Judge applications can be found here!</NavLink>
       </span>
     )
     const applyVolunteers = (
       <span>
         If you're interested in helping out this year's hackathon,
-        <NavLink className="question__link" style={linkStyles} to="/applications">volunteer applications can be found here!</NavLink>
+        <NavLink className="question__link" style={linkStyles} to="/apply">volunteer applications can be found here!</NavLink>
       </span>
     )
 
