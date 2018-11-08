@@ -33,7 +33,7 @@ class HackerForm extends Component {
     linkedin: '',
     dietary_rest: '',
     workshop_ideas: '',
-    resume: '',
+    resume_uri: '',
     resumeName: ''
   }
 
@@ -58,7 +58,7 @@ class HackerForm extends Component {
       }
       S3FileUpload.uploadFile(this.resumeObj, config)
       .then((response) => {
-        this.setState({resume: response.location}, function() {
+        this.setState({resume_uri: response.location}, function() {
           this.setState({status: 1}, () => {
             axios({
               method: 'post',
@@ -82,7 +82,7 @@ class HackerForm extends Component {
                 linkedin: this.state.linkedin,
                 dietary_rest: this.state.dietary_rest,
                 workshop_ideas: this.state.workshop_ideas,
-                resume: this.state.resume
+                resume_uri: this.state.resume
               }
             }).then((response) => {
               this.setState({status: 2})
