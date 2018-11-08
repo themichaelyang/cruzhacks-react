@@ -87,42 +87,41 @@ class HackerForm extends Component {
             }).then((response) => {
               this.setState({status: 2})
             }).catch((error) => {
-              this.setState({status: 1}, () => {
-                axios({
-                  method: 'post',
-                  url: process.env.REACT_APP_REGISTRATION_ENDPOINT.concat('/attendee'),
-                  data: {
-                    email: this.state.email,
-                    first_name: this.state.first_name,
-                    last_name: this.state.last_name,
-                    age: this.state.age,
-                    university: this.state.university,
-                    grad_year: this.state.grad_year,
-                    shirt_size: this.state.shirt_size,
-                    short_answer1: this.state.short_answer1,
-                    short_answer2: this.state.short_answer2,
-                    phone_number: this.state.phone_number,
-                    gender: this.state.gender,
-                    ethnicity: this.state.ethnicity,
-                    major: this.state.major,
-                    num_hacks: this.state.num_hacks,
-                    github: this.state.github,
-                    linkedin: this.state.linkedin,
-                    dietary_rest: this.state.dietary_rest,
-                    workshop_ideas: this.state.workshop_ideas
-                  }
-                }).then((response) => {
-                  this.setState({status: 2})
-                }).catch((error) => {
-                  this.setState({status: 3})
-                });
-              })
+              this.setState({status: 3})
             });
           })
         })
       })
       .catch((error) => {
         console.log(error)
+        axios({
+          method: 'post',
+          url: process.env.REACT_APP_REGISTRATION_ENDPOINT.concat('/attendee'),
+          data: {
+            email: this.state.email,
+            first_name: this.state.first_name,
+            last_name: this.state.last_name,
+            age: this.state.age,
+            university: this.state.university,
+            grad_year: this.state.grad_year,
+            shirt_size: this.state.shirt_size,
+            short_answer1: this.state.short_answer1,
+            short_answer2: this.state.short_answer2,
+            phone_number: this.state.phone_number,
+            gender: this.state.gender,
+            ethnicity: this.state.ethnicity,
+            major: this.state.major,
+            num_hacks: this.state.num_hacks,
+            github: this.state.github,
+            linkedin: this.state.linkedin,
+            dietary_rest: this.state.dietary_rest,
+            workshop_ideas: this.state.workshop_ideas
+          }
+        }).then((response) => {
+          this.setState({status: 2})
+        }).catch((error) => {
+          this.setState({status: 3})
+        });
         this.setState({status: 3})
       })
     } else {
