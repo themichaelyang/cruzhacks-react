@@ -1,6 +1,8 @@
 import React, {Component} from 'react';
 import Question from './Question';
 
+import {NavLink} from 'react-router-dom';
+
 class FAQ extends Component {
   render() {
     const linkStyles = {
@@ -8,7 +10,7 @@ class FAQ extends Component {
     }
     const MLHquestion = (
       <span>
-        As a Major League Hacking member event, we follow 
+        As a Major League Hacking member event, we follow
         <a className="question__link" style={linkStyles} href="https://mlh.io/code-of-conduct" target="_blank" rel="noopener noreferrer">Major League Hacking’s Code of Conduct</a>
         which ensures all attendees to CruzHacks are respectful regardless of who you are and where you come from. Additionally, to be considered for an award, you must only submit a project that your team wrote and worked on during the hackathon & agree to our 2018 Participation Agreement
       </span>
@@ -32,17 +34,17 @@ class FAQ extends Component {
 
     const applyMentorsJudges = (
       <span>
-        We would love to have you as a mentor or judge. 
-        <a className="question__link" style={linkStyles} href="https://www.cruzhacks.com/applications" rel="noopener noreferrer">Mentor and Judge applications can be found here!</a>
+        We would love to have you as a mentor or judge.
+        <NavLink className="question__link" style={linkStyles} to="/applications">Mentor and Judge applications can be found here!</NavLink>
       </span>
     )
     const applyVolunteers = (
       <span>
         If you're interested in helping out this year's hackathon,
-        <a className="question__link" style={linkStyles} href="https://www.cruzhacks.com/applications" rel="noopener noreferrer">volunteer applications can be found here!</a>
+        <NavLink className="question__link" style={linkStyles} to="/applications">volunteer applications can be found here!</NavLink>
       </span>
     )
-    
+
     return (
       <div className="faq-container">
         <h2 className="faq-container__title">Frequently Asked Questions</h2>
