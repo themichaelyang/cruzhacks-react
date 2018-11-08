@@ -82,7 +82,7 @@ class HackerForm extends Component {
                 linkedin: this.state.linkedin,
                 dietary_rest: this.state.dietary_rest,
                 workshop_ideas: this.state.workshop_ideas,
-                resume_uri: this.state.resume
+                resume_uri: this.state.resume_uri
               }
             }).then((response) => {
               this.setState({status: 2})
