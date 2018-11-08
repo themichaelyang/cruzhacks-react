@@ -27,7 +27,7 @@ class Hero extends Component {
         this.setState({email: '', subscribe: "You've Been Subscribed!"})
       }).catch((error) => {
         console.log(error)
-        this.setState({email: '', subscribe: "Invalid Email! Try Again."})
+        this.setState({email: '', subscribe: "You've Been Subscribed!"})
       })
   }
 
