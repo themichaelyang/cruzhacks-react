@@ -7,9 +7,12 @@ import EthnicitySelect from './EthnicitySelect';
 import GraduationSelect from './GraduationSelect';
 import HackathonSelect from './HackathonSelect';
 import TShirtSelect from '../TShirtSelect';
-import Loader from 'components/Loader';
 
-class HackerForm extends Component { 
+import Loader from 'components/Loader';
+import Success from 'components/Success';
+import Error from 'components/Error';
+
+class HackerForm extends Component {
   initialState = {
     status: 0,
     email: '',
@@ -19,16 +22,16 @@ class HackerForm extends Component {
     university: '',
     grad_year: '',
     shirt_size: '',
-    short_answer1: '', 
-    short_answer2: '', 
+    short_answer1: '',
+    short_answer2: '',
     phone_number: '',
     gender: '',
     ethnicity: '',
-    major: '',    
+    major: '',
     num_hacks: '',
-    github: '',     
-    linkedin: '',   
-    dietary_rest: '',    
+    github: '',
+    linkedin: '',
+    dietary_rest: '',
     workshop_ideas: '',
     resume: '',
     resumeName: ''
@@ -37,7 +40,7 @@ class HackerForm extends Component {
   resumeObj = {}
 
   constructor(props) {
-    super(props)    
+    super(props)
     this.state = this.initialState
   }
 
@@ -85,8 +88,8 @@ class HackerForm extends Component {
               this.setState({status: 2})
             }).catch((error) => {
               this.setState({status: 3})
-            });  
-          }) 
+            });
+          })
         })
       })
       .catch((error) => {
@@ -97,7 +100,7 @@ class HackerForm extends Component {
       this.setState({status: 1}, () => {
         axios({
           method: 'post',
-          url: 'https://cruzhacks2019-registration-stg.herokuapp.com/register/attendee',
+          url: process.env.REACT_APP_REGISTRATION_ENDPOINT.concat('/attendee'),
           data: {
             email: this.state.email,
             first_name: this.state.first_name,
@@ -122,12 +125,12 @@ class HackerForm extends Component {
           this.setState({status: 2})
         }).catch((error) => {
           this.setState({status: 3})
-        });  
-      }) 
-    }       
+        });
+      })
+    }
   }
 
-  handleOnChange = (event) => {    
+  handleOnChange = (event) => {
     let newState = {}
     const name = event.target.name
     newState[name] = name === 'age' ? parseInt(event.target.value, 10) : event.target.value
@@ -148,12 +151,12 @@ class HackerForm extends Component {
   render() {
     switch (this.state.status) {
       case 1: return <Loader />
-      case 2: return <span className="status-success">Thanks for applying! We've received your application and will get back to you as soon as we can.</span>
-      case 3: return <span className="status-error">Oops! There was an error submitting your application. Please try again and make sure you use a unique email!</span>
+      case 2: return <Success text="Thanks for applying! We've received your application and will get back to you as soon as we can."/>
+      case 3: return <Error text="Oops! There was an error submitting your application. If you think this was a mistake please get in touch with us at contact@cruzhacks.com!"/>
       default: {
         return (
           <div className="form-container">
-            <h2 className="form-container__title">Hacker Application</h2>                   
+            <h2 className="form-container__title">Hacker Application</h2>
             <p className="form-container__text">
               <span>Add a paragraph before the application to note our policy with picking applications, a.k.a. please take the application seriously as we have limited space in our venue. We are picking participants to ensure diversity between skill level, year, representation, etc.</span>
               <span>Sorry Greg too tired to write this rn can sum1 else do it thanks</span>
@@ -210,12 +213,12 @@ class HackerForm extends Component {
               <div className="form__group">
                 <textarea rows="4" cols="50" maxLength="500" className="form__group__textarea" id="short_answer1" name="short_answer1" onChange={this.handleOnChange} value={this.state.short_answer1} required/>
                 <label className={this.state.short_answer1 ? "form__group__label" : "inactive form__group__label"} htmlFor="short_answer1">Why do you want to attend CruzHacks 2019?* (max 500 chars)</label>
-                <span className="form__group__charcount">Character count: {this.state.short_answer1.length}</span>            
+                <span className="form__group__charcount">Character count: {this.state.short_answer1.length}</span>
               </div>
               <div className="form__group">
                 <textarea rows="4" cols="50" maxLength="500" className="form__group__textarea" id="short_answer2" name="short_answer2" onChange={this.handleOnChange} value={this.state.short_answer2} required/>
                 <label className={this.state.short_answer2 ? "form__group__label" : "inactive form__group__label"} htmlFor="short_answer2">What's something you've created that you're proud of?* (max 500 chars) </label>
-                <span className="form__group__charcount">Character count: {this.state.short_answer2.length}</span>    
+                <span className="form__group__charcount">Character count: {this.state.short_answer2.length}</span>
               </div>
               <GenderSelect handler={this.grabState}/>
               <EthnicitySelect handler={this.grabState}/>
@@ -223,9 +226,9 @@ class HackerForm extends Component {
               <HackathonSelect handler={this.grabState}/>
               <TShirtSelect handler={this.grabState}/>
               <p className="form__text">
-                By submitting this application I affirm that I have read and agree to the <a href="https://static.mlh.io/docs/mlh-code-of-conduct.pdf" target="_blank" rel="noopener noreferrer">MLH code of conduct</a> and I authorize CruzHacks to share my application information for event administration, ranking, MLH administration, pre and post-event informational emails and occasional messages about hackathons in-line with the MLH Privacy Policy. I further agree to the terms of both the MLH Contest Terms and Conditions and the MLH Privacy policy. 
+                By submitting this application I affirm that I have read and agree to the <a href="https://static.mlh.io/docs/mlh-code-of-conduct.pdf" target="_blank" rel="noopener noreferrer">MLH code of conduct</a> and I authorize CruzHacks to share my application information for event administration, ranking, MLH administration, pre and post-event informational emails and occasional messages about hackathons in-line with the MLH Privacy Policy. I further agree to the terms of both the MLH Contest Terms and Conditions and the MLH Privacy policy.
               </p>
-              <input className="form__submit" type="submit" value="Submit Application"/>          
+              <input className="form__submit" type="submit" value="Submit Application"/>
             </form>
           </div>
         )

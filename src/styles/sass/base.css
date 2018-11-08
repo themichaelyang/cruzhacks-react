@@ -41,15 +41,24 @@ body, html {
 .text-center {
   text-align: center !important; }
 
-.status-success, .status-error {
-  font-size: 4rem;
-  color: #DFF2BF;
-  max-width: 960px;
-  display: block;
-  margin: auto; }
+.success, .error {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  min-height: 75vh; }
+  .success__text, .error__text {
+    color: white;
+    font-size: 5rem;
+    max-width: 960px; }
+  .success__img, .error__img {
+    margin: 5rem auto;
+    height: 35rem; }
 
-.status-error {
-  color: #FFBABA; }
+.error__text {
+  color: #EF5C65; }
+
+.error__img {
+  height: 35rem; }
 
 .loader {
   width: 250px;
@@ -120,7 +129,7 @@ body, html {
         grid-template-columns: 1fr; } }
   .hero__button {
     text-decoration: none;
-    font-size: 2rem;
+    font-size: 2.75rem;
     font-weight: 600;
     padding: 1.5rem 3.3rem;
     background-color: #292b3f;
@@ -137,9 +146,10 @@ body, html {
     width: 100%;
     position: absolute;
     top: 51%;
-    left: 55%;
+    left: 50%;
     transform: translate(-50%, -50%);
-    height: 1100px;
+    min-height: 110vh;
+    max-height: 120vh;
     z-index: -1; }
     @media (max-width: 56.25em) {
       .hero__bg {
@@ -176,7 +186,6 @@ body, html {
 
 .hero__button, .hero__button-small {
   text-decoration: none;
-  font-size: 2rem;
   font-weight: 600;
   padding: 1.5rem 3.3rem;
   background-color: #292b3f;
@@ -256,12 +265,51 @@ body, html {
           left: 0; }
 
 .hero__updates {
-  margin: 2rem;
-  display: grid; }
-
-@media (max-width: 56.25em) {
-  .hero__updates {
-    grid-template-columns: 1fr; } }
+  display: flex;
+  flex-direction: column;
+  color: rgba(252, 249, 255, 0.7);
+  position: relative; }
+  .hero__updates__title {
+    font-size: 4rem;
+    margin: 1.5rem auto; }
+  .hero__updates__label {
+    font-size: 2.5rem;
+    position: absolute;
+    bottom: 85px;
+    align-self: center;
+    transition: all .2s; }
+    .hero__updates__label.active {
+      transform: translateY(-25px); }
+  .hero__updates__input {
+    width: 30rem;
+    margin: auto;
+    padding: 2.5rem 0 .5rem 0;
+    font-size: 2.5rem;
+    border: none;
+    outline: none;
+    color: white;
+    border-bottom: 2px solid rgba(252, 249, 255, 0.7);
+    background-color: transparent; }
+    .hero__updates__input:focus {
+      border-bottom: 2px solid #EBA471; }
+      .hero__updates__input:focus + .hero__updates__label {
+        transform: translateY(-25px); }
+  .hero__updates__submit {
+    font-size: 2rem;
+    font-weight: 600;
+    border: none;
+    align-self: center;
+    padding: 1.5rem 3.3rem;
+    background-color: #292b3f;
+    border-radius: 5rem;
+    margin: 1.75rem 2rem;
+    transition: all .2s;
+    text-transform: uppercase;
+    color: white;
+    outline: none;
+    cursor: pointer; }
+    .hero__updates__submit:hover {
+      background-color: #282430; }
 
 .mission {
   padding: 16rem 32rem 3rem;

@@ -1,49 +1,34 @@
 import React, {Component} from 'react';
 import { NavLink } from 'react-router-dom';
+import axios from 'axios';
+
 import logo from 'assets/logo.svg';
 import hero from 'assets/hero.svg';
-import axios from 'axios';
-import Recaptcha from 'react-google-invisible-recaptcha';
 
 class Hero extends Component {
-  constructor (props) {
-    super(props);
+  constructor(props) {
+    super(props)
     this.state = {
-        email: '',
-        submit: 'Submit'
+      email: '',
+      subscribe: 'Subscribe'
     }
-    this.recapatchaValid = this.recapatchaValid.bind(this);
-    this.handleChange = this.handleChange.bind(this);
-    this.handleSubmit = this.handleSubmit.bind(this);
-    this.setState = this.setState.bind(this);
-}
-  /**
-   * Email input state updater
-   */
-  handleChange(event) {
-    const value = event.target.value;
-    const name = event.target.name;
-    this.setState({
-      [name]: value
-    });
   }
-  
-  /**
-   * AJAX function to Google Sheets
-   */
-  handleSubmit (event) {
-    this.recaptcha.reset()
-    axios.get('https://script.google.com/macros/s/AKfycbwK0fis0dLzeu0Yf3A27oKrxvAC_ZUafgPHiaWqM-Dgmdk-g20/exec', {
-      params: {
-        email: this.state.email,
-      }
-    })
-    .then(() => {
-      this.setState({submit: 'Submitted!', email: ''})
-    })
-    .catch(function (error) {
-      alert(error);
-    });
+
+  getEmail = (event) => {
+    this.setState({email: event.target.value})
+  }
+
+  subscribeEmail = (event) => {
+    if (!this.state.email) return
+    axios.post(process.env.REACT_APP_SUBSCRIBE_ENDPOINT, {
+        email: this.state.email
+      })
+      .then((response) => {
+        this.setState({email: '', subscribe: "You've Been Subscribed!"})
+      }).catch((error) => {
+        console.log(error)
+        this.setState({email: '', subscribe: "Invalid Email! Try Again."})
+      })
   }
 
   render() {
@@ -54,38 +39,19 @@ class Hero extends Component {
         <span className="hero__text">Create something that makes a difference.</span>
         <span className="hero__text__alt">Jan 18-20, 2019 @ Stevenson Event Center</span>
         <div className="hero__button-container">
-          <NavLink to="/application" className="hero__button">Apps open in Nov</NavLink>
-          <a href="mailto:amit@cruzhacks.com" className="hero__button" target="_blank" rel="noopener noreferrer">Sponsoring?</a>
+          <NavLink to="/dmk0s" className="hero__button not-allowed">Apps opening soon</NavLink>
+          <a href="/Sponsorship_Packet_E.pdf" className="hero__button" target="_blank" rel="noopener noreferrer">Sponsoring?</a>
         </div>
-        <span className="hero__text">Subscribe to updates:</span>
         <div className="hero__updates">
-        <form onSubmit={this.recapatchaValid} id="emailForm">
-          <div className="hero__form-group">
-            <input type="email" className="form-control" name="email" id="email" value={this.state.email} onChange={this.handleChange} required/>
-            <label htmlFor="email" className={this.state.email ? "label-hidden" : "animated-label"}>Email</label>
-          </div>
-          <button type={"submit"} className={"hero__button-small"}>
-              {this.state.submit}
-            </button>
-            <div className="hidden">
-              <Recaptcha              
-                ref={ ref => this.recaptcha = ref }
-                sitekey={process.env.REACT_APP_RECAPTCHA_SITE_KEY}
-                onResolved={  this.handleSubmit } 
-              />
-            </div>
-          </form>
+          <span className="hero__updates__title">Subscribe for email updates:</span>
+          <input className="hero__updates__input" value={this.state.email} type="email" name="email" id="email" onChange={this.getEmail}/>
+          <label htmlFor="email" className={this.state.email ? "active hero__updates__label" : "hero__updates__label"}>Email</label>
+          <input type="submit" className="hero__updates__submit" value={this.state.subscribe} onClick={this.subscribeEmail}/>
         </div>
         <img src={hero} alt="" className="hero__bg"/>
       </div>
     );
   }
-  recapatchaValid = (event) => {
-    event.preventDefault();
-    this.setState({submit: "Submitting..."}, function() {
-      this.recaptcha.execute()
-    })
-  }  
 }
 
 export default Hero;
