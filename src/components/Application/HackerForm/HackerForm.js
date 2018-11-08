@@ -152,7 +152,7 @@ class HackerForm extends Component {
     switch (this.state.status) {
       case 1: return <Loader />
       case 2: return <Success text="Thanks for applying! We've received your application and will get back to you as soon as we can."/>
-      case 3: return <Error text="Oops! There was an error submitting your application. If you think this was a mistake please get in touch with us at contact@cruzhacks.com!"/>
+      case 3: return <Error text="Oops! There was an error submitting your application. If you think this was a mistake or this repeatedly happens, please get in touch with us at contact@cruzhacks.com!"/>
       default: {
         return (
           <div className="form-container">
