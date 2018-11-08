@@ -55,7 +55,7 @@ class HackerForm extends Component {
         dirName: 'resumes/'.concat(this.state.email),
         accessKeyId: process.env.REACT_APP_AWS_ACCESS_KEY,
         secretAccessKey: process.env.REACT_APP_AWS_SECRET_KEY
-      }
+      }      
       S3FileUpload.uploadFile(this.resumeObj, config)
       .then((response) => {
         this.setState({resume_uri: response.location}, function() {
