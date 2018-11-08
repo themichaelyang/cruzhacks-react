@@ -224,7 +224,7 @@ class HackerForm extends Component {
               <GraduationSelect handler={this.grabState}/>
               <HackathonSelect handler={this.grabState}/>
               <TShirtSelect handler={this.grabState}/>
-              <div style={{'textAlign': 'left', 'margin-top': '2rem'}}>
+              <div style={{'textAlign': 'left', 'marginTop': '2rem'}}>
                 <input type="checkbox" id="conduct" required/>
                 <label className="form__checkbox" htmlFor="conduct">I have read and agree to the <a style={{'color': '#EBA471'}} href="https://static.mlh.io/docs/mlh-code-of-conduct.pdf" target="_blank" rel="noopener noreferrer">MLH code of conduct</a></label>
               </div>
