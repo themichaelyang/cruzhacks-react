@@ -18,10 +18,19 @@
         padding: 5rem 1rem 3rem 1rem
 
 .form
+    &__checkbox
+      &.small
+        font-size: 2rem
+      font-size: 3rem
+      color: $color-text-alt
+      vertical-align: middle
+      padding-left: 1rem
+      a
+        color: inherit
     &__text
         color: $color-text-alt
         font-size: 2rem
-        margin: 1rem        
+        margin: 1rem
         text-align: justify
         cursor: default
         a
@@ -51,10 +60,10 @@
         padding-top: 3rem
         &__label
             position: absolute
-            top: 5px   
+            top: 5px
             left: 0
-            font-size: 2rem      
-            transition: all .15s   
+            font-size: 2rem
+            transition: all .15s
             &.inactive
                 transform: translateY(30px)
         &__input
@@ -67,6 +76,8 @@
             border-bottom: 1.5px solid $color-bg-alt
             @include respond(tab-port)
                 min-width: 30rem
+            @include respond(phone)
+                width: 85vw
             &:focus
                 border-bottom: 1.5px solid $color-text-orange
                 + .form__group__label
@@ -104,7 +115,7 @@
     margin: 10rem auto 4rem auto
     color: white
     @include respond(tab-port)
-        flex-direction: column            
+        flex-direction: column
     &__title
         font-size: 4rem
         font-weight: normal
@@ -130,7 +141,7 @@
             cursor: pointer
             transition: background-color .2s
             &:hover
-                background-color: lighten($color-bg-alt, 5%)              
+                background-color: lighten($color-bg-alt, 5%)
             &.active
                 background: white
                 color: $color-bg-alt
@@ -155,7 +166,7 @@
     .check
         position: absolute
         top: 50%
-        left: 50% 
+        left: 50%
         transform: translate(-50%, -50%)
         background-color: $color-text-orange
         height: 2rem
@@ -164,7 +175,7 @@
 
 .avail
     margin: 10rem auto 4rem auto
-    color: white        
+    color: white
     &__title
         font-size: 4rem
         font-weight: normal
@@ -193,7 +204,10 @@
             cursor: pointer
             transition: background-color .2s
             &:hover
-                background-color: lighten($color-bg-alt, 5%)              
+                background-color: lighten($color-bg-alt, 5%)
             &.active
                 background: white
                 color: $color-bg-alt
+
+#conduct, #MLH
+  transform: scale(1.5)
