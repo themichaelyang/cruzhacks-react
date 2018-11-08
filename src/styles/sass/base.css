@@ -699,6 +699,16 @@ body, html {
     font-weight: normal;
     padding: 5rem 1rem 3rem 1rem; }
 
+.form__checkbox {
+  font-size: 3rem;
+  color: rgba(252, 249, 255, 0.7);
+  vertical-align: middle;
+  padding-left: 1rem; }
+  .form__checkbox.small {
+    font-size: 2rem; }
+  .form__checkbox a {
+    color: inherit; }
+
 .form__text {
   color: rgba(252, 249, 255, 0.7);
   font-size: 2rem;
@@ -751,6 +761,9 @@ body, html {
     @media (max-width: 56.25em) {
       .form__group__input {
         min-width: 30rem; } }
+    @media (max-width: 37.5em) {
+      .form__group__input {
+        width: 85vw; } }
     .form__group__input:focus {
       border-bottom: 1.5px solid #EBA471; }
       .form__group__input:focus + .form__group__label {
@@ -884,3 +897,6 @@ body, html {
       .avail__col__option.active {
         background: white;
         color: #312D38; }
+
+#conduct, #MLH {
+  transform: scale(1.5); }

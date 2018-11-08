@@ -158,8 +158,7 @@ class HackerForm extends Component {
           <div className="form-container">
             <h2 className="form-container__title">Hacker Application</h2>
             <p className="form-container__text">
-              <span>Add a paragraph before the application to note our policy with picking applications, a.k.a. please take the application seriously as we have limited space in our venue. We are picking participants to ensure diversity between skill level, year, representation, etc.</span>
-              <span>Sorry Greg too tired to write this rn can sum1 else do it thanks</span>
+              <span>We ask that all hackers take the application process seriously as we have limited space in our venue. The selection process is in place to ensure diversity between skill level, year, representation, etc.</span>
             </p>
             <form className="form" onSubmit={this.handleSubmit}>
               <div className="form__group">
@@ -207,7 +206,7 @@ class HackerForm extends Component {
                 <label className={this.state.workshop_ideas ? "form__group__label" : "inactive form__group__label"} htmlFor="workshop_ideas">Are there any specific workshops you'd like to see?</label>
               </div>
               <div className="form__group">
-                <label className="form__group__file" htmlFor="resume">{this.state.resumeName ? this.state.resumeName : "Upload your resume as (Firstname_Lastname.pdf)"}</label>
+                <label className="form__group__file" htmlFor="resume">{this.state.resumeName ? this.state.resumeName : "Upload your resume"}</label>
                 <input className="form__group__input" style={{visibility: 'hidden', position: 'absolute'}} id="resume" name="resume" type="file" onChange={this.handleFileUpload} maxLength="250"/>
               </div>
               <div className="form__group">
@@ -225,9 +224,14 @@ class HackerForm extends Component {
               <GraduationSelect handler={this.grabState}/>
               <HackathonSelect handler={this.grabState}/>
               <TShirtSelect handler={this.grabState}/>
-              <p className="form__text">
-                By submitting this application I affirm that I have read and agree to the <a href="https://static.mlh.io/docs/mlh-code-of-conduct.pdf" target="_blank" rel="noopener noreferrer">MLH code of conduct</a> and I authorize CruzHacks to share my application information for event administration, ranking, MLH administration, pre and post-event informational emails and occasional messages about hackathons in-line with the MLH Privacy Policy. I further agree to the terms of both the MLH Contest Terms and Conditions and the MLH Privacy policy.
-              </p>
+              <div style={{'text-align': 'left', 'margin-top': '2rem'}}>
+                <input type="checkbox" id="conduct" required/>
+                <label className="form__checkbox" htmlFor="conduct">I have read and agree to the <a style={{'color': '#EBA471'}} href="https://static.mlh.io/docs/mlh-code-of-conduct.pdf" target="_blank" rel="noopener noreferrer">MLH code of conduct</a></label>
+              </div>
+              <div style={{'text-align': 'left', 'margin': '2rem 0'}}>
+                <input type="checkbox" id="MLH" required/>
+                <label className="form__checkbox" htmlFor="MLH">I authorize you to share my application/registration information for event administration, ranking, MLH administration, pre- and post-event informational e-mails, and occasional messages about hackathons in-line with the MLH Privacy Policy. I further I agree to the terms of both the MLH Contest Terms and Conditions and the MLH Privacy Policy.</label>
+              </div>
               <input className="form__submit" type="submit" value="Submit Application"/>
             </form>
           </div>
