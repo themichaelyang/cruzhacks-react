@@ -224,11 +224,11 @@ class HackerForm extends Component {
               <GraduationSelect handler={this.grabState}/>
               <HackathonSelect handler={this.grabState}/>
               <TShirtSelect handler={this.grabState}/>
-              <div style={{'text-align': 'left', 'margin-top': '2rem'}}>
+              <div style={{'textAlign': 'left', 'margin-top': '2rem'}}>
                 <input type="checkbox" id="conduct" required/>
                 <label className="form__checkbox" htmlFor="conduct">I have read and agree to the <a style={{'color': '#EBA471'}} href="https://static.mlh.io/docs/mlh-code-of-conduct.pdf" target="_blank" rel="noopener noreferrer">MLH code of conduct</a></label>
               </div>
-              <div style={{'text-align': 'left', 'margin': '2rem 0'}}>
+              <div style={{'textAlign': 'left', 'margin': '2rem 0'}}>
                 <input type="checkbox" id="MLH" required/>
                 <label className="form__checkbox" htmlFor="MLH">I authorize you to share my application/registration information for event administration, ranking, MLH administration, pre- and post-event informational e-mails, and occasional messages about hackathons in-line with the MLH Privacy Policy. I further I agree to the terms of both the MLH Contest Terms and Conditions and the MLH Privacy Policy.</label>
               </div>
