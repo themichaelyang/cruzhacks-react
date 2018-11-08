@@ -21,7 +21,7 @@ class HackerForm extends Component {
     age: null,
     university: '',
     grad_year: 0,
-    shirt_size: 'M',
+    shirt_size: '',
     short_answer1: '',
     short_answer2: '',
     phone_number: '',
