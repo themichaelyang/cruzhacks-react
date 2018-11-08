@@ -39,7 +39,7 @@ class Hero extends Component {
         <span className="hero__text">Create something that makes a difference.</span>
         <span className="hero__text__alt">Jan 18-20, 2019 @ Stevenson Event Center</span>
         <div className="hero__button-container">
-          <NavLink to="/dmk0s" className="hero__button not-allowed">Apps opening soon</NavLink>
+          <NavLink to="/applications" className="hero__button not-allowed">Apps opening soon</NavLink>
           <a href="/Sponsorship_Packet_E.pdf" className="hero__button" target="_blank" rel="noopener noreferrer">Sponsoring?</a>
         </div>
         <div className="hero__updates">
