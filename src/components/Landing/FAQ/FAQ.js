@@ -29,6 +29,20 @@ class FAQ extends Component {
         and we can discuss the best way for your organization to get involved!
       </span>
     )
+
+    const applyMentorsJudges = (
+      <span>
+        We would love to have you as a mentor or judge. 
+        <a className="question__link" style={linkStyles} href="https://www.cruzhacks.com/applications" rel="noopener noreferrer">Mentor and Judge applications can be found here!</a>
+      </span>
+    )
+    const applyVolunteers = (
+      <span>
+        If you're interested in helping out this year's hackathon,
+        <a className="question__link" style={linkStyles} href="https://www.cruzhacks.com/applications" rel="noopener noreferrer">volunteer applications can be found here!</a>
+      </span>
+    )
+    
     return (
       <div className="faq-container">
         <h2 className="faq-container__title">Frequently Asked Questions</h2>
@@ -52,7 +66,7 @@ class FAQ extends Component {
             />
             <Question
               title="How can I become a mentor or judge?"
-              answer="We would love to have you as a mentor or judge. Mentor and Judge applications will be open soon!"
+              answer={applyMentorsJudges}
             />
           </div>
           <div className="faq-container__column">
@@ -74,7 +88,7 @@ class FAQ extends Component {
             />
             <Question
               title="I'd like to help out!"
-              answer="If you're interested in volunteering for this year's hackathon, we'll post the sign up link here when applications open!"
+              answer={applyVolunteers}
             />
           </div>
         </div>
