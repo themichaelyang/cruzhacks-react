@@ -45,6 +45,9 @@ class HackerForm extends Component {
   }
 
   handleSubmit = (event) => {
+    if (this.state.status == 1) {
+      return;
+    }
     event.preventDefault()
     if (this.state.shirt_size === '') {
       window.alert("Please select a shirt size!")
@@ -122,7 +125,6 @@ class HackerForm extends Component {
         }).catch((error) => {
           this.setState({status: 3})
         });
-        this.setState({status: 3})
       })
     } else {
       this.setState({status: 1}, () => {
