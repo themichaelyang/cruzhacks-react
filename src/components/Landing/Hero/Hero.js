@@ -31,6 +31,13 @@ class Hero extends Component {
       })
   }
 
+  scrollToContent = () => {
+    window.scrollTo({
+      top: document.querySelector('.mission').offsetTop,
+      behavior: 'smooth'
+    })
+  }
+
   render() {
     return (
       <div className="hero">
@@ -48,6 +55,7 @@ class Hero extends Component {
           <label htmlFor="email" className={this.state.email ? "active hero__updates__label" : "hero__updates__label"}>Email</label>
           <input type="submit" className="hero__updates__submit" value={this.state.subscribe} onClick={this.subscribeEmail}/>
         </div> */}
+        <span className="hero__tiny" onClick={this.scrollToContent}>Learn More!</span>
         <img src={hero} alt="" className="hero__bg"/>
       </div>
     );
