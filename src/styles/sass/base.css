@@ -1,3 +1,4 @@
+@charset "UTF-8";
 *,
 *::after,
 *::before {
@@ -130,7 +131,7 @@ body, html {
   .hero__button {
     text-decoration: none;
     font-size: 2.75rem;
-    font-weight: 600;
+    font-weight: 400;
     padding: 1.5rem 3.3rem;
     background-color: #292b3f;
     border-radius: 5rem;
@@ -142,6 +143,26 @@ body, html {
       background-color: #282430; }
     .hero__button.not-allowed {
       cursor: not-allowed; }
+    .hero__button__cta {
+      background-color: #8568eb !important;
+      font-weight: 600; }
+  .hero__tiny {
+    font-weight: 500;
+    font-size: 2.5em;
+    text-transform: uppercase;
+    color: #aca5b5;
+    position: absolute;
+    top: calc(100vh - 60px);
+    margin: 0 auto;
+    cursor: pointer;
+    width: 175px;
+    height: 55px; }
+    .hero__tiny:after {
+      content: "↓";
+      position: absolute;
+      right: 82px;
+      top: 26px;
+      animation: moving .5s ease alternate infinite; }
   .hero__bg {
     width: 100%;
     position: absolute;
@@ -154,6 +175,8 @@ body, html {
     @media (max-width: 56.25em) {
       .hero__bg {
         filter: blur(3px);
+        transform: rotate(90deg) translate(-38px, -388px) scale(1.6);
+        transform-origin: top;
         width: 110%;
         top: 51%;
         left: 46%; } }
@@ -251,6 +274,12 @@ body, html {
     cursor: pointer; }
     .hero__updates__submit:hover {
       background-color: #282430; }
+
+@keyframes moving {
+  from {
+    transform: translateY(0); }
+  to {
+    transform: translateY(3px); } }
 
 .mission {
   padding: 16rem 32rem 3rem;
@@ -630,20 +659,20 @@ body, html {
     position: absolute;
     cursor: pointer;
     top: 30px;
-    left: 30px; }
+    left: calc(50% - 59px); }
     @media (max-width: 75em) {
       .application__logo {
-        top: 20px;
-        left: 20px;
+        top: 25px;
         height: 10rem; } }
   .application__title {
     font-size: 9.5rem;
-    margin-top: 7rem;
+    margin-top: 18rem;
     color: white;
     cursor: default; }
     @media (max-width: 75em) {
       .application__title {
-        margin-top: 12rem; } }
+        margin-top: 15rem;
+        font-size: 7.5rem; } }
   .application__select {
     text-align: center;
     position: relative;
@@ -658,13 +687,13 @@ body, html {
       margin: 2rem; }
 
 .appselect {
-  height: 6rem;
-  width: 25rem;
+  height: 5rem;
+  width: 18rem;
   margin: 1rem;
   background-color: #312D38;
   border-radius: 2rem;
   display: inline-flex;
-  padding: 2rem 4rem;
+  padding: 2rem 3.4rem;
   align-items: center;
   justify-content: center;
   cursor: pointer;
@@ -681,8 +710,16 @@ body, html {
     color: white; }
 
 .form-container {
-  max-width: 960px;
-  margin: auto; }
+  max-width: 815px;
+  background: #1e1c23;
+  border: 4px solid #f7a167;
+  margin: 0 auto;
+  border-radius: 2rem;
+  padding: 20px 60px; }
+  @media (max-width: 75em) {
+    .form-container {
+      border: none;
+      padding: 20px; } }
   .form-container__text {
     font-size: 3rem;
     color: rgba(252, 249, 255, 0.7);
@@ -695,17 +732,18 @@ body, html {
     color: #EBA471;
     font-size: 5rem;
     text-transform: uppercase;
-    letter-spacing: 3px;
-    font-weight: normal;
+    letter-spacing: 1px;
+    font-weight: bold;
     padding: 5rem 1rem 3rem 1rem; }
 
 .form__checkbox {
-  font-size: 3rem;
-  color: rgba(252, 249, 255, 0.7);
-  vertical-align: middle;
-  padding-left: 1rem; }
+  color: white; }
   .form__checkbox.small {
-    font-size: 2rem; }
+    font-size: 2rem;
+    font-size: 3rem;
+    color: rgba(252, 249, 255, 0.7);
+    vertical-align: middle;
+    padding-left: 1rem; }
   .form__checkbox a {
     color: inherit; }
 
@@ -726,13 +764,14 @@ body, html {
   font-size: 3rem;
   color: white;
   border-radius: 3rem;
-  margin: 1rem auto 10rem auto;
+  margin: 1rem auto 4rem auto;
   cursor: pointer;
   transition: all .2s; }
   .form__submit:hover {
     font-size: 3.5rem; }
 
 .form__group {
+  display: grid;
   position: relative;
   width: max-content;
   margin: 1rem auto;
@@ -742,6 +781,9 @@ body, html {
   padding-top: 3rem; }
   .form__group:not(:first-child) {
     margin-top: 5rem; }
+  @media (max-width: 75em) {
+    .form__group {
+      width: initial; } }
   .form__group__label {
     position: absolute;
     top: 5px;
@@ -897,6 +939,3 @@ body, html {
       .avail__col__option.active {
         background: white;
         color: #312D38; }
-
-#conduct, #MLH {
-  transform: scale(1.5); }

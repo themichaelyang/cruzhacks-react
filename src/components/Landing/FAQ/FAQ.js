@@ -1,6 +1,8 @@
 import React, {Component} from 'react';
 import Question from './Question';
 
+import {NavLink} from 'react-router-dom';
+
 class FAQ extends Component {
   render() {
     const linkStyles = {
@@ -8,7 +10,7 @@ class FAQ extends Component {
     }
     const MLHquestion = (
       <span>
-        As a Major League Hacking member event, we follow 
+        As a Major League Hacking member event, we follow
         <a className="question__link" style={linkStyles} href="https://mlh.io/code-of-conduct" target="_blank" rel="noopener noreferrer">Major League Hacking’s Code of Conduct</a>
         which ensures all attendees to CruzHacks are respectful regardless of who you are and where you come from. Additionally, to be considered for an award, you must only submit a project that your team wrote and worked on during the hackathon & agree to our 2018 Participation Agreement
       </span>
@@ -29,6 +31,20 @@ class FAQ extends Component {
         and we can discuss the best way for your organization to get involved!
       </span>
     )
+
+    const applyMentorsJudges = (
+      <span>
+        We would love to have you as a mentor or judge.
+        <NavLink className="question__link" style={linkStyles} to="/apply">Mentor and Judge applications can be found here!</NavLink>
+      </span>
+    )
+    const applyVolunteers = (
+      <span>
+        If you're interested in helping out this year's hackathon,
+        <NavLink className="question__link" style={linkStyles} to="/apply">volunteer applications can be found here!</NavLink>
+      </span>
+    )
+
     return (
       <div className="faq-container">
         <h2 className="faq-container__title">Frequently Asked Questions</h2>
@@ -52,7 +68,7 @@ class FAQ extends Component {
             />
             <Question
               title="How can I become a mentor or judge?"
-              answer="We would love to have you as a mentor or judge. Mentor and Judge applications will be open soon!"
+              answer={applyMentorsJudges}
             />
           </div>
           <div className="faq-container__column">
@@ -74,7 +90,7 @@ class FAQ extends Component {
             />
             <Question
               title="I'd like to help out!"
-              answer="If you're interested in volunteering for this year's hackathon, we'll post the sign up link here when applications open!"
+              answer={applyVolunteers}
             />
           </div>
         </div>
