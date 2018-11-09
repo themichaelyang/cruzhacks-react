@@ -39,7 +39,7 @@
       grid-template-columns: 1fr
   &__button
     text-decoration: none
-    font-size: 2rem
+    font-size: 2.75rem
     font-weight: 600
     padding: 1.5rem 3.3rem
     background-color: rgb(41, 43, 63)
@@ -56,9 +56,10 @@
     width: 100%
     position: absolute
     top: 51%
-    left: 55%
+    left: 50%
     transform: translate(-50%, -50%)
-    height: 1100px
+    min-height: 110vh
+    max-height: 120vh
     z-index: -1
     @include respond(tab-port)
         filter: blur(3px)
@@ -91,10 +92,9 @@
     visibility: hidden
     background-color: white
     ransition: 0.2s ease all
-    
+
 .hero__button, .hero__button-small
   text-decoration: none
-  font-size: 2rem
   font-weight: 600
   padding: 1.5rem 3.3rem
   background-color: #292b3f
@@ -114,69 +114,49 @@
 
 .hero__button-small
   padding: 1rem, 3.1rem
-  
-.hero__form-group
-  position: relative
-  padding-top: 16px
-  margin-bottom: 16px
-  font-size: 14px
-  color: white
-  .animated-label
-    position: absolute
-    top: 20px
-    left: 0
-    bottom: 0
-    z-index: 2
-    width: 100%
-    font-weight: 300
-    opacity: 0.5
-    cursor: text
-    transition: 0.2s ease all
-    margin: 0
-    -webkit-user-select: none
-    -moz-user-select: none
-    user-select: none
-    &:after
-      content: ''
-      position: absolute
-      bottom: 0
-      left: 45%
-      height: 2px
-      width: 10px
-      visibility: hidden
-      background-color: white
-      transition: 0.2s ease all
-  &.not-empty .animated-label
-    top: 0
-    font-size: 12px
-  .form-control
-    position: relative
-    z-index: 1
-    border-radius: 0
-    border-width: 0 0 2px
-    border-bottom-color: #292b3f
-    height: auto
-    padding: 3px 0 5px
-    background: transparent
-    color: white
-    outline: none
-    &:focus
-      box-shadow: none
-      border-bottom-color: #292b3f
-      ~ .animated-label
-        top: 0
-        opacity: 1
-        color: white
-        font-size: 14px
-        &:after
-          visibility: visible
-          width: 100%
-          left: 0
 
 .hero__updates
-  margin: 2rem
-  display: grid
-
-@media (max-width: 56.25em)
-  .hero__updates
-    grid-template-columns: 1fr
+  display: flex
+  flex-direction: column
+  color: $color-text-alt
+  position: relative
+  &__title
+    font-size: 4rem
+    margin: 1.5rem auto
+  &__label
+    font-size: 2.5rem
+    position: absolute
+    bottom: 10rem
+    align-self: center
+    transition: all .2s
+  &__input
+    width: 30rem
+    margin: auto
+    margin-top: 1.25rem
+    padding: 2.5rem 0 .5rem 0
+    font-size: 2.5rem
+    border: none
+    outline: none
+    color: white
+    border-bottom: 2px solid $color-text-alt
+    background-color: transparent
+    &:focus
+      border-bottom: 2px solid $color-text-orange
+      + .hero__updates__label
+        transform: translateY(-25px)
+  &__submit
+    font-size: 2rem
+    font-weight: 600
+    border: none
+    align-self: center
+    padding: 1.5rem 3.3rem
+    background-color: #292b3f
+    border-radius: 5rem
+    margin: 1.75rem 2rem
+    transition: all .2s
+    text-transform: uppercase
+    color: white
+    outline: none
+    cursor: pointer
+    &:hover
+      background-color: #282430

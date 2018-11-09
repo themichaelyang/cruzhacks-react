@@ -2,6 +2,9 @@ import React, {Component} from 'react';
 import axios from 'axios';
 
 import Loader from 'components/Loader';
+import Success from 'components/Success';
+import Error from 'components/Error';
+
 import TShirtSelect from '../TShirtSelect';
 import Availability from './Availability';
 
@@ -19,7 +22,7 @@ class JudgeForm extends Component {
     available: '',
     dietary_rest: '',
   }
-  
+
   constructor(props) {
     super(props)
     this.state = this.initialState
@@ -61,20 +64,20 @@ class JudgeForm extends Component {
           this.setState({status: 2})
         }).catch((error) => {
           this.setState({status: 3})
-        });  
+        });
       })
-    }    
+    }
   }
 
   render() {
     switch (this.state.status) {
       case 1: return <Loader />
-      case 2: return <span className="status-success">Success! (Can someone come up with the text for this & Jennifer can ya make some SVG for this so it's more visual or give me an idea of what to make this thing look like it's like 5am and im exhausted and i have 0 creative sense right now and im hangry and i have to finish my cs homework Also can u pick send me the hex for success color and error colors)</span>
-      case 3: return <span className="status-error">Oops! There was an error submitting your application. You probably submitted an application with an email that has already been used. If that's not what happened and you see this I messed up the form data validation. Let me know immediately if that's the case</span>
+      case 2: return <Success text="Thanks for applying! We've received your application and will get back to you as soon as we can."/>
+      case 3: return <Error text="Oops! There was an error submitting your application. If you think this was a mistake please get in touch with us at contact@cruzhacks.com!"/>
       default: {
         return (
           <div className="form-container">
-            <h2 className="form-container__title">Judge Application</h2>        
+            <h2 className="form-container__title">Judge Application</h2>
             <p className="form-container__text">
               <span>Judges will arrive to the Stevenson Event Center at UCSC at 12 pm and be served lunch from a tasty location.  Then each judge will be assigned projects to evaluate from 1 pm - 2 pm, and then the final results will be announced in the closing ceremony from 2:30 - 4:00 pm. </span>
             </p>
@@ -102,7 +105,7 @@ class JudgeForm extends Component {
               <div className="form__group">
                 <textarea rows="5" cols="50" className="form__group__textarea" id="short_answer1" name="short_answer1" type="text" onChange={this.handleOnChange} value={this.state.short_answer1} required/>
                 <label className={this.state.short_answer1 ? "form__group__label" : "inactive form__group__label"} htmlFor="short_answer1">Why do you want to be a judge CruzHacks 2019? </label>
-                <span className="form__group__charcount">Character count: {this.state.short_answer1.length}</span>  
+                <span className="form__group__charcount">Character count: {this.state.short_answer1.length}</span>
               </div>
               <div className="form__group">
                 <input className="form__group__input" id="dietary_rest" name="dietary_rest" type="text" onChange={this.handleOnChange} value={this.state.dietary_rest} required/>

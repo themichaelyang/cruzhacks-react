@@ -1,6 +1,7 @@
 import React, { Component } from 'react';
 import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
 import { createGlobalStyle } from 'styled-components';
+import HttpsRedirect from 'react-https-redirect';
 
 import Landing from 'components/Landing';
 import Application from 'components/Application';
@@ -19,15 +20,17 @@ const GlobalStyle = createGlobalStyle`
 class Layout extends Component {
   render() {
     return (
-      <div className="layout">
+      <HttpsRedirect>
         <GlobalStyle />
-        <Router>
-          <Switch>
-            <Route path="/d7o59mpc" exact component={Application}/>
-            <Route path="/" component={Landing}/>
-          </Switch>
-        </Router>
-      </div>
+        <div className="layout">
+          <Router>
+            <Switch>
+              <Route path="/apply" exact component={Application}/>
+              <Route path="/" component={Landing}/>
+            </Switch>
+          </Router>
+        </div>
+      </HttpsRedirect>
     );
   }
 }

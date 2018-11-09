@@ -7,9 +7,12 @@ import EthnicitySelect from './EthnicitySelect';
 import GraduationSelect from './GraduationSelect';
 import HackathonSelect from './HackathonSelect';
 import TShirtSelect from '../TShirtSelect';
-import Loader from 'components/Loader';
 
-class HackerForm extends Component { 
+import Loader from 'components/Loader';
+import Success from 'components/Success';
+import Error from 'components/Error';
+
+class HackerForm extends Component {
   initialState = {
     status: 0,
     email: '',
@@ -17,31 +20,34 @@ class HackerForm extends Component {
     last_name: '',
     age: null,
     university: '',
-    grad_year: '',
+    grad_year: 0,
     shirt_size: '',
-    short_answer1: '', 
-    short_answer2: '', 
+    short_answer1: '',
+    short_answer2: '',
     phone_number: '',
-    gender: '',
-    ethnicity: '',
-    major: '',    
-    num_hacks: '',
-    github: '',     
-    linkedin: '',   
-    dietary_rest: '',    
+    gender: 'n/a',
+    ethnicity: 'n/a',
+    major: '',
+    num_hacks: '0',
+    github: '',
+    linkedin: '',
+    dietary_rest: '',
     workshop_ideas: '',
-    resume: '',
+    resume_uri: '',
     resumeName: ''
   }
 
   resumeObj = {}
 
   constructor(props) {
-    super(props)    
+    super(props)
     this.state = this.initialState
   }
 
   handleSubmit = (event) => {
+    if (this.state.status == 1) {
+      return;
+    }
     event.preventDefault()
     if (this.state.shirt_size === '') {
       window.alert("Please select a shirt size!")
@@ -55,7 +61,7 @@ class HackerForm extends Component {
       }
       S3FileUpload.uploadFile(this.resumeObj, config)
       .then((response) => {
-        this.setState({resume: response.location}, function() {
+        this.setState({resume_uri: response.location}, function() {
           this.setState({status: 1}, () => {
             axios({
               method: 'post',
@@ -79,25 +85,21 @@ class HackerForm extends Component {
                 linkedin: this.state.linkedin,
                 dietary_rest: this.state.dietary_rest,
                 workshop_ideas: this.state.workshop_ideas,
-                resume: this.state.resume
+                resume_uri: this.state.resume_uri
               }
             }).then((response) => {
               this.setState({status: 2})
             }).catch((error) => {
               this.setState({status: 3})
-            });  
-          }) 
+            });
+          })
         })
       })
       .catch((error) => {
         console.log(error)
-        this.setState({status: 3})
-      })
-    } else {
-      this.setState({status: 1}, () => {
         axios({
           method: 'post',
-          url: 'https://cruzhacks2019-registration-stg.herokuapp.com/register/attendee',
+          url: process.env.REACT_APP_REGISTRATION_ENDPOINT.concat('/attendee'),
           data: {
             email: this.state.email,
             first_name: this.state.first_name,
@@ -122,12 +124,43 @@ class HackerForm extends Component {
           this.setState({status: 2})
         }).catch((error) => {
           this.setState({status: 3})
-        });  
-      }) 
-    }       
+        });
+      })
+    } else {
+      this.setState({status: 1}, () => {
+        axios({
+          method: 'post',
+          url: process.env.REACT_APP_REGISTRATION_ENDPOINT.concat('/attendee'),
+          data: {
+            email: this.state.email,
+            first_name: this.state.first_name,
+            last_name: this.state.last_name,
+            age: this.state.age,
+            university: this.state.university,
+            grad_year: this.state.grad_year,
+            shirt_size: this.state.shirt_size,
+            short_answer1: this.state.short_answer1,
+            short_answer2: this.state.short_answer2,
+            phone_number: this.state.phone_number,
+            gender: this.state.gender,
+            ethnicity: this.state.ethnicity,
+            major: this.state.major,
+            num_hacks: this.state.num_hacks,
+            github: this.state.github,
+            linkedin: this.state.linkedin,
+            dietary_rest: this.state.dietary_rest,
+            workshop_ideas: this.state.workshop_ideas
+          }
+        }).then((response) => {
+          this.setState({status: 2})
+        }).catch((error) => {
+          this.setState({status: 3})
+        });
+      })
+    }
   }
 
-  handleOnChange = (event) => {    
+  handleOnChange = (event) => {
     let newState = {}
     const name = event.target.name
     newState[name] = name === 'age' ? parseInt(event.target.value, 10) : event.target.value
@@ -148,15 +181,14 @@ class HackerForm extends Component {
   render() {
     switch (this.state.status) {
       case 1: return <Loader />
-      case 2: return <span className="status-success">Thanks for applying! We've received your application and will get back to you as soon as we can.</span>
-      case 3: return <span className="status-error">Oops! There was an error submitting your application. Please try again and make sure you use a unique email!</span>
+      case 2: return <Success text="Thanks for applying! We've received your application and will get back to you as soon as we can."/>
+      case 3: return <Error text="Oops! There was an error submitting your application. If you think this was a mistake or this repeatedly happens, please get in touch with us at contact@cruzhacks.com!"/>
       default: {
         return (
           <div className="form-container">
-            <h2 className="form-container__title">Hacker Application</h2>                   
+            <h2 className="form-container__title">Hacker Application</h2>
             <p className="form-container__text">
-              <span>Add a paragraph before the application to note our policy with picking applications, a.k.a. please take the application seriously as we have limited space in our venue. We are picking participants to ensure diversity between skill level, year, representation, etc.</span>
-              <span>Sorry Greg too tired to write this rn can sum1 else do it thanks</span>
+              <span>We ask that all hackers take the application process seriously as we have limited space in our venue. The selection process is in place to ensure diversity between skill level, year, representation, etc.</span>
             </p>
             <form className="form" onSubmit={this.handleSubmit}>
               <div className="form__group">
@@ -204,28 +236,33 @@ class HackerForm extends Component {
                 <label className={this.state.workshop_ideas ? "form__group__label" : "inactive form__group__label"} htmlFor="workshop_ideas">Are there any specific workshops you'd like to see?</label>
               </div>
               <div className="form__group">
-                <label className="form__group__file" htmlFor="resume">{this.state.resumeName ? this.state.resumeName : "Upload your resume as (Firstname_Lastname.pdf)"}</label>
+                <label className="form__group__file" htmlFor="resume">{this.state.resumeName ? this.state.resumeName : "Upload your resume"}</label>
                 <input className="form__group__input" style={{visibility: 'hidden', position: 'absolute'}} id="resume" name="resume" type="file" onChange={this.handleFileUpload} maxLength="250"/>
               </div>
               <div className="form__group">
                 <textarea rows="4" cols="50" maxLength="500" className="form__group__textarea" id="short_answer1" name="short_answer1" onChange={this.handleOnChange} value={this.state.short_answer1} required/>
                 <label className={this.state.short_answer1 ? "form__group__label" : "inactive form__group__label"} htmlFor="short_answer1">Why do you want to attend CruzHacks 2019?* (max 500 chars)</label>
-                <span className="form__group__charcount">Character count: {this.state.short_answer1.length}</span>            
+                <span className="form__group__charcount">Character count: {this.state.short_answer1.length}</span>
               </div>
               <div className="form__group">
                 <textarea rows="4" cols="50" maxLength="500" className="form__group__textarea" id="short_answer2" name="short_answer2" onChange={this.handleOnChange} value={this.state.short_answer2} required/>
                 <label className={this.state.short_answer2 ? "form__group__label" : "inactive form__group__label"} htmlFor="short_answer2">What's something you've created that you're proud of?* (max 500 chars) </label>
-                <span className="form__group__charcount">Character count: {this.state.short_answer2.length}</span>    
+                <span className="form__group__charcount">Character count: {this.state.short_answer2.length}</span>
               </div>
               <GenderSelect handler={this.grabState}/>
               <EthnicitySelect handler={this.grabState}/>
               <GraduationSelect handler={this.grabState}/>
               <HackathonSelect handler={this.grabState}/>
               <TShirtSelect handler={this.grabState}/>
-              <p className="form__text">
-                By submitting this application I affirm that I have read and agree to the <a href="https://static.mlh.io/docs/mlh-code-of-conduct.pdf" target="_blank" rel="noopener noreferrer">MLH code of conduct</a> and I authorize CruzHacks to share my application information for event administration, ranking, MLH administration, pre and post-event informational emails and occasional messages about hackathons in-line with the MLH Privacy Policy. I further agree to the terms of both the MLH Contest Terms and Conditions and the MLH Privacy policy. 
-              </p>
-              <input className="form__submit" type="submit" value="Submit Application"/>          
+              <div style={{'textAlign': 'left', 'marginTop': '2rem'}}>
+                <input type="checkbox" id="conduct" required/>
+                <label className="form__checkbox" htmlFor="conduct">I have read and agree to the <a style={{'color': '#EBA471'}} href="https://static.mlh.io/docs/mlh-code-of-conduct.pdf" target="_blank" rel="noopener noreferrer">MLH code of conduct</a></label>
+              </div>
+              <div style={{'textAlign': 'left', 'margin': '2rem 0'}}>
+                <input type="checkbox" id="MLH" required/>
+                <label className="form__checkbox" htmlFor="MLH">I authorize you to share my application/registration information for event administration, ranking, MLH administration, pre- and post-event informational e-mails, and occasional messages about hackathons in-line with the MLH Privacy Policy. I further I agree to the terms of both the MLH Contest Terms and Conditions and the MLH Privacy Policy.</label>
+              </div>
+              <input className="form__submit" type="submit" value="Submit Application"/>
             </form>
           </div>
         )
