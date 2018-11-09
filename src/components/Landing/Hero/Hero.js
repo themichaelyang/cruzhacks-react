@@ -39,15 +39,15 @@ class Hero extends Component {
         <span className="hero__text">Create something that makes a difference.</span>
         <span className="hero__text__alt">Jan 18-20, 2019 @ Stevenson Event Center</span>
         <div className="hero__button-container">
-          <NavLink to="/apply" className="hero__button">Apps Open Now!</NavLink>
+          <NavLink to="/apply" className="hero__button__cta hero__button">Apply!</NavLink>
           <a href="/Sponsorship_Packet_E.pdf" className="hero__button" target="_blank" rel="noopener noreferrer">Sponsoring?</a>
         </div>
-        <div className="hero__updates">
+        {/* <div className="hero__updates">
           <span className="hero__updates__title">Subscribe for email updates:</span>
           <input className="hero__updates__input" value={this.state.email} type="email" name="email" id="email" onChange={this.getEmail}/>
           <label htmlFor="email" className={this.state.email ? "active hero__updates__label" : "hero__updates__label"}>Email</label>
           <input type="submit" className="hero__updates__submit" value={this.state.subscribe} onClick={this.subscribeEmail}/>
-        </div>
+        </div> */}
         <img src={hero} alt="" className="hero__bg"/>
       </div>
     );
