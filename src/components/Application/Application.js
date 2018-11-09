@@ -22,7 +22,7 @@ class Application extends Component {
     setTimeout(() => window.scrollTo({
       top: 600, 
       behavior: "smooth"
-  }), 100)
+    }), 100)
 
   }
 
