@@ -40,7 +40,7 @@
   &__button
     text-decoration: none
     font-size: 2.75rem
-    font-weight: 600
+    font-weight: 400
     padding: 1.5rem 3.3rem
     background-color: rgb(41, 43, 63)
     border-radius: 5rem
@@ -52,6 +52,26 @@
       background-color: lighten($color-bg, 5%)
     &.not-allowed
       cursor: not-allowed
+    &__cta
+      background-color: #8568eb !important
+      font-weight: 600
+  &__tiny
+    font-weight: 500
+    font-size: 2.5em
+    text-transform: uppercase
+    color: #aca5b5
+    position: absolute
+    top: calc(100vh - 60px)
+    margin: 0 auto
+    cursor: pointer
+    width: 175px
+    height: 55px
+    &:after
+      content: "↓"
+      position: absolute
+      right: 82px
+      top: 26px
+      animation: moving .5s ease alternate infinite
   &__bg
     width: 100%
     position: absolute
@@ -63,6 +83,8 @@
     z-index: -1
     @include respond(tab-port)
         filter: blur(3px)
+        transform: rotate(90deg) translate(-38px, -388px) scale(1.6)
+        transform-origin: top
         width: 110%
         top: 51%
         left: 46%
@@ -160,3 +182,9 @@
     cursor: pointer
     &:hover
       background-color: #282430
+
+@keyframes moving
+  from
+    transform: translateY(0)
+  to
+    transform: translateY(3px)
