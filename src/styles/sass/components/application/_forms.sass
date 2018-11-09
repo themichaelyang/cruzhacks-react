@@ -1,6 +1,13 @@
 .form-container
-    max-width: 960px
-    margin: auto
+    max-width: 815px
+    background: rgb(30, 28, 35)
+    border: 4px solid #f7a167
+    margin: 0 auto
+    border-radius: 2rem
+    padding: 20px 60px
+    @include respond(tab-land)
+        border: none
+        padding: 20px
     &__text
         font-size: 3rem
         color: $color-text-alt
@@ -13,20 +20,20 @@
         color: $color-text-orange
         font-size: 5rem
         text-transform: uppercase
-        letter-spacing: 3px
-        font-weight: normal
+        letter-spacing: 1px
+        font-weight: bold
         padding: 5rem 1rem 3rem 1rem
 
 .form
     &__checkbox
-      &.small
-        font-size: 2rem
-      font-size: 3rem
-      color: $color-text-alt
-      vertical-align: middle
-      padding-left: 1rem
-      a
-        color: inherit
+        &.small
+            font-size: 2rem
+            font-size: 3rem
+            color: $color-text-alt
+            vertical-align: middle
+            padding-left: 1rem
+        a
+            color: inherit
     &__text
         color: $color-text-alt
         font-size: 2rem
@@ -43,7 +50,7 @@
         font-size: 3rem
         color: white
         border-radius: 3rem
-        margin: 1rem auto 10rem auto
+        margin: 1rem auto 4rem auto
         cursor: pointer
         transition: all .2s
         &:hover
@@ -51,6 +58,7 @@
     &__group
         &:not(:first-child)
             margin-top: 5rem
+        display: grid
         position: relative
         width: max-content
         margin: 1rem auto
@@ -58,6 +66,8 @@
         font-size: 3rem
         letter-spacing: 1px
         padding-top: 3rem
+        @include respond(tab-land)
+            width: initial
         &__label
             position: absolute
             top: 5px

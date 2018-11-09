@@ -12,13 +12,18 @@ class Application extends Component {
   constructor(props) {
     super(props)
     this.state = {
-      application: 1
+      application: 0
     }
   }
 
   toggleApplication = (event) => {
     let app = parseInt(event.target.dataset.app, 10)
     this.setState({application: app})
+    setTimeout(() => window.scrollTo({
+      top: 600, 
+      behavior: "smooth"
+  }), 100)
+
   }
 
   renderForm = (application) => {
@@ -27,7 +32,7 @@ class Application extends Component {
       case 2: return <MentorForm />
       case 3: return <JudgeForm />
       case 4: return <VolunteerForm />
-      default: return <HackerForm />
+      default: return null
     }
   }
 
@@ -35,7 +40,7 @@ class Application extends Component {
     return (
       <div className="application">
         <NavLink to="/"><img src={logo} alt="logo" className="application__logo"/></NavLink>
-        <h1 className="application__title">CruzHacks 2019 Applications</h1>
+        <h1 className="application__title">CruzHacks 2019<br/>Applications</h1>
         <div className="application__select">
           <span className="application__select__title">Choose an Application Type</span>
           <AppSelect name="Hacker" class={this.state.application === 1 ? 'selected' : ''} data="1" handler={this.toggleApplication}/>
