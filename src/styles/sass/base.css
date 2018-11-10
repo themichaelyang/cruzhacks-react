@@ -446,7 +446,7 @@ body, html {
       color: rgba(252, 249, 255, 0.7); }
 
 .sponsors__container {
-  padding: 10rem 15rem 0rem 15rem;
+  padding: 10rem 15rem 10rem 15rem;
   text-align: center; }
   @media (max-width: 75em) {
     .sponsors__container {
@@ -462,39 +462,37 @@ body, html {
   color: white;
   margin-bottom: 5rem; }
 
-.sponsors__logos.giga {
-  padding: 2rem 2% 2rem 2%;
-  padding-bottom: 0rem;
-  padding-top: 0em;
+.sponsors__logos.gigas {
   display: flex;
   flex-wrap: wrap;
   justify-items: center;
   justify-content: center; }
   @media (max-width: 75em) {
-    .sponsors__logos.giga {
-      padding: 2rem;
+    .sponsors__logos.gigas {
       padding-bottom: 0rem; } }
   @media (max-width: 37.5em) {
-    .sponsors__logos.giga {
+    .sponsors__logos.gigas {
       padding: 2rem 2% 2rem 2%;
-      padding-top: 0; } }
+      padding-top: 0;
+      transform: scale(0.85); } }
 
-.sponsors__logos.kilo {
-  padding: 2rem 2% 2rem 2%;
+.sponsors__logos.kilos {
+  padding: 2rem 15% 2rem 15%;
   padding-bottom: 0rem;
   display: flex;
   flex-wrap: wrap;
   justify-items: center;
-  justify-content: center; }
+  justify-content: center;
+  flex: 0 0 10%; }
   @media (max-width: 75em) {
-    .sponsors__logos.kilo {
+    .sponsors__logos.kilos {
       padding: 2rem;
       padding-bottom: 0rem; } }
   @media (max-width: 37.5em) {
-    .sponsors__logos.kilo {
+    .sponsors__logos.kilos {
       padding: 6rem 14% 1rem 14%; } }
 
-.sponsors__logos.centi {
+.sponsors__logos.centis {
   padding: 2rem 2% 2rem 2%;
   display: flex;
   flex-wrap: wrap;
@@ -502,13 +500,29 @@ body, html {
   justify-content: center;
   padding-bottom: 5rem; }
   @media (max-width: 75em) {
-    .sponsors__logos.centi {
-      padding: 2rem;
+    .sponsors__logos.centis {
       padding-bottom: 7.5rem; } }
   @media (max-width: 37.5em) {
-    .sponsors__logos.centi {
-      padding: 6rem 14% 1rem 14%;
+    .sponsors__logos.centis {
+      max-height: 19rem;
       padding-bottom: 7.5rem; } }
+
+.sponsors__logos.partners {
+  padding: 2rem 15% 2rem 15%;
+  padding-bottom: 0rem;
+  display: flex;
+  flex-wrap: wrap;
+  justify-items: center;
+  justify-content: center;
+  flex: 0 0 10%; }
+  @media (max-width: 75em) {
+    .sponsors__logos.partners {
+      padding: 2rem;
+      padding-bottom: 0rem; } }
+  @media (max-width: 37.5em) {
+    .sponsors__logos.partners {
+      padding: 6rem 14% 1rem 14%;
+      padding-bottom: 0rem; } }
 
 .sponsors__giga {
   background-color: #312D38;
@@ -520,7 +534,8 @@ body, html {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  text-align: center; }
+  text-align: center;
+  flex: 0 0 20%; }
   @media (max-width: 37.5em) {
     .sponsors__giga {
       transform: scale(0.75); } }
@@ -540,6 +555,18 @@ body, html {
 .sponsors__centi {
   background-color: #312D38;
   max-height: 9.5rem;
+  margin: 1rem 1rem;
+  padding: 3rem 2rem 2rem;
+  border-radius: 20px;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center; }
+
+.sponsors__partner {
+  background-color: #312D38;
+  max-height: 19rem;
   margin: 1rem 1rem;
   padding: 3rem 2rem 2rem;
   border-radius: 20px;
