@@ -46,7 +46,6 @@
     border-radius: 5rem
     margin: 1rem 2rem
     transition: all .2s
-    text-transform: uppercase
     color: white
     &:hover
       background-color: lighten($color-bg, 5%)
@@ -54,7 +53,8 @@
       cursor: not-allowed
     &__cta
       background-color: #8568eb !important
-      font-weight: 600
+      font-weight: 600 !important
+      text-transform: uppercase !important
       &:hover
         background-color: #977ef1 !important
     &__tiny
@@ -138,13 +138,12 @@
 
 .hero__button, .hero__button-small
   text-decoration: none
-  font-weight: 600
+  font-weight: 500
   padding: 1.5rem 3.3rem
   background-color: #292b3f
   border-radius: 5rem
   margin: 1rem 2rem
   transition: all .2s
-  text-transform: uppercase
   color: white
   outline: none
 

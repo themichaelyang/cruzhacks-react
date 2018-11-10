@@ -94,7 +94,7 @@ body, html {
   text-align: center;
   padding: 4rem 1rem; }
   .hero__logo {
-    height: 13rem; }
+    height: 12rem; }
     @media (max-width: 56.25em) {
       .hero__logo {
         height: 10rem; } }
@@ -137,7 +137,6 @@ body, html {
     border-radius: 5rem;
     margin: 1rem 2rem;
     transition: all .2s;
-    text-transform: uppercase;
     color: white; }
     .hero__button:hover {
       background-color: #282430; }
@@ -145,7 +144,10 @@ body, html {
       cursor: not-allowed; }
     .hero__button__cta {
       background-color: #8568eb !important;
-      font-weight: 600; }
+      font-weight: 600 !important;
+      text-transform: uppercase !important; }
+      .hero__button__cta:hover {
+        background-color: #977ef1 !important; }
     .hero__button__tiny {
       color: white;
       font-size: 2em;
@@ -153,7 +155,8 @@ body, html {
       background: #292940;
       padding: 0.7em 1em 0.7em 0.4em;
       border-radius: 2em;
-      transition: background 0.5s ease; }
+      transition: background 0.5s ease;
+      margin-bottom: 5em; }
       .hero__button__tiny:before {
         content: "NEW!";
         background: #676bff;
@@ -227,13 +230,12 @@ body, html {
 
 .hero__button, .hero__button-small {
   text-decoration: none;
-  font-weight: 600;
+  font-weight: 500;
   padding: 1.5rem 3.3rem;
   background-color: #292b3f;
   border-radius: 5rem;
   margin: 1rem 2rem;
   transition: all .2s;
-  text-transform: uppercase;
   color: white;
   outline: none; }
 
