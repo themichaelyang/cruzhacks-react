@@ -393,8 +393,7 @@ body, html {
     border-radius: 10px; }
     @media (max-width: 37.5em) {
       .highlight__image {
-        width: 40rem;
-        height: 30rem; } }
+        width: 40rem; } }
   .highlight__overlay {
     height: 32.45rem;
     width: 100%;
@@ -406,7 +405,7 @@ body, html {
     right: 0; }
     @media (max-width: 37.5em) {
       .highlight__overlay {
-        height: 30rem; } }
+        height: 26rem; } }
   .highlight__text {
     text-align: right;
     color: white; }
