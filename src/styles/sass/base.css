@@ -398,7 +398,7 @@ body, html {
       color: rgba(252, 249, 255, 0.7); }
 
 .sponsors__container {
-  padding: 10rem 15rem 0rem 15rem;
+  padding: 10rem 15rem 10rem 15rem;
   text-align: center; }
   @media (max-width: 75em) {
     .sponsors__container {
@@ -466,8 +466,7 @@ body, html {
   flex-wrap: wrap;
   justify-items: center;
   justify-content: center;
-  flex: 0 0 10%;
-  margin-bottom: 10rem; }
+  flex: 0 0 10%; }
   @media (max-width: 75em) {
     .sponsors__logos.partners {
       padding: 2rem;
