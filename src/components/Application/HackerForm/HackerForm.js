@@ -20,15 +20,15 @@ class HackerForm extends Component {
     last_name: '',
     age: null,
     university: '',
-    grad_year: '',
+    grad_year: 0,
     shirt_size: '',
     short_answer1: '',
     short_answer2: '',
     phone_number: '',
-    gender: '',
-    ethnicity: '',
+    gender: 'n/a',
+    ethnicity: 'n/a',
     major: '',
-    num_hacks: '',
+    num_hacks: '0',
     github: '',
     linkedin: '',
     dietary_rest: '',
@@ -45,6 +45,9 @@ class HackerForm extends Component {
   }
 
   handleSubmit = (event) => {
+    if (this.state.status == 1) {
+      return;
+    }
     event.preventDefault()
     if (this.state.shirt_size === '') {
       window.alert("Please select a shirt size!")
@@ -82,7 +85,7 @@ class HackerForm extends Component {
                 linkedin: this.state.linkedin,
                 dietary_rest: this.state.dietary_rest,
                 workshop_ideas: this.state.workshop_ideas,
-                resume_uri: this.state.resume
+                resume_uri: this.state.resume_uri
               }
             }).then((response) => {
               this.setState({status: 2})
@@ -94,7 +97,34 @@ class HackerForm extends Component {
       })
       .catch((error) => {
         console.log(error)
-        this.setState({status: 3})
+        axios({
+          method: 'post',
+          url: process.env.REACT_APP_REGISTRATION_ENDPOINT.concat('/attendee'),
+          data: {
+            email: this.state.email,
+            first_name: this.state.first_name,
+            last_name: this.state.last_name,
+            age: this.state.age,
+            university: this.state.university,
+            grad_year: this.state.grad_year,
+            shirt_size: this.state.shirt_size,
+            short_answer1: this.state.short_answer1,
+            short_answer2: this.state.short_answer2,
+            phone_number: this.state.phone_number,
+            gender: this.state.gender,
+            ethnicity: this.state.ethnicity,
+            major: this.state.major,
+            num_hacks: this.state.num_hacks,
+            github: this.state.github,
+            linkedin: this.state.linkedin,
+            dietary_rest: this.state.dietary_rest,
+            workshop_ideas: this.state.workshop_ideas
+          }
+        }).then((response) => {
+          this.setState({status: 2})
+        }).catch((error) => {
+          this.setState({status: 3})
+        });
       })
     } else {
       this.setState({status: 1}, () => {
@@ -152,7 +182,7 @@ class HackerForm extends Component {
     switch (this.state.status) {
       case 1: return <Loader />
       case 2: return <Success text="Thanks for applying! We've received your application and will get back to you as soon as we can."/>
-      case 3: return <Error text="Oops! There was an error submitting your application. If you think this was a mistake please get in touch with us at contact@cruzhacks.com!"/>
+      case 3: return <Error text="Oops! There was an error submitting your application. If you think this was a mistake or this repeatedly happens, please get in touch with us at contact@cruzhacks.com!"/>
       default: {
         return (
           <div className="form-container">
@@ -224,11 +254,11 @@ class HackerForm extends Component {
               <GraduationSelect handler={this.grabState}/>
               <HackathonSelect handler={this.grabState}/>
               <TShirtSelect handler={this.grabState}/>
-              <div style={{'text-align': 'left', 'margin-top': '2rem'}}>
+              <div style={{'textAlign': 'left', 'marginTop': '2rem'}}>
                 <input type="checkbox" id="conduct" required/>
                 <label className="form__checkbox" htmlFor="conduct">I have read and agree to the <a style={{'color': '#EBA471'}} href="https://static.mlh.io/docs/mlh-code-of-conduct.pdf" target="_blank" rel="noopener noreferrer">MLH code of conduct</a></label>
               </div>
-              <div style={{'text-align': 'left', 'margin': '2rem 0'}}>
+              <div style={{'textAlign': 'left', 'margin': '2rem 0'}}>
                 <input type="checkbox" id="MLH" required/>
                 <label className="form__checkbox" htmlFor="MLH">I authorize you to share my application/registration information for event administration, ranking, MLH administration, pre- and post-event informational e-mails, and occasional messages about hackathons in-line with the MLH Privacy Policy. I further I agree to the terms of both the MLH Contest Terms and Conditions and the MLH Privacy Policy.</label>
               </div>
