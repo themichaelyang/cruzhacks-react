@@ -8,7 +8,7 @@
   text-align: center
   padding: 4rem 1rem
   &__logo
-    height: 13rem
+    height: 12rem
     @include respond(tab-port)
       height: 10rem
   &__title
@@ -55,6 +55,8 @@
     &__cta
       background-color: #8568eb !important
       font-weight: 600
+      &:hover
+        background-color: #977ef1 !important
     &__tiny
       color: white
       font-size: 2em
@@ -63,6 +65,7 @@
       padding: 0.7em 1em 0.7em 0.4em
       border-radius: 2em
       transition: background 0.5s ease
+      margin-bottom: 5em;
       &:before
         content: "NEW!"
         background: #676bff
