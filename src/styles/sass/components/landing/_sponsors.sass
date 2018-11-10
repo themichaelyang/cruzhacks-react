@@ -13,34 +13,32 @@
         color: white
         margin-bottom: 5rem
     &__logos
-            &.giga
-                padding: 2rem 2% 2rem 2%
-                padding-bottom: 0rem
-                padding-top: 0em
+            &.gigas
                 display: flex
                 flex-wrap: wrap
                 justify-items: center
                 justify-content: center
                 @include respond(tab-land)
-                    padding: 2rem
                     padding-bottom: 0rem
                 @include respond(phone)
                         padding: 2rem 2% 2rem 2%
                         padding-top: 0
 
-            &.kilo
-                padding: 2rem 2% 2rem 2%
+            &.kilos
+                padding: 2rem 15% 2rem 15%
                 padding-bottom: 0rem
                 display: flex
                 flex-wrap: wrap
                 justify-items: center
                 justify-content: center
+                flex: 0 0 10%
                 @include respond(tab-land)
                     padding: 2rem
                     padding-bottom: 0rem
                 @include respond(phone)
                         padding: 6rem 14% 1rem 14%
-            &.centi
+                        
+            &.centis
                 padding: 2rem 2% 2rem 2%
                 display: flex
                 flex-wrap: wrap
@@ -48,12 +46,25 @@
                 justify-content: center
                 padding-bottom: 5rem
                 @include respond(tab-land)
-                    padding: 2rem
                     padding-bottom: 7.5rem
                 @include respond(phone)
-                        padding: 6rem 14% 1rem 14%
+                        max-height: 19rem
                         padding-bottom: 7.5rem
-                
+
+            &.partners
+                padding: 2rem 15% 2rem 15%
+                padding-bottom: 0rem
+                display: flex
+                flex-wrap: wrap
+                justify-items: center
+                justify-content: center
+                flex: 0 0 10%
+                @include respond(tab-land)
+                    padding: 2rem
+                    padding-bottom: 0rem
+                @include respond(phone)
+                        padding: 6rem 14% 1rem 14%    
+                        
     &__giga
         background-color: $color-bg-alt
         min-height: 21rem
@@ -65,9 +76,9 @@
         justify-content: center
         align-items: center
         text-align: center
+        flex: 0 0 20%
         @include respond(phone)
-             transform: scale(.75)
-          
+            transform: scale(.75)
         
     &__kilo
         background-color: $color-bg-alt
@@ -80,6 +91,7 @@
         justify-content: center
         align-items: center
         text-align: center
+        
 
     &__centi
         background-color: $color-bg-alt
@@ -93,7 +105,15 @@
         align-items: center
         text-align: center    
 
+    &__partner
+        background-color: $color-bg-alt
+        max-height: 19rem
+        margin: 1rem 1rem
+        padding: 3rem 2rem 2rem
+        border-radius: 20px
+        display: flex
+        flex-direction: column
+        justify-content: center
+        align-items: center
+        text-align: center
         
-        
-   
-    
