@@ -32,6 +32,7 @@ class ClubSelect extends Component {
           <span className={this.state.club.has("ACM") ? "club__select__option active" : "club__select__option"} data-club="ACM" onClick={this.changeValue}>ACM</span>
           <span className={this.state.club.has("Formula Slug") ? "club__select__option active" : "club__select__option"} data-club="Formula Slug" onClick={this.changeValue}>Formula Slug</span>
           <span className={this.state.club.has("Gesher Group") ? "club__select__option active" : "club__select__option"} data-club="Gesher Group" onClick={this.changeValue}>Gesher Group</span>
+          <span className={this.state.club.has("None of the above") ? "club__select__option active" : "club__select__option"} data-club="None of the above" onClick={this.changeValue}>None of the above</span>
           <input type="hidden" name="club" className="club__value" onChange={this.props.handler}/>
         </div>        
       </div>
