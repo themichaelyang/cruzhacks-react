@@ -718,16 +718,20 @@ body, html {
 .application {
   text-align: center; }
   .application__logo {
-    height: 12rem;
-    margin-right: 3rem;
-    position: absolute;
+    position: sticky;
+    height: 16rem;
     cursor: pointer;
-    top: 30px;
-    left: calc(50% - 59px); }
+    top: 30px; }
     @media (max-width: 75em) {
       .application__logo {
+        height: 18rem; } }
+    @media (max-width: 56.25em) {
+      .application__logo {
+        height: 19rem; } }
+    @media (max-width: 37.5em) {
+      .application__logo {
         top: 25px;
-        height: 10rem; } }
+        height: 18rem; } }
   .application__title {
     font-size: 9.5rem;
     margin-top: 18rem;

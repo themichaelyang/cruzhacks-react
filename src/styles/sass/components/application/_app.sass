@@ -1,15 +1,17 @@
 .application
   text-align: center
   &__logo
-    height: 12rem
-    margin-right: 3rem
-    position: absolute
+    position: sticky
+    height: 16rem
     cursor: pointer
     top: 30px
-    left: calc(50% - 59px)
     @include respond(tab-land)
+      height: 18rem
+    @include respond(tab-port)
+      height: 19rem
+    @include respond(phone)
       top: 25px
-      height: 10rem
+      height: 18rem
   &__title
     font-size: 9.5rem
     margin-top: 18rem
