@@ -94,7 +94,7 @@ body, html {
   text-align: center;
   padding: 4rem 1rem; }
   .hero__logo {
-    height: 13rem; }
+    height: 12rem; }
     @media (max-width: 56.25em) {
       .hero__logo {
         height: 10rem; } }
@@ -137,7 +137,6 @@ body, html {
     border-radius: 5rem;
     margin: 1rem 2rem;
     transition: all .2s;
-    text-transform: uppercase;
     color: white; }
     .hero__button:hover {
       background-color: #282430; }
@@ -145,7 +144,29 @@ body, html {
       cursor: not-allowed; }
     .hero__button__cta {
       background-color: #8568eb !important;
-      font-weight: 600; }
+      font-weight: 600 !important;
+      text-transform: uppercase !important; }
+      .hero__button__cta:hover {
+        background-color: #977ef1 !important; }
+    .hero__button__tiny {
+      color: white;
+      font-size: 2em;
+      text-decoration: none;
+      background: #292940;
+      padding: 0.7em 1em 0.7em 0.4em;
+      border-radius: 2em;
+      transition: background 0.5s ease;
+      margin-bottom: 5em; }
+      .hero__button__tiny:before {
+        content: "NEW!";
+        background: #676bff;
+        padding: 4px 7px 4px 8px;
+        border-radius: 24px;
+        margin-right: 8px;
+        font-size: 0.9em;
+        box-shadow: 0 0 4px #676bff; }
+      .hero__button__tiny:hover {
+        background: #33334e; }
   .hero__tiny {
     font-weight: 500;
     font-size: 2.5em;
@@ -209,13 +230,12 @@ body, html {
 
 .hero__button, .hero__button-small {
   text-decoration: none;
-  font-weight: 600;
+  font-weight: 500;
   padding: 1.5rem 3.3rem;
   background-color: #292b3f;
   border-radius: 5rem;
   margin: 1rem 2rem;
   transition: all .2s;
-  text-transform: uppercase;
   color: white;
   outline: none; }
 
@@ -393,8 +413,7 @@ body, html {
     border-radius: 10px; }
     @media (max-width: 37.5em) {
       .highlight__image {
-        width: 40rem;
-        height: 30rem; } }
+        width: 40rem; } }
   .highlight__overlay {
     height: 32.45rem;
     width: 100%;
@@ -406,7 +425,7 @@ body, html {
     right: 0; }
     @media (max-width: 37.5em) {
       .highlight__overlay {
-        height: 30rem; } }
+        height: 26rem; } }
   .highlight__text {
     text-align: right;
     color: white; }
