@@ -47,16 +47,14 @@ class Team extends Component {
             img={karthik}
             title="President – Development"
             linkedin="https://www.linkedin.com/in/karthik-manickam/"
-            link="http://karthikmanickam.com"
-            target="_blank"
+            link="http://karthikmanickam.com"            
           />
           <Member
             name="Anisha Trivedi"
             img={anisha}
             title="Director of Public Relations"
             linkedin="https://www.linkedin.com/in/anishatrivedi/"
-            link=""
-            target="_blank"
+            link=""           
           />
         </div>        
         <div className="team__row">
@@ -85,8 +83,7 @@ class Team extends Component {
             img={sherry}
             title="Marketing Lead"
             linkedin="https://www.linkedin.com/in/sherry-huang-502018b7/"
-            link=""
-            target="_blank"
+            link=""            
           />          
         </div>
         <div className="team__row">
@@ -116,8 +113,7 @@ class Team extends Component {
             img={eric}
             title="Development Lead"
             linkedin="https://www.linkedin.com/in/mocklee/"
-            link=""
-            target="_blank"
+            link=""           
           />
         </div>
         <div className="team__row">
@@ -147,7 +143,6 @@ class Team extends Component {
             title="Sponsorship Lead"
             linkedin="https://www.linkedin.com/in/surya-ruddaraju-22925995/"
             link=""
-            target="_blank"
           />          
         </div>
         <div className="team__row">
@@ -163,8 +158,7 @@ class Team extends Component {
             img={kiran}
             title="Communications Lead"
             linkedin=""
-            link=""
-            target="_blank"
+            link=""            
           />
           <Member
             name="Catherine Lee"

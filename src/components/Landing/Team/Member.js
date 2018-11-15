@@ -12,7 +12,7 @@ class Member extends Component {
         <span className="member__name">{this.props.name}</span>
         <span className="member__title">{this.props.title}</span>
         <div className="member__links">
-          <a href={this.props.linkedin} target="blank"><img src={linkedin} alt="" className="member__linkedin"/></a>
+          <a href={this.props.linkedin} target="blank" rel="noopener noreferrer"><img src={linkedin} alt="" className="member__linkedin"/></a>
           <a href={this.props.link} target={this.props.target}><img src={envelope} alt="" className="member__mail"/></a>
         </div>
       </div>
