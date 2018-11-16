@@ -19,8 +19,8 @@
     "styled-components": "^4.0.3"
   },
   "scripts": {
-    "start": "cross-env NODE_PATH=./src npm-run-all -p watch-css start-js",
-    "build": "cross-env NODE_PATH=./src npm-run-all build-css build-js",
+    "start": "cross-env NODE_ENV=production NODE_PATH=./src npm-run-all -p watch-css start-js",
+    "build": "cross-env NODE_ENV=production NODE_PATH=./src npm-run-all build-css build-js",
     "build-css": "node-sass-chokidar --include-path ./src --include-path ./node_modules src/ -o src/",
     "watch-css": "npm run build-css && node-sass-chokidar --include-path ./src --include-path ./node_modules src/ -o src/ --watch --recursive",
     "start-js": "react-scripts start",

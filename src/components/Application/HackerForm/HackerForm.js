@@ -188,7 +188,7 @@ class HackerForm extends Component {
           <div className="form-container">
             <h2 className="form-container__title">Hacker Application</h2>
             <p className="form-container__text">
-              <span>We ask that all hackers take the application process seriously as we have limited space in our venue. The selection process is in place to ensure diversity between skill level, year, representation, etc.</span>
+              <span>We ask that all hackers take the application process seriously as we have limited space in our <a href="https://stevenson.ucsc.edu/activities/facilities/event-center.html" className="form-container__link" target="_blank" rel="noopener noreferrer">venue</a>. The selection process is in place to ensure diversity between skill level, year, representation, etc.</span>
             </p>
             <form className="form" onSubmit={this.handleSubmit}>
               <div className="form__group">

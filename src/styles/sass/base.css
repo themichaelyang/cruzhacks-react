@@ -201,6 +201,12 @@ body, html {
         width: 110%;
         top: 51%;
         left: 46%; } }
+  .hero__link {
+    color: rgba(252, 249, 255, 0.7);
+    text-decoration: underline;
+    transition: all .2s; }
+    .hero__link:hover {
+      color: white; }
 
 .label-hidden {
   position: absolute;
@@ -535,7 +541,10 @@ body, html {
   justify-content: center;
   align-items: center;
   text-align: center;
-  flex: 0 0 20%; }
+  flex: 0 0 20%;
+  transition: all .2s; }
+  .sponsors__giga:hover {
+    background-color: #282430; }
   @media (max-width: 37.5em) {
     .sponsors__giga {
       transform: scale(0.75); } }
@@ -550,7 +559,10 @@ body, html {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  text-align: center; }
+  text-align: center;
+  transition: all .2s; }
+  .sponsors__kilo:hover {
+    background-color: #282430; }
 
 .sponsors__centi {
   background-color: #312D38;
@@ -562,7 +574,10 @@ body, html {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  text-align: center; }
+  text-align: center;
+  transition: all .2s; }
+  .sponsors__centi:hover {
+    background-color: #282430; }
 
 .sponsors__partner {
   background-color: #312D38;
@@ -574,7 +589,10 @@ body, html {
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  text-align: center; }
+  text-align: center;
+  transition: all .2s; }
+  .sponsors__partner:hover {
+    background-color: #282430; }
 
 .faq-grid {
   display: grid;
@@ -700,16 +718,20 @@ body, html {
 .application {
   text-align: center; }
   .application__logo {
-    height: 12rem;
-    margin-right: 3rem;
-    position: absolute;
+    position: sticky;
+    height: 16rem;
     cursor: pointer;
-    top: 30px;
-    left: calc(50% - 59px); }
+    top: 30px; }
     @media (max-width: 75em) {
       .application__logo {
+        height: 18rem; } }
+    @media (max-width: 56.25em) {
+      .application__logo {
+        height: 19rem; } }
+    @media (max-width: 37.5em) {
+      .application__logo {
         top: 25px;
-        height: 10rem; } }
+        height: 18rem; } }
   .application__title {
     font-size: 9.5rem;
     margin-top: 18rem;
@@ -781,9 +803,17 @@ body, html {
     letter-spacing: 1px;
     font-weight: bold;
     padding: 5rem 1rem 3rem 1rem; }
+  .form-container__link {
+    color: rgba(252, 249, 255, 0.7);
+    text-decoration: underline;
+    transition: all .2s; }
+    .form-container__link:hover {
+      color: white; }
 
 .form__checkbox {
-  color: white; }
+  color: white;
+  padding: 0.5rem;
+  font-size: 1.5rem; }
   .form__checkbox.small {
     font-size: 2rem;
     font-size: 3rem;

@@ -48,24 +48,24 @@ class Sponsors extends Component {
           </a>
         </div>
         <div className="sponsors__kilo">
-          <a href="https://www.productops.com/" target="_blank">
+          <a href="https://www.productops.com/" target="_blank" rel="noopener noreferrer">
           <img src={ProductOpsKilo}  alt="ProductOps" height="100px" width="225px"/>
           </a>
         </div>
         <div className="sponsors__kilo">
-          <a href="https://www.plantronics.com" target="_blank">
+          <a href="https://www.plantronics.com" target="_blank" rel="noopener noreferrer">
           <img src={PlantronicsKilo}  alt="Plantronics" height="100px" width="225px"/>
           </a>
         </div>
         <div className="sponsors__kilo">
-          <a href="https://www.santacruzworks.org/members/south-swell-ventures" target="_blank">
+          <a href="https://www.santacruzworks.org/members/south-swell-ventures" target="_blank" rel="noopener noreferrer">
           <img src={SouthSwellKilo}  alt="South Swell Ventures" height="100px" width="225px"/>
           </a>
         </div>
       </div>
       <div className="sponsors__logos centis">
         <div className="sponsors__centi">
-          <a href="https://choosesantacruz.com/" target="_blank">
+          <a href="https://choosesantacruz.com/" target="_blank" rel="noopener noreferrer">
           <img src={ChooseSCCenti}  alt="Choose Santa Cruz" height="100px"/>
           </a>
         </div>
@@ -73,17 +73,17 @@ class Sponsors extends Component {
       <h2 className="sponsors__title">and Our Great Partners</h2>
       <div className="sponsors__logos partners">
         <div className="sponsors__partner">
-          <a href="https://mlh.io/" target="_blank">
+          <a href="https://mlh.io/" target="_blank" rel="noopener noreferrer">
           <img src={MLHPartner}  alt="Major League Hacking" width="225px" height="110px"/>
           </a>
         </div>
         <div className="sponsors__partner">
-          <a href="https://challengerocket.com/" target="_blank">
+          <a href="https://challengerocket.com/" target="_blank" rel="noopener noreferrer">
           <img src={ChallengeRocketPartner}  alt="Challenge Rocket" width="225px" height="110px"/>
           </a>
         </div>
         <div className="sponsors__partner">
-          <a href="http://santacruztechbeat.com/" target="_blank">
+          <a href="http://santacruztechbeat.com/" target="_blank" rel="noopener noreferrer">
           <img src={SCTBPartner}  alt="Santa Cruz Tech Beat" width="225px" height="110px"/>
           </a>
         </div>
