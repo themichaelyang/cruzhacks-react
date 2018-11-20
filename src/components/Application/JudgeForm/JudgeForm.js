@@ -79,7 +79,7 @@ class JudgeForm extends Component {
           <div className="form-container">
             <h2 className="form-container__title">Judge Application</h2>
             <p className="form-container__text">
-              <span>Judges will arrive to the Stevenson Event Center at UCSC at 12 pm and be served lunch from a tasty location.  Then each judge will be assigned projects to evaluate from 1 pm - 2 pm, and then the final results will be announced in the closing ceremony from 2:30 - 4:00 pm. </span>
+              <span>Judges will arrive at the <a className="form-container__link" href="https://goo.gl/maps/2gdMzVKgkv92" target="_blank" rel="noopener noreferrer">Stevenson Event Center</a> at UCSC @ 12 pm and be served lunch from a tasty location.  Then each judge will be assigned projects to evaluate from 1 pm - 2 pm, and then the final results will be announced in the closing ceremony from 2:30 - 4:00 pm. </span>
             </p>
             <form className="form" onSubmit={this.handleSubmit}>
               <div className="form__group">
