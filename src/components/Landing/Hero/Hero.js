@@ -49,7 +49,7 @@ class Hero extends Component {
           <NavLink to="/apply" className="hero__button__cta hero__button">Apply!</NavLink>
           <a href="/Sponsorship_Packet_E.pdf" className="hero__button" target="_blank" rel="noopener noreferrer">Sponsoring?</a>
         </div>
-        <a href="https://goo.gl/forms/sHjE5p8Krf3e1Dki1" target="_blank" className="hero__button__tiny">Pre-Hack Workshops!</a>
+        <a href="https://goo.gl/forms/sHjE5p8Krf3e1Dki1" target="_blank" className="hero__button__tiny">Beginner Pre-Hackathon!</a>
         {/* <div className="hero__updates">
           <span className="hero__updates__title">Subscribe for email updates:</span>
           <input className="hero__updates__input" value={this.state.email} type="email" name="email" id="email" onChange={this.getEmail}/>
