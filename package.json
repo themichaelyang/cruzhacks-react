@@ -2,6 +2,10 @@
   "name": "cruzhacks-react",
   "version": "0.1.0",
   "private": true,
+  "engines" : {
+    "npm" : "6.3.0",
+    "node": "v8.10.0"
+  },
   "dependencies": {
     "axios": "^0.18.0",
     "fetch-jsonp": "^1.1.3",
