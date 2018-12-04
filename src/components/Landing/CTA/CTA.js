@@ -7,14 +7,13 @@ import sparklesData from 'assets/cta/sparkles.json';
 import collaborateData from 'assets/cta/collaborate.json';
 
 class CTA extends Component {
-  constructor(props) {
-    super(props)
-    this.state = {
+  componentWillMount() {
+    this.setState({
       concept: false,
       collaborate: false,
       create: false,
       position: 9999999,
-    }
+    })
   }
 
   componentDidMount() {
