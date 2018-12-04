@@ -50,7 +50,6 @@ class Hero extends Component {
           <a href="/Sponsorship_Packet_E.pdf" className="hero__button" target="_blank" rel="noopener noreferrer">Sponsoring?</a>
           <span className="hero__text__alt deadline">Deadline to Apply: December 20th</span>
         </div>
-        <a href="https://localhackday.mlh.io/lhd-2018/events/1167-acm-x-cruzhacks-pre-hackathon" target="_blank" className="hero__button__tiny">Beginner Pre-Hackathon!</a>
         <span className="hero__tiny" onClick={this.scrollToContent}>Learn More!</span>
         <img src={hero} alt="" className="hero__bg"/>
       </div>
