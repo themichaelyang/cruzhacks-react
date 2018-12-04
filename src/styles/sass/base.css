@@ -120,6 +120,9 @@ body, html {
       @media (max-width: 56.25em) {
         .hero__text__alt {
           font-size: 1.5rem; } }
+  .hero .deadline {
+    grid-column-start: 1;
+    grid-column-end: 3; }
   .hero__button-container {
     margin: 2rem;
     display: grid;

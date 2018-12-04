@@ -48,14 +48,9 @@ class Hero extends Component {
         <div className="hero__button-container">
           <NavLink to="/apply" className="hero__button__cta hero__button">Apply!</NavLink>
           <a href="/Sponsorship_Packet_E.pdf" className="hero__button" target="_blank" rel="noopener noreferrer">Sponsoring?</a>
+          <span className="hero__text__alt deadline">Deadline to Apply: December 20th</span>
         </div>
         <a href="https://localhackday.mlh.io/lhd-2018/events/1167-acm-x-cruzhacks-pre-hackathon" target="_blank" className="hero__button__tiny">Beginner Pre-Hackathon!</a>
-        {/* <div className="hero__updates">
-          <span className="hero__updates__title">Subscribe for email updates:</span>
-          <input className="hero__updates__input" value={this.state.email} type="email" name="email" id="email" onChange={this.getEmail}/>
-          <label htmlFor="email" className={this.state.email ? "active hero__updates__label" : "hero__updates__label"}>Email</label>
-          <input type="submit" className="hero__updates__submit" value={this.state.subscribe} onClick={this.subscribeEmail}/>
-        </div> */}
         <span className="hero__tiny" onClick={this.scrollToContent}>Learn More!</span>
         <img src={hero} alt="" className="hero__bg"/>
       </div>
