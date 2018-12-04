@@ -13,6 +13,8 @@ import MLHPartner from 'assets/sponsors/MLH - PARTNER/mlh-logo-white.svg'
 import ChallengeRocketPartner from 'assets/sponsors/Challenge Rocket - PARTNER/challengerocket_logo_color_rgb.png'
 import UCSCArtsKilo from 'assets/sponsors/UCSC Arts Division - KILO/artsdivision-logo.png'
 import SCTBPartner from 'assets/sponsors/Santa Cruz Tech Beat - PARTNER/SCTB-logo.png'
+import StickerMulePartner from 'assets/sponsors/Sticker Mule - PARTNER/sticker-mule-logo-light-bg.svg'
+import YerbaMatePartner from 'assets/sponsors/Yerba Mate - PARTNER/Guayaki-Partner-Logo-Web.png'
 
 class Sponsors extends Component {
   render() {
@@ -85,6 +87,16 @@ class Sponsors extends Component {
         <div className="sponsors__partner">
           <a href="http://santacruztechbeat.com/" target="_blank" rel="noopener noreferrer">
           <img src={SCTBPartner}  alt="Santa Cruz Tech Beat" width="225px" height="110px"/>
+          </a>
+        </div>
+        <div className="sponsors__partner">
+          <a href="https://hackp.ac/mlh-stickermule-hackathons" target="_blank" rel="noopener noreferrer">
+          <img src={StickerMulePartner}  alt="Sticker Mule" width="225px" height="110px"/>
+          </a>
+        </div>
+        <div className="sponsors__partner">
+          <a href="https://guayaki.com/" target="_blank" rel="noopener noreferrer">
+          <img src={YerbaMatePartner}  alt="Yerba Mate" width="225px" height="110px"/>
           </a>
         </div>
       </div>
