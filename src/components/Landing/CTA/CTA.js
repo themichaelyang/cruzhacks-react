@@ -7,12 +7,16 @@ import sparklesData from 'assets/cta/sparkles.json';
 import collaborateData from 'assets/cta/collaborate.json';
 
 class CTA extends Component {
-  state = {
-    concept: false,
-    collaborate: false,
-    create: false,
-    position: 9999999,
+  constructor(props) {
+    super(props)
+    this.state = {
+      concept: false,
+      collaborate: false,
+      create: false,
+      position: 9999999,
+    }
   }
+
   componentDidMount() {
     document.onscroll = () => {
       if (window.scrollY >= this.state.position) {
