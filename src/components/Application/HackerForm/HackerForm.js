@@ -44,120 +44,101 @@ class HackerForm extends Component {
     this.state = this.initialState
   }
 
-  handleSubmit = (event) => {
-    if (this.state.status == 1) {
-      return;
+  uploadWithResume = () => {
+    const config = {
+      bucketName: process.env.REACT_APP_AWS_BUCKET_NAME,
+      region: process.env.REACT_APP_AWS_REGION,
+      dirName: 'resumes/'.concat(this.state.email),
+      accessKeyId: process.env.REACT_APP_AWS_ACCESS_KEY,
+      secretAccessKey: process.env.REACT_APP_AWS_SECRET_KEY
     }
-    event.preventDefault()
-    if (this.state.shirt_size === '') {
-      window.alert("Please select a shirt size!")
-    } else if (this.resumeObj) {
-      const config = {
-        bucketName: process.env.REACT_APP_AWS_BUCKET_NAME,
-        region: process.env.REACT_APP_AWS_REGION,
-        dirName: 'resumes/'.concat(this.state.email),
-        accessKeyId: process.env.REACT_APP_AWS_ACCESS_KEY,
-        secretAccessKey: process.env.REACT_APP_AWS_SECRET_KEY
+    S3FileUpload.uploadFile(this.resumeObj, config)
+    .then((response) => {
+      this.setState({resume_uri: response.location}, function() {
+        axios({
+          method: 'post',
+          url: process.env.REACT_APP_REGISTRATION_ENDPOINT.concat('/attendee'),
+          data: {
+            email: this.state.email,
+            first_name: this.state.first_name,
+            last_name: this.state.last_name,
+            age: this.state.age,
+            university: this.state.university,
+            grad_year: this.state.grad_year,
+            shirt_size: this.state.shirt_size,
+            short_answer1: this.state.short_answer1,
+            short_answer2: this.state.short_answer2,
+            phone_number: this.state.phone_number,
+            gender: this.state.gender,
+            ethnicity: this.state.ethnicity,
+            major: this.state.major,
+            num_hacks: this.state.num_hacks,
+            github: this.state.github,
+            linkedin: this.state.linkedin,
+            dietary_rest: this.state.dietary_rest,
+            workshop_ideas: this.state.workshop_ideas,
+            resume_uri: this.state.resume_uri
+          }
+        }).then((response) => {
+          this.setState({status: 2})
+        }).catch((error) => {
+          console.log(error)
+          this.setState({status: 3})
+        });
+      }) // end resume_uri setState
+    }) // end S3 File upload promise
+    .catch((error) => {
+      this.setState({status: 3})
+      window.alert("There was a problem uploading your resume")
+    })
+  }
+
+  uploadWithoutResume = () => {
+    axios({
+      method: 'post',
+      url: process.env.REACT_APP_REGISTRATION_ENDPOINT.concat('/attendee'),
+      data: {
+        email: this.state.email,
+        first_name: this.state.first_name,
+        last_name: this.state.last_name,
+        age: this.state.age,
+        university: this.state.university,
+        grad_year: this.state.grad_year,
+        shirt_size: this.state.shirt_size,
+        short_answer1: this.state.short_answer1,
+        short_answer2: this.state.short_answer2,
+        phone_number: this.state.phone_number,
+        gender: this.state.gender,
+        ethnicity: this.state.ethnicity,
+        major: this.state.major,
+        num_hacks: this.state.num_hacks,
+        github: this.state.github,
+        linkedin: this.state.linkedin,
+        dietary_rest: this.state.dietary_rest,
+        workshop_ideas: this.state.workshop_ideas
       }
-      S3FileUpload.uploadFile(this.resumeObj, config)
+    }).then((response) => {
+      this.setState({status: 2})
+    }).catch((error) => {
+      this.setState({status: 3})
+    });
+  }
+
+  handleSubmit = event => {
+    this.setState({status: 1}, function() { // display loader
+      axios.get(process.env.REACT_APP_IS_REGISTERED_ENDPOINT.concat(this.state.email))
       .then((response) => {
-        this.setState({resume_uri: response.location}, function() {
-          this.setState({status: 1}, () => {
-            axios({
-              method: 'post',
-              url: process.env.REACT_APP_REGISTRATION_ENDPOINT.concat('/attendee'),
-              data: {
-                email: this.state.email,
-                first_name: this.state.first_name,
-                last_name: this.state.last_name,
-                age: this.state.age,
-                university: this.state.university,
-                grad_year: this.state.grad_year,
-                shirt_size: this.state.shirt_size,
-                short_answer1: this.state.short_answer1,
-                short_answer2: this.state.short_answer2,
-                phone_number: this.state.phone_number,
-                gender: this.state.gender,
-                ethnicity: this.state.ethnicity,
-                major: this.state.major,
-                num_hacks: this.state.num_hacks,
-                github: this.state.github,
-                linkedin: this.state.linkedin,
-                dietary_rest: this.state.dietary_rest,
-                workshop_ideas: this.state.workshop_ideas,
-                resume_uri: this.state.resume_uri
-              }
-            }).then((response) => {
-              this.setState({status: 2})
-            }).catch((error) => {
-              this.setState({status: 3})
-            });
-          })
-        })
-      })
-      .catch((error) => {
-        console.log(error)
-        axios({
-          method: 'post',
-          url: process.env.REACT_APP_REGISTRATION_ENDPOINT.concat('/attendee'),
-          data: {
-            email: this.state.email,
-            first_name: this.state.first_name,
-            last_name: this.state.last_name,
-            age: this.state.age,
-            university: this.state.university,
-            grad_year: this.state.grad_year,
-            shirt_size: this.state.shirt_size,
-            short_answer1: this.state.short_answer1,
-            short_answer2: this.state.short_answer2,
-            phone_number: this.state.phone_number,
-            gender: this.state.gender,
-            ethnicity: this.state.ethnicity,
-            major: this.state.major,
-            num_hacks: this.state.num_hacks,
-            github: this.state.github,
-            linkedin: this.state.linkedin,
-            dietary_rest: this.state.dietary_rest,
-            workshop_ideas: this.state.workshop_ideas
+        if (!response.data) { // if not registered
+          if (this.state.resumeName) {
+            this.uploadWithResume();
+          } else {
+            this.uploadWithoutResume();
           }
-        }).then((response) => {
+        } else { // if already registered send success message
           this.setState({status: 2})
-        }).catch((error) => {
-          this.setState({status: 3})
-        });
+        }
       })
-    } else {
-      this.setState({status: 1}, () => {
-        axios({
-          method: 'post',
-          url: process.env.REACT_APP_REGISTRATION_ENDPOINT.concat('/attendee'),
-          data: {
-            email: this.state.email,
-            first_name: this.state.first_name,
-            last_name: this.state.last_name,
-            age: this.state.age,
-            university: this.state.university,
-            grad_year: this.state.grad_year,
-            shirt_size: this.state.shirt_size,
-            short_answer1: this.state.short_answer1,
-            short_answer2: this.state.short_answer2,
-            phone_number: this.state.phone_number,
-            gender: this.state.gender,
-            ethnicity: this.state.ethnicity,
-            major: this.state.major,
-            num_hacks: this.state.num_hacks,
-            github: this.state.github,
-            linkedin: this.state.linkedin,
-            dietary_rest: this.state.dietary_rest,
-            workshop_ideas: this.state.workshop_ideas
-          }
-        }).then((response) => {
-          this.setState({status: 2})
-        }).catch((error) => {
-          this.setState({status: 3})
-        });
-      })
-    }
+    })
   }
 
   handleOnChange = (event) => {
