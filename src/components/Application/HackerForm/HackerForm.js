@@ -88,8 +88,7 @@ class HackerForm extends Component {
       }) // end resume_uri setState
     }) // end S3 File upload promise
     .catch((error) => {
-      this.setState({status: 3})
-      window.alert("There was a problem uploading your resume")
+      this.uploadWithoutResume()
     })
   }
 
